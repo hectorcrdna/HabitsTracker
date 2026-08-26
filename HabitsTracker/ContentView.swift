@@ -29,7 +29,7 @@ struct ContentView: View {
     var body: some View {
         List {
             ForEach(habits) { habit in
-                Text(habit.habitTitle)
+                HabitRow(habit: habit)
             }
         }
         .navigationTitle("Habits")

@@ -17,6 +17,7 @@
 		8B202D09303B4CC800885BA1 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D08303B4CC800885BA1 /* Filter.swift */; };
 		8B202D0B303EC0E800885BA1 /* Habit-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D0A303EC0E800885BA1 /* Habit-CoreDataHelpers.swift */; };
 		8B202D0D303EC32200885BA1 /* Tag-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D0C303EC32200885BA1 /* Tag-CoreDataHelpers.swift */; };
+		8B202D0F303F43A200885BA1 /* HabitRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D0E303F43A200885BA1 /* HabitRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		8B202D08303B4CC800885BA1 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		8B202D0A303EC0E800885BA1 /* Habit-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Habit-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		8B202D0C303EC32200885BA1 /* Tag-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag-CoreDataHelpers.swift"; sourceTree = "<group>"; };
+		8B202D0E303F43A200885BA1 /* HabitRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				8B202D08303B4CC800885BA1 /* Filter.swift */,
 				8B202D04303B4AC500885BA1 /* SidebarView.swift */,
 				8B202CF73039F1EC00885BA1 /* ContentView.swift */,
+				8B202D0E303F43A200885BA1 /* HabitRow.swift */,
 				8B202D06303B4AD500885BA1 /* DetailView.swift */,
 				8B202D00303B1A4900885BA1 /* DataController.swift */,
 				8B202D0A303EC0E800885BA1 /* Habit-CoreDataHelpers.swift */,
@@ -160,6 +163,7 @@
 				8B202D07303B4AD500885BA1 /* DetailView.swift in Sources */,
 				8B202D01303B1A4900885BA1 /* DataController.swift in Sources */,
 				8B202D05303B4AC500885BA1 /* SidebarView.swift in Sources */,
+				8B202D0F303F43A200885BA1 /* HabitRow.swift in Sources */,
 				8B202CFA3039F1EC00885BA1 /* ContentView.swift in Sources */,
 				8B202CFB3039F1EC00885BA1 /* HabitsTrackerApp.swift in Sources */,
 			);
