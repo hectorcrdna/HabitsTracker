@@ -15,6 +15,8 @@
 		8B202D05303B4AC500885BA1 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D04303B4AC500885BA1 /* SidebarView.swift */; };
 		8B202D07303B4AD500885BA1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D06303B4AD500885BA1 /* DetailView.swift */; };
 		8B202D09303B4CC800885BA1 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D08303B4CC800885BA1 /* Filter.swift */; };
+		8B202D0B303EC0E800885BA1 /* Habit-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D0A303EC0E800885BA1 /* Habit-CoreDataHelpers.swift */; };
+		8B202D0D303EC32200885BA1 /* Tag-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D0C303EC32200885BA1 /* Tag-CoreDataHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		8B202D04303B4AC500885BA1 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		8B202D06303B4AD500885BA1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		8B202D08303B4CC800885BA1 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		8B202D0A303EC0E800885BA1 /* Habit-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Habit-CoreDataHelpers.swift"; sourceTree = "<group>"; };
+		8B202D0C303EC32200885BA1 /* Tag-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 				8B202CF73039F1EC00885BA1 /* ContentView.swift */,
 				8B202D06303B4AD500885BA1 /* DetailView.swift */,
 				8B202D00303B1A4900885BA1 /* DataController.swift */,
+				8B202D0A303EC0E800885BA1 /* Habit-CoreDataHelpers.swift */,
+				8B202D0C303EC32200885BA1 /* Tag-CoreDataHelpers.swift */,
 				8B202CFD303B16DD00885BA1 /* Main.xcdatamodeld */,
 				8B202CF63039F1EC00885BA1 /* Assets.xcassets */,
 				8B202D02303B2D2600885BA1 /* HabitsTracker.entitlements */,
@@ -148,6 +154,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B202D09303B4CC800885BA1 /* Filter.swift in Sources */,
+				8B202D0D303EC32200885BA1 /* Tag-CoreDataHelpers.swift in Sources */,
+				8B202D0B303EC0E800885BA1 /* Habit-CoreDataHelpers.swift in Sources */,
 				8B202CFF303B16DD00885BA1 /* Main.xcdatamodeld in Sources */,
 				8B202D07303B4AD500885BA1 /* DetailView.swift in Sources */,
 				8B202D01303B1A4900885BA1 /* DataController.swift in Sources */,
