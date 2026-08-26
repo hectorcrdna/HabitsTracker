@@ -19,12 +19,17 @@ extension Habit {
         set { content = newValue }
     }
     
-    var habitCreationDate: Date? {
+    var habitCreationDate: Date {
         creationDate ?? .now
     }
     
-    var habitModificationDate: Date? {
+    var habitModificationDate: Date {
         modificationDate ?? .now
+    }
+    
+    var habitTags: [Tag] {
+        let result = tags?.allObjects as? [Tag] ?? []
+        return result.sorted()
     }
     
     static var example: Habit {
@@ -37,5 +42,18 @@ extension Habit {
         habit.priority = 2
         habit.creationDate = .now
         return habit
+    }
+}
+
+extension Habit: Comparable {
+    public static func <(lhs: Habit, rhs: Habit) -> Bool {
+        let left = lhs.habitTitle.localizedLowercase
+        let right = rhs.habitTitle.localizedLowercase
+        
+        if left == right {
+            return lhs.habitCreationDate < rhs.habitCreationDate
+        } else {
+            return left < right
+        }
     }
 }
