@@ -31,8 +31,16 @@ struct ContentView: View {
             ForEach(habits) { habit in
                 HabitRow(habit: habit)
             }
+            .onDelete(perform: delete)
         }
         .navigationTitle("Habits")
+    }
+    
+    func delete(at offsets: IndexSet) {
+        for offset in offsets {
+            let habit = habits[offset]
+            dataController.delete(habit)
+        }
     }
 }
 
