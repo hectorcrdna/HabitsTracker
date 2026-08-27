@@ -27,7 +27,7 @@ struct ContentView: View {
     }
     
     var body: some View {
-        List {
+        List(selection: $dataController.selectedHabit) {
             ForEach(habits) { habit in
                 HabitRow(habit: habit)
             }

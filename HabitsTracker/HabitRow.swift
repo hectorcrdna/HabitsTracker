@@ -23,7 +23,7 @@ struct HabitRow: View {
                         .font(.headline)
                         .lineLimit(1)
                     
-                    Text("No tags.")
+                    Text(habit.habitTagsList)
                         .foregroundStyle(.secondary)
                         .lineLimit(1)
                 }

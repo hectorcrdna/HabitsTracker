@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import Combine
 
 extension Tag {
     var tagID: UUID {

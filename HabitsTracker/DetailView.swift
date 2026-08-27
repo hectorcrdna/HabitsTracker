@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct DetailView: View {
+    @EnvironmentObject var dataController: DataController
+    
     var body: some View {
-        Text("Detail")
+        VStack {
+            if let habit = dataController.selectedHabit {
+                HabitView(habit: habit)
+            } else {
+                NoHabitView()
+            }
+        }
+        .navigationTitle("Details")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

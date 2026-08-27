@@ -32,6 +32,24 @@ extension Habit {
         return result.sorted()
     }
     
+    var habitTagsList: String {
+        guard let tags else { return "No tags" }
+        
+        if tags.count == 0 {
+            return "No tags"
+        } else {
+            return habitTags.map(\.tagName).formatted()
+        }
+    }
+    
+    var habitStatus: String {
+        if completed {
+            return "Completed"
+        } else {
+            return "Not completed"
+        }
+    }
+    
     static var example: Habit {
         let controller = DataController(inMemory: true)
         let viewContext = controller.container.viewContext

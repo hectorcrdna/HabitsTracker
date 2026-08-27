@@ -12,6 +12,7 @@ class DataController: ObservableObject {
     let container: NSPersistentCloudKitContainer
     
     @Published var selectedFilter: Filter? = .all
+    @Published var selectedHabit: Habit?
     
     static var previews: DataController = {
         let dataController = DataController(inMemory: true)
@@ -95,5 +96,15 @@ class DataController: ObservableObject {
         delete(request2)
         
         save()
+    }
+    
+    func missingTags(from habit: Habit) -> [Tag] {
+        let request = Tag.fetchRequest()
+        let allTags = (try? container.viewContext.fetch(request)) ?? []
+        
+        let allTagsSet = Set(allTags)
+        let difference = allTagsSet.symmetricDifference(habit.habitTags)
+        
+        return difference.sorted()
     }
 }
