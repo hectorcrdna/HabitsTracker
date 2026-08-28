@@ -59,5 +59,5 @@ struct SidebarView: View {
 
 #Preview {
     SidebarView()
-        .environmentObject(DataController.previews)
+        .environmentObject(DataController.preview)
 }

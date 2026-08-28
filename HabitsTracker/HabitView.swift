@@ -74,6 +74,9 @@ struct HabitView: View {
             }
         }
         .disabled(habit.isDeleted)
+        .onReceive(habit.objectWillChange) { _ in
+            dataController.queueSave()
+        }
     }
 }
 

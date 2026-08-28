@@ -46,7 +46,7 @@ extension Habit {
         if completed {
             return "Completed"
         } else {
-            return "Not completed"
+            return "Incomplete"
         }
     }
     
