@@ -21,6 +21,10 @@
 		8B202D11304012E900885BA1 /* HabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D10304012E900885BA1 /* HabitView.swift */; };
 		8B202D133040130000885BA1 /* NoHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D123040130000885BA1 /* NoHabitView.swift */; };
 		8B202D1530435CA600885BA1 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D1430435CA600885BA1 /* Bundle-Decodable.swift */; };
+		8B202D18304363D000885BA1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B202D17304363D000885BA1 /* Colors.xcassets */; };
+		8B202D19304363D000885BA1 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B202D16304363D000885BA1 /* Awards.json */; };
+		8B202D1B3043649300885BA1 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D1A3043649300885BA1 /* Award.swift */; };
+		8B202D1D3043685F00885BA1 /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D1C3043685F00885BA1 /* AwardsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,10 @@
 		8B202D10304012E900885BA1 /* HabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitView.swift; sourceTree = "<group>"; };
 		8B202D123040130000885BA1 /* NoHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoHabitView.swift; sourceTree = "<group>"; };
 		8B202D1430435CA600885BA1 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		8B202D16304363D000885BA1 /* Awards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Awards.json; sourceTree = "<group>"; };
+		8B202D17304363D000885BA1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		8B202D1A3043649300885BA1 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
+		8B202D1C3043685F00885BA1 /* AwardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +89,15 @@
 				8B202D06303B4AD500885BA1 /* DetailView.swift */,
 				8B202D10304012E900885BA1 /* HabitView.swift */,
 				8B202D123040130000885BA1 /* NoHabitView.swift */,
+				8B202D1C3043685F00885BA1 /* AwardsView.swift */,
 				8B202D00303B1A4900885BA1 /* DataController.swift */,
 				8B202D0A303EC0E800885BA1 /* Habit-CoreDataHelpers.swift */,
 				8B202D0C303EC32200885BA1 /* Tag-CoreDataHelpers.swift */,
 				8B202D1430435CA600885BA1 /* Bundle-Decodable.swift */,
 				8B202CFD303B16DD00885BA1 /* Main.xcdatamodeld */,
+				8B202D1A3043649300885BA1 /* Award.swift */,
+				8B202D16304363D000885BA1 /* Awards.json */,
+				8B202D17304363D000885BA1 /* Colors.xcassets */,
 				8B202CF63039F1EC00885BA1 /* Assets.xcassets */,
 				8B202D02303B2D2600885BA1 /* HabitsTracker.entitlements */,
 				8B202D03303B2D3D00885BA1 /* Info.plist */,
@@ -154,6 +166,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B202D18304363D000885BA1 /* Colors.xcassets in Resources */,
+				8B202D19304363D000885BA1 /* Awards.json in Resources */,
 				8B202CFC3039F1EC00885BA1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,6 +180,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B202D09303B4CC800885BA1 /* Filter.swift in Sources */,
+				8B202D1B3043649300885BA1 /* Award.swift in Sources */,
+				8B202D1D3043685F00885BA1 /* AwardsView.swift in Sources */,
 				8B202D0D303EC32200885BA1 /* Tag-CoreDataHelpers.swift in Sources */,
 				8B202D0B303EC0E800885BA1 /* Habit-CoreDataHelpers.swift in Sources */,
 				8B202CFF303B16DD00885BA1 /* Main.xcdatamodeld in Sources */,
