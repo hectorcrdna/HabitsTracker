@@ -11,32 +11,32 @@ import CoreData
 struct ContentView: View {
     @EnvironmentObject var dataController: DataController
     
-    var habits: [Habit] {
-        let filter = dataController.selectedFilter ?? .all
-        var allHabits: [Habit]
-        
-        if let tag = filter.tag {
-            allHabits = tag.habits?.allObjects as? [Habit] ?? []
-        } else {
-            let request = Habit.fetchRequest()
-            request.predicate = NSPredicate(format: "modificationDate > %@", filter.minModificationDate as NSDate)
-            allHabits = (try? dataController.container.viewContext.fetch(request)) ?? []
-        }
-        
-        return allHabits.sorted()
-    }
-    
     var body: some View {
         List(selection: $dataController.selectedHabit) {
-            ForEach(habits) { habit in
+            ForEach(dataController.habitsForSelectedFilter()) { habit in
                 HabitRow(habit: habit)
             }
             .onDelete(perform: delete)
         }
         .navigationTitle("Habits")
+        .searchable(text: $dataController.filterText, tokens: $dataController.filterTokens, prompt: "Filter habits or type # to add tags") { tag in
+            Text(tag.tagName)
+        }
+        .searchSuggestions {
+            ForEach(dataController.suggestedFilterTokens) { tag in
+                if !dataController.filterTokens.contains(tag) {
+                    Button(tag.tagName) {
+                        dataController.filterTokens.append(tag)
+                        dataController.filterText = ""
+                    }
+                }
+            }
+        }
     }
     
     func delete(at offsets: IndexSet) {
+        let habits = dataController.habitsForSelectedFilter()
+        
         for offset in offsets {
             let habit = habits[offset]
             dataController.delete(habit)

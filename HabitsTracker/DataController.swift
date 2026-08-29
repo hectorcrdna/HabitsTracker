@@ -13,6 +13,8 @@ class DataController: ObservableObject {
     
     @Published var selectedFilter: Filter? = .all
     @Published var selectedHabit: Habit?
+    @Published var filterText = ""
+    @Published var filterTokens = [Tag]()
     
     private var saveTask: Task<Void, Error>?
     
@@ -21,6 +23,20 @@ class DataController: ObservableObject {
         dataController.createSampleData()
         return dataController
     }()
+    
+    var suggestedFilterTokens: [Tag] {
+        guard filterText.starts(with: "#") else { return [] }
+        
+        let trimmedFilterText = String(filterText.dropFirst()).trimmingCharacters(in: .whitespaces)
+        
+        let request = Tag.fetchRequest()
+        
+        if trimmedFilterText.isEmpty == false {
+            request.predicate = NSPredicate(format: "name CONTAINS[c] %@", trimmedFilterText)
+        }
+        
+        return (try? container.viewContext.fetch(request).sorted()) ?? []
+    }
     
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "Main")
@@ -117,5 +133,40 @@ class DataController: ObservableObject {
         let difference = allTagsSet.symmetricDifference(habit.habitTags)
         
         return difference.sorted()
+    }
+    
+    func habitsForSelectedFilter() -> [Habit] {
+        let filter = selectedFilter ?? .all
+        var predicates = [NSPredicate]()
+        
+        if let tag = filter.tag {
+            let tagPredicate = NSPredicate(format: "tags CONTAINS %@", tag)
+            predicates.append(tagPredicate)
+            
+        } else {
+            let datePredicate = NSPredicate(format: "modificationDate > %@", filter.minModificationDate as NSDate)
+            predicates.append(datePredicate)
+        }
+        
+        let trimmedFilterText = filterText.trimmingCharacters(in: .whitespaces)
+        
+        if trimmedFilterText.isEmpty == false {
+            let titlePredicate = NSPredicate(format: "title CONTAINS[c] %@", trimmedFilterText)
+            let contentPredicate = NSPredicate(format: "content CONTAINS[c] %@", trimmedFilterText)
+            
+            let combinedPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: [titlePredicate, contentPredicate])
+            predicates.append(combinedPredicate)
+        }
+        
+        if filterTokens.isEmpty == false {
+            let tokenPredicate = NSPredicate(format: "ANY tags in %@", filterTokens)
+            predicates.append(tokenPredicate)
+        }
+        
+        let request = Habit.fetchRequest()
+        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        
+        let allHabits = (try? container.viewContext.fetch(request)) ?? []
+        return allHabits.sorted()
     }
 }
