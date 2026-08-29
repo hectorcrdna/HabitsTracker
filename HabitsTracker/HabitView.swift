@@ -77,6 +77,24 @@ struct HabitView: View {
         .onReceive(habit.objectWillChange) { _ in
             dataController.queueSave()
         }
+        .toolbar {
+            Menu {
+                Button {
+                    UIPasteboard.general.string = habit.title
+                } label: {
+                    Label("Copy habit title", systemImage: "doc.on.doc")
+                }
+                
+                Button {
+                    habit.completed.toggle()
+                    dataController.save()
+                } label: {
+                    Label(habit.completed ? "Mark Incomplet" : "Mark Completed", systemImage: "bubble.left.and.exclamationmark.bubble.right")
+                }
+            } label: {
+                Label("Actions", systemImage: "ellipsis.circle")
+            }
+        }
     }
 }
 

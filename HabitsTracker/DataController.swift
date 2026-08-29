@@ -197,7 +197,7 @@ class DataController: ObservableObject {
         request.sortDescriptors = [NSSortDescriptor(key: sortType.rawValue, ascending: sortNewestFirst)]
         
         let allHabits = (try? container.viewContext.fetch(request)) ?? []
-        return allHabits.sorted()
+        return allHabits
     }
     
     func newTag() {
