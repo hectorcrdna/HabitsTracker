@@ -199,4 +199,25 @@ class DataController: ObservableObject {
         let allHabits = (try? container.viewContext.fetch(request)) ?? []
         return allHabits.sorted()
     }
+    
+    func newTag() {
+        let tag = Tag(context: container.viewContext)
+        tag.id = UUID()
+        tag.name = "New Tag"
+        save()
+    }
+    
+    func newHabit() {
+        let habit = Habit(context: container.viewContext)
+        habit.title = "New Habit"
+        habit.creationDate = .now
+        habit.priority = 1
+        
+        if let tag = selectedFilter?.tag {
+            habit.addToTags(tag)
+        }
+        save()
+        
+        selectedHabit = habit
+    }
 }

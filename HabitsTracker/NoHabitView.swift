@@ -15,9 +15,7 @@ struct NoHabitView: View {
             .font(.title)
             .foregroundStyle(.secondary)
         
-        Button("New Habit") {
-            // Make new habit
-        }
+        Button("New Habit", action: dataController.newHabit)
     }
 }
 
