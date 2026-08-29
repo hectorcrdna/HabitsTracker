@@ -78,7 +78,9 @@ struct SidebarView: View {
             Button("Cancel", role: .cancel) { }
             TextField("New name", text: $tagName)
         }
-        .sheet(isPresented: $showingAwards, content: AwardsView.init)
+        .sheet(isPresented: $showingAwards) {
+            AwardsView()
+        }
     }
     
     func delete(_ offsets: IndexSet) {

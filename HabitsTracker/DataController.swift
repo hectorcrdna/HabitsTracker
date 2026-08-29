@@ -220,4 +220,32 @@ class DataController: ObservableObject {
         
         selectedHabit = habit
     }
+    
+    func count<T>(for fetchRequest: NSFetchRequest<T>) -> Int {
+        (try? container.viewContext.count(for: fetchRequest)) ?? 0
+    }
+    
+    func hasEarned(award: Award) -> Bool {
+        switch award.criterion {
+        case "habits":
+            let fetchRequest = Habit.fetchRequest()
+            let awardCount = count(for: fetchRequest)
+            return awardCount >= award.value
+            
+        case "closed":
+            let fetchRequest = Habit.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "completed = true")
+            let awardCount = count(for: fetchRequest)
+            return awardCount >= award.value
+            
+        case "tags":
+            let fetchRequest = Tag.fetchRequest()
+            let awardCount = count(for: fetchRequest)
+            return awardCount >= award.value
+            
+        default:
+            //fatalError("Uknown award criterion \(award.criterion)")
+            return false
+        }
+    }
 }

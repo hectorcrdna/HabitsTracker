@@ -1,71 +1,71 @@
 [
     {
         "name": "First Steps",
-        "description": "Add your first issue.",
+        "description": "Add your first habit.",
         "color": "My Light Blue",
-        "criterion": "issues",
+        "criterion": "habits",
         "value": 1,
         "image": "figure.walk"
     },
     {
         "name": "A Great Start",
-        "description": "Add 10 issues.",
+        "description": "Add 10 habits.",
         "color": "My Light Blue",
-        "criterion": "issues",
+        "criterion": "habits",
         "value": 10,
         "image": "hand.thumbsup.fill"
     },
     {
         "name": "Moving On Up",
-        "description": "Add 20 issues.",
+        "description": "Add 20 habits.",
         "color": "My Light Blue",
-        "criterion": "issues",
+        "criterion": "habits",
         "value": 20,
         "image": "tray.and.arrow.up.fill"
     },
     {
         "name": "Gathering Speed",
-        "description": "Add 50 issues.",
+        "description": "Add 50 habits.",
         "color": "My Light Blue",
-        "criterion": "issues",
+        "criterion": "habits",
         "value": 50,
         "image": "speedometer"
     },
     {
         "name": "Making Waves",
-        "description": "Add 100 issues.",
+        "description": "Add 100 habits.",
         "color": "My Light Blue",
-        "criterion": "issues",
+        "criterion": "habits",
         "value": 100,
         "image": "dot.radiowaves.left.and.right"
     },
     {
         "name": "High Performer",
-        "description": "Add 250 issues.",
+        "description": "Add 250 habits.",
         "color": "My Light Blue",
-        "criterion": "issues",
+        "criterion": "habits",
         "value": 250,
         "image": "square.stack.3d.up.fill"
     },
     {
         "name": "Star Performer",
-        "description": "Add 500 issues.",
+        "description": "Add 500 habits.",
         "color": "My Light Blue",
-        "criterion": "issues",
+        "criterion": "habits",
         "value": 500,
         "image": "star.circle.fill"
     },
     {
         "name": "Champion Performer",
-        "description": "Add 1000 issues.",
+        "description": "Add 1000 habits.",
         "color": "My Light Blue",
-        "criterion": "issues",
+        "criterion": "habits",
         "value": 1000,
         "image": "crown.fill"
     },
     {
         "name": "Checking Boxes",
-        "description": "Close your first issue.",
+        "description": "Close your first habits.",
         "color": "My Green",
         "criterion": "closed",
         "value": 1,
@@ -73,7 +73,7 @@
     },
     {
         "name": "Rocking it",
-        "description": "Close 10 issues.",
+        "description": "Close 10 habits.",
         "color": "My Green",
         "criterion": "closed",
         "value": 10,
@@ -81,7 +81,7 @@
     },
     {
         "name": "20 is Plenty",
-        "description": "Close 20 issues.",
+        "description": "Close 20 habits.",
         "color": "My Green",
         "criterion": "closed",
         "value": 20,
@@ -89,7 +89,7 @@
     },
     {
         "name": "Bullseye!",
-        "description": "Close 50 issues.",
+        "description": "Close 50 habits.",
         "color": "My Green",
         "criterion": "closed",
         "value": 50,
@@ -97,7 +97,7 @@
     },
     {
         "name": "Flying High",
-        "description": "Close 100 issues.",
+        "description": "Close 100 habits.",
         "color": "My Green",
         "criterion": "closed",
         "value": 100,
@@ -105,7 +105,7 @@
     },
     {
         "name": "You're On Fire!",
-        "description": "Close 250 issues.",
+        "description": "Close 250 habits.",
         "color": "My Green",
         "criterion": "closed",
         "value": 250,
@@ -113,7 +113,7 @@
     },
     {
         "name": "Box Ticker in Chief",
-        "description": "Close 500 issues.",
+        "description": "Close 500 habits.",
         "color": "My Green",
         "criterion": "closed",
         "value": 500,
@@ -121,7 +121,7 @@
     },
     {
         "name": "Boom!",
-        "description": "Close 1000 issues.",
+        "description": "Close 1000 habits.",
         "color": "My Green",
         "criterion": "closed",
         "value": 1000,
