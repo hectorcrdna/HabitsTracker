@@ -77,6 +77,7 @@ struct HabitView: View {
         .onReceive(habit.objectWillChange) { _ in
             dataController.queueSave()
         }
+        .onSubmit(dataController.save)
         .toolbar {
             Menu {
                 Button {
