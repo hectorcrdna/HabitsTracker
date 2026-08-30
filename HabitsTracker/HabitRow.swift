@@ -32,6 +32,7 @@ struct HabitRow: View {
                 
                 VStack(alignment: .trailing) {
                     Text(habit.habitCreationDate.formatted(date: .numeric, time: .omitted))
+                        .accessibilityLabel(habit.habitCreationDate.formatted(date: .abbreviated, time: .omitted))
                         .font(.subheadline)
                     
                     if habit.completed {
@@ -42,6 +43,7 @@ struct HabitRow: View {
                 .foregroundStyle(.secondary)
             }
         }
+        .accessibilityHint(habit.priority == 2 ? "Hi priority" : "")
     }
 }
 
