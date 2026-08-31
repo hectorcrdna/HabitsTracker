@@ -19,11 +19,16 @@ struct HabitView: View {
                     TextField("Title", text: $habit.habitTitle, prompt: Text("Enter the habit title here"))
                         .font(.title)
                     
-                    Text("**Modified** \(habit.habitModificationDate.formatted(date: .long, time: .shortened))")
+                    Text("**Modified:** \(habit.habitModificationDate.formatted(date: .long, time: .shortened))")
                         .foregroundStyle(.secondary)
                     
-                    Text("**Status:** \(habit.habitStatus)")
-                        .foregroundStyle(.secondary)
+                    HStack {
+                        Text("**Status:**")
+                            .foregroundStyle(.secondary)
+                        
+                        Text(LocalizedStringKey(habit.habitStatus))
+                            .foregroundStyle(.secondary)
+                    }
                 }
                 
                 Picker("Priority", selection: $habit.priority) {
@@ -83,14 +88,14 @@ struct HabitView: View {
                 Button {
                     UIPasteboard.general.string = habit.title
                 } label: {
-                    Label("Copy habit title", systemImage: "doc.on.doc")
+                    Label("Copy Habit Title", systemImage: "doc.on.doc")
                 }
                 
                 Button {
                     habit.completed.toggle()
                     dataController.save()
                 } label: {
-                    Label(habit.completed ? "Mark Incomplet" : "Mark Completed", systemImage: "bubble.left.and.exclamationmark.bubble.right")
+                    Label(habit.completed ? "Mark Incomplete" : "Mark Completed", systemImage: "bubble.left.and.exclamationmark.bubble.right")
                 }
             } label: {
                 Label("Actions", systemImage: "ellipsis.circle")

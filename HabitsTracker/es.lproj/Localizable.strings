@@ -1,0 +1,139 @@
+/* 
+  Localizable.strings
+  HabitsTracker
+
+  Created by Hector Cardona on 8/30/26.
+  
+*/
+
+/* SIDEBARVIEW */
+//Toolbar button "Plus" to add new tags.
+"Add tag" = "Añade etiqueta";
+
+//Toolbar button "Rosette" to show awards sheet.
+"Show awards" = "Mostrar trofeos";
+
+//Toolbar button "Flame" to add sample data.
+"Add Samples" = "añade ejemplos";
+
+//Navigation title.
+"Filters" = "Filtros";
+
+//List group title "Smart Filters".
+"Smart Filters" = "Filtros Inteligentes";
+//Row "All Habits" title.
+"All Habits" = "Todos Los Habitos";
+//Row "Recent Habits" title.
+"Recent Habits" = "Habitos Recientes";
+
+//List group title "Tags".
+"Tags" = "Etiquetas";
+
+//New tag default title.
+"New tag" = "Nueva etiqueta";
+
+
+/* SIDEBARVIEW - AWARDS SHEET */
+//Navigation title "Awards".
+"Awards" = "trofeos";
+
+//Awards alert title.
+"Unlocked: %@" = "Ganado: %@";
+"Locked" = "Bloqueado";
+
+
+/*SIDEBARVIEW - CONTEXT MENU */
+//Context menu item "Rename".
+"Rename" = "Renombrar";
+//"Rename" alert title.
+"Rename Tag" = "Renombrar Etiqueta";
+//"Rename" alert prompt.
+"New name" = "Nuevo nombre";
+//"Rename" alert buttons.
+"OK" = "OK";
+"Cancel" = "Cancelar";
+
+//Context menu item "delete".
+"Delete" = "Borrar";
+
+
+
+
+/* CONTENTVIEW */
+//Toolbar menu button "Filter" to filter habits.
+"Filter" = "Filtros";
+
+//"Filter" item "Turn Filter On"/"Turn Filter Off.
+"Turn Filter On" = "Encender Filtros";
+"Turn Filter Off" = "Apagar Filtros";
+
+//"Filter" item "Sort By".
+"Sort By" = "Ordenar Por";
+//"Sort By" items".
+"Date Created" = "Fecha de Creación";
+"Date Modified" = "Fecha de Modificación";
+"Newest to Oldest" = "Reciente a Antiguo";
+"Oldest to Newest" = "Antiguo a Reciente";
+
+//"Filter" item "Status".
+"All" = "Todos";
+"Completed" = "Completado";
+"Incomplete" = "Incompleto";
+
+//"Filter item "Priority".
+"Low" = "Baja";
+"Medium" = "Mediana";
+"High" = "Alta";
+
+//Toolbar menu button "New Habit" to create a new habit.
+"New Habit" = "Habito Nuevo";
+
+//Navigation title.
+"Habits" = "Habitos";
+
+//Search box Prompt.
+"Filter habits or type # to add tags" = "Filtra los habitos o escribe # para añadir etiquetas";
+
+
+
+
+/* DETAILVIEW */
+//Navigation title.
+"Details" = "Detalles";
+
+
+
+
+/* HABITVIEW */
+//Toolbar button "Actions" for habits.
+"Actions" = "Acciones";
+//"Actions" item "Copy habit title".
+"Copy Habit Title" = "Copiar Titulo de Habito";
+//"Actions" item "Mark Completed/Incomplete".
+"Mark Completed" = "Marcar Completado";
+"Mark Incomplete" = "Marcar Incompleto";
+
+//Selected habit title prompt.
+"Enter the habit title here" = "Escribe el titulo del habito aquí";
+//Selected habit modifide date.
+"**Modified:** %@" = "**Modificado:** %@";
+//Selected habit status.
+"**Status:**" = "**Estado:**";
+//Selected habit priority title.
+"Priority" = "Prioridad";
+//Selected habit add or remove tags menu.
+"Add Tags" = "Añade Etiquetas";
+//Selected habit basic info title.
+"Basic Information" = "Información Basica";
+//Selected habit basic info prompt.
+"Enter the habit description here" = "Escribe la descripción del habito aquí";
+
+
+
+
+/* NOHABITVIEW */
+//Body text.
+"No Habit Selected" = "Ningun Habito Seleccionado";
+
+//Body button to create new habit.
+"New Habit" = "Habito Nuevo";

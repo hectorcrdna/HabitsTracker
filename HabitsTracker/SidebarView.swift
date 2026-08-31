@@ -30,7 +30,7 @@ struct SidebarView: View {
             Section("Smart Filters") {
                 ForEach(smartFilters) { filter in
                     NavigationLink(value: filter) {
-                        Label(filter.name, systemImage: filter.icon)
+                        Label(LocalizedStringKey(filter.name), systemImage: filter.icon)
                     }
                 }
             }
@@ -55,7 +55,7 @@ struct SidebarView: View {
                             }
                             .accessibilityElement()
                             .accessibilityLabel(filter.name)
-                            .accessibilityHint("^[\(filter.activeHabitsCount) habit](inflect: true)")
+                            .accessibilityHint("\(filter.activeHabitsCount) habits")
                     }
                 }
                 .onDelete(perform: delete)
@@ -82,7 +82,7 @@ struct SidebarView: View {
             #endif
         }
         
-        .alert("Rename tag", isPresented: $renamingTag) {
+        .alert("Rename Tag", isPresented: $renamingTag) {
             Button("OK", action: completeRename)
             Button("Cancel", role: .cancel) { }
             TextField("New name", text: $tagName)

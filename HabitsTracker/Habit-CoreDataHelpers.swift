@@ -50,6 +50,10 @@ extension Habit {
         }
     }
     
+    var habitFormattedCreationDate: String {
+        habitCreationDate.formatted(date: .numeric, time: .omitted)
+    }
+    
     static var example: Habit {
         let controller = DataController(inMemory: true)
         let viewContext = controller.container.viewContext

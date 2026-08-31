@@ -1,0 +1,162 @@
+[
+    {
+        "name": "Primeros Pasos",
+        "description": "Añade tu primer habito.",
+        "color": "My Light Blue",
+        "criterion": "habits",
+        "value": 1,
+        "image": "figure.walk"
+    },
+    {
+        "name": "Un tremendo comienzo",
+        "description": "Añade 10 habitos.",
+        "color": "My Light Blue",
+        "criterion": "habits",
+        "value": 10,
+        "image": "hand.thumbsup.fill"
+    },
+    {
+        "name": "Ascendiendo",
+        "description": "Añade 20 habitos.",
+        "color": "My Light Blue",
+        "criterion": "habits",
+        "value": 20,
+        "image": "tray.and.arrow.up.fill"
+    },
+    {
+        "name": "Ganando velocidad",
+        "description": "Añade 50 habitos.",
+        "color": "My Light Blue",
+        "criterion": "habits",
+        "value": 50,
+        "image": "speedometer"
+    },
+    {
+        "name": "Causando sensación",
+        "description": "Añade 100 habitos.",
+        "color": "My Light Blue",
+        "criterion": "habits",
+        "value": 100,
+        "image": "dot.radiowaves.left.and.right"
+    },
+    {
+        "name": "Destacado",
+        "description": "Añade 250 habitos.",
+        "color": "My Light Blue",
+        "criterion": "habits",
+        "value": 250,
+        "image": "square.stack.3d.up.fill"
+    },
+    {
+        "name": "Estrella",
+        "description": "Añade 500 habitos.",
+        "color": "My Light Blue",
+        "criterion": "habits",
+        "value": 500,
+        "image": "star.circle.fill"
+    },
+    {
+        "name": "Campeón",
+        "description": "Añade 1000 habitos.",
+        "color": "My Light Blue",
+        "criterion": "habits",
+        "value": 1000,
+        "image": "crown.fill"
+    },
+    {
+        "name": "Marcando",
+        "description": "Completa tu primer habito.",
+        "color": "My Green",
+        "criterion": "closed",
+        "value": 1,
+        "image": "checkmark.shield.fill"
+    },
+    {
+        "name": "Triunfando",
+        "description": "Completa 10 habitos.",
+        "color": "My Green",
+        "criterion": "closed",
+        "value": 10,
+        "image": "guitars.fill"
+    },
+    {
+        "name": "20 es más que suficiente",
+        "description": "Completa 20 habitos.",
+        "color": "My Green",
+        "criterion": "closed",
+        "value": 20,
+        "image": "20.square.fill"
+    },
+    {
+        "name": "Tiro al blanco!",
+        "description": "Completa 50 habitos.",
+        "color": "My Green",
+        "criterion": "closed",
+        "value": 50,
+        "image": "target"
+    },
+    {
+        "name": "Volando alto",
+        "description": "Completa 100 habitos.",
+        "color": "My Green",
+        "criterion": "closed",
+        "value": 100,
+        "image": "airplane.circle.fill"
+    },
+    {
+        "name": "Estas que ardes!",
+        "description": "Completa 250 habitos.",
+        "color": "My Green",
+        "criterion": "closed",
+        "value": 250,
+        "image": "flame.fill"
+    },
+    {
+        "name": "Cumpliendo requisitos",
+        "description": "Completa 500 habitos.",
+        "color": "My Green",
+        "criterion": "closed",
+        "value": 500,
+        "image": "text.badge.checkmark"
+    },
+    {
+        "name": "Boom!",
+        "description": "Completa 1000 habitos.",
+        "color": "My Green",
+        "criterion": "closed",
+        "value": 1000,
+        "image": "bolt.circle.fill"
+    },
+    {
+        "name": "Jugando al \"tag\"",
+        "description": "Crea tu primera etiqueta.",
+        "color": "My Gold",
+        "criterion": "tags",
+        "value": 1,
+        "image": "tag.fill"
+    },
+    {
+        "name": "Tag Team",
+        "description": "Crea 10 etiquetas.",
+        "color": "My Gold",
+        "criterion": "tags",
+        "value": 10,
+        "image": "tag.circle.fill"
+    },
+    {
+        "name": "Etiquetas supremas",
+        "description": "Crea 50 etiquetas.",
+        "color": "My Gold",
+        "criterion": "tags",
+        "value": 50,
+        "image": "square.grid.3x1.folder.fill.badge.plus"
+    },
+    {
+        "name": "Auspiciador",
+        "description": "Compraste la versión \"Premium\".",
+        "color": "My Purple",
+        "criterion": "unlock",
+        "value": 0,
+        "image": "dollarsign.square.fill"
+    }
+]

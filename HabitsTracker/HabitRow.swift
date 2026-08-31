@@ -31,7 +31,7 @@ struct HabitRow: View {
                 Spacer()
                 
                 VStack(alignment: .trailing) {
-                    Text(habit.habitCreationDate.formatted(date: .numeric, time: .omitted))
+                    Text(habit.habitFormattedCreationDate)
                         .accessibilityLabel(habit.habitCreationDate.formatted(date: .abbreviated, time: .omitted))
                         .font(.subheadline)
                     

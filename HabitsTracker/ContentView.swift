@@ -34,7 +34,7 @@ struct ContentView: View {
         }
         .toolbar {
             Menu {
-                Button(dataController.filterEnabled ? "Turn Filter off" : "Turn Filter on") {
+                Button(dataController.filterEnabled ? "Turn Filter Off" : "Turn Filter On") {
                     dataController.filterEnabled.toggle()
                 }
                 
@@ -56,8 +56,8 @@ struct ContentView: View {
                 
                 Picker("Status", selection: $dataController.filterStatus) {
                     Text("All").tag(Status.all)
-                    Text("Open").tag(Status.open)
-                    Text("Closed").tag(Status.closed)
+                    Text("Incomplete").tag(Status.open)
+                    Text("Completed").tag(Status.closed)
                 }
                 .disabled(dataController.filterEnabled == false)
                 
@@ -75,7 +75,7 @@ struct ContentView: View {
             }
             
             Button(action: dataController.newHabit) {
-                Label("New habit", systemImage: "square.and.pencil")
+                Label("New Habit", systemImage: "square.and.pencil")
             }
         }
     }
