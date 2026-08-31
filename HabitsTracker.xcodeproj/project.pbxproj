@@ -56,6 +56,9 @@
 		8B202D2E3044C46700885BA1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = es; path = es.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		8B202D323045434F00885BA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Awards.json; sourceTree = "<group>"; };
 		8B202D333045435200885BA1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/Awards.json; sourceTree = "<group>"; };
+		8B202D343045531700885BA1 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8B202D353045531700885BA1 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = hu; path = hu.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		8B202D363045531700885BA1 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = hu; path = hu.lproj/Awards.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,7 @@
 				en,
 				es,
 				Base,
+				hu,
 			);
 			mainGroup = 8B202CDF3039F1CD00885BA1;
 			minimizedProjectReferenceProxies = 1;
@@ -217,6 +221,7 @@
 			children = (
 				8B202D28304489F700885BA1 /* en */,
 				8B202D2D3044C46700885BA1 /* es */,
+				8B202D343045531700885BA1 /* hu */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 			children = (
 				8B202D2B3044911300885BA1 /* en */,
 				8B202D2E3044C46700885BA1 /* es */,
+				8B202D353045531700885BA1 /* hu */,
 			);
 			name = Localizable.stringsdict;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 			children = (
 				8B202D323045434F00885BA1 /* en */,
 				8B202D333045435200885BA1 /* es */,
+				8B202D363045531700885BA1 /* hu */,
 			);
 			name = Awards.json;
 			sourceTree = "<group>";
