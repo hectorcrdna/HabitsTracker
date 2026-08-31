@@ -37,34 +37,7 @@ struct HabitView: View {
                     Text("High").tag(Int16(2))
                 }
                 
-                Menu {
-                    ForEach(habit.habitTags) { tag in
-                        Button {
-                            habit.removeFromTags(tag)
-                        } label: {
-                            Label(tag.tagName, systemImage: "checkmark")
-                        }
-                    }
-                    
-                    let otherTags = dataController.missingTags(from: habit)
-                    
-                    if otherTags.isEmpty == false {
-                        Divider()
-                        
-                        Section("Add Tags") {
-                            ForEach(otherTags) { tag in
-                                Button(tag.tagName) {
-                                    habit.addToTags(tag)
-                                }
-                            }
-                        }
-                    }
-                } label: {
-                    Text(habit.habitTagsList)
-                        .multilineTextAlignment(.leading)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .animation(nil, value: habit.habitTagsList)
-                }
+                TagsMenuView(habit: habit)
             }
             
             Section {
@@ -84,22 +57,7 @@ struct HabitView: View {
         }
         .onSubmit(dataController.save)
         .toolbar {
-            Menu {
-                Button {
-                    UIPasteboard.general.string = habit.title
-                } label: {
-                    Label("Copy Habit Title", systemImage: "doc.on.doc")
-                }
-                
-                Button {
-                    habit.completed.toggle()
-                    dataController.save()
-                } label: {
-                    Label(habit.completed ? "Mark Incomplete" : "Mark Completed", systemImage: "bubble.left.and.exclamationmark.bubble.right")
-                }
-            } label: {
-                Label("Actions", systemImage: "ellipsis.circle")
-            }
+            HabitViewToolbar(habit: habit)
         }
     }
 }

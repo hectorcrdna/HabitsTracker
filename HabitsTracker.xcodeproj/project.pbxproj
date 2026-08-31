@@ -27,6 +27,12 @@
 		8B202D29304489F700885BA1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B202D27304489F700885BA1 /* Localizable.strings */; };
 		8B202D2C3044911300885BA1 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 8B202D2A3044911300885BA1 /* Localizable.stringsdict */; };
 		8B202D313045434500885BA1 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B202D303045434500885BA1 /* Awards.json */; };
+		8B202D383045B4C700885BA1 /* SidebarViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D373045B4C700885BA1 /* SidebarViewToolbar.swift */; };
+		8B202D3A3045B81900885BA1 /* HabitViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D393045B81900885BA1 /* HabitViewToolbar.swift */; };
+		8B202D3C3045B97E00885BA1 /* ContentViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D3B3045B97E00885BA1 /* ContentViewToolbar.swift */; };
+		8B202D3E3045C68E00885BA1 /* TagsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D3D3045C68E00885BA1 /* TagsMenuView.swift */; };
+		8B202D403045C87600885BA1 /* SmartFilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D3F3045C87600885BA1 /* SmartFilterRow.swift */; };
+		8B202D423045C94900885BA1 /* UserFilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D413045C94900885BA1 /* UserFilterRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +65,12 @@
 		8B202D343045531700885BA1 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B202D353045531700885BA1 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = hu; path = hu.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		8B202D363045531700885BA1 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = hu; path = hu.lproj/Awards.json; sourceTree = "<group>"; };
+		8B202D373045B4C700885BA1 /* SidebarViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewToolbar.swift; sourceTree = "<group>"; };
+		8B202D393045B81900885BA1 /* HabitViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewToolbar.swift; sourceTree = "<group>"; };
+		8B202D3B3045B97E00885BA1 /* ContentViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewToolbar.swift; sourceTree = "<group>"; };
+		8B202D3D3045C68E00885BA1 /* TagsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsMenuView.swift; sourceTree = "<group>"; };
+		8B202D3F3045C87600885BA1 /* SmartFilterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartFilterRow.swift; sourceTree = "<group>"; };
+		8B202D413045C94900885BA1 /* UserFilterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFilterRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,20 +106,26 @@
 				8B202CF83039F1EC00885BA1 /* HabitsTrackerApp.swift */,
 				8B202D08303B4CC800885BA1 /* Filter.swift */,
 				8B202D04303B4AC500885BA1 /* SidebarView.swift */,
+				8B202D3F3045C87600885BA1 /* SmartFilterRow.swift */,
+				8B202D413045C94900885BA1 /* UserFilterRow.swift */,
+				8B202D373045B4C700885BA1 /* SidebarViewToolbar.swift */,
 				8B202CF73039F1EC00885BA1 /* ContentView.swift */,
+				8B202D3B3045B97E00885BA1 /* ContentViewToolbar.swift */,
 				8B202D0E303F43A200885BA1 /* HabitRow.swift */,
 				8B202D06303B4AD500885BA1 /* DetailView.swift */,
 				8B202D10304012E900885BA1 /* HabitView.swift */,
+				8B202D3D3045C68E00885BA1 /* TagsMenuView.swift */,
+				8B202D393045B81900885BA1 /* HabitViewToolbar.swift */,
 				8B202D123040130000885BA1 /* NoHabitView.swift */,
 				8B202D1C3043685F00885BA1 /* AwardsView.swift */,
 				8B202D00303B1A4900885BA1 /* DataController.swift */,
 				8B202D0A303EC0E800885BA1 /* Habit-CoreDataHelpers.swift */,
 				8B202D0C303EC32200885BA1 /* Tag-CoreDataHelpers.swift */,
 				8B202D1430435CA600885BA1 /* Bundle-Decodable.swift */,
+				8B202D1A3043649300885BA1 /* Award.swift */,
 				8B202CFD303B16DD00885BA1 /* Main.xcdatamodeld */,
 				8B202D27304489F700885BA1 /* Localizable.strings */,
 				8B202D2A3044911300885BA1 /* Localizable.stringsdict */,
-				8B202D1A3043649300885BA1 /* Award.swift */,
 				8B202D303045434500885BA1 /* Awards.json */,
 				8B202D17304363D000885BA1 /* Colors.xcassets */,
 				8B202CF63039F1EC00885BA1 /* Assets.xcassets */,
@@ -196,8 +214,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B202D09303B4CC800885BA1 /* Filter.swift in Sources */,
+				8B202D3E3045C68E00885BA1 /* TagsMenuView.swift in Sources */,
 				8B202D1B3043649300885BA1 /* Award.swift in Sources */,
 				8B202D1D3043685F00885BA1 /* AwardsView.swift in Sources */,
+				8B202D403045C87600885BA1 /* SmartFilterRow.swift in Sources */,
 				8B202D0D303EC32200885BA1 /* Tag-CoreDataHelpers.swift in Sources */,
 				8B202D0B303EC0E800885BA1 /* Habit-CoreDataHelpers.swift in Sources */,
 				8B202CFF303B16DD00885BA1 /* Main.xcdatamodeld in Sources */,
@@ -205,8 +225,12 @@
 				8B202D07303B4AD500885BA1 /* DetailView.swift in Sources */,
 				8B202D01303B1A4900885BA1 /* DataController.swift in Sources */,
 				8B202D11304012E900885BA1 /* HabitView.swift in Sources */,
+				8B202D3C3045B97E00885BA1 /* ContentViewToolbar.swift in Sources */,
 				8B202D05303B4AC500885BA1 /* SidebarView.swift in Sources */,
+				8B202D383045B4C700885BA1 /* SidebarViewToolbar.swift in Sources */,
+				8B202D3A3045B81900885BA1 /* HabitViewToolbar.swift in Sources */,
 				8B202D133040130000885BA1 /* NoHabitView.swift in Sources */,
+				8B202D423045C94900885BA1 /* UserFilterRow.swift in Sources */,
 				8B202D0F303F43A200885BA1 /* HabitRow.swift in Sources */,
 				8B202CFA3039F1EC00885BA1 /* ContentView.swift in Sources */,
 				8B202CFB3039F1EC00885BA1 /* HabitsTrackerApp.swift in Sources */,
