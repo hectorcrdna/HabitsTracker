@@ -9,7 +9,11 @@ import SwiftUI
 
 struct HabitViewToolbar: View {
     @EnvironmentObject var dataController: DataController
-   @ObservedObject var habit: Habit
+	@ObservedObject var habit: Habit
+
+	var openCloseHabitButtonTitle: String {
+		habit.completed ? "Mark Incomplete" : "Mark Completed"
+	}
 
     var body: some View {
         Menu {
@@ -18,20 +22,20 @@ struct HabitViewToolbar: View {
             } label: {
                 Label("Copy Habit Title", systemImage: "doc.on.doc")
             }
-            
+
             Button {
                 habit.completed.toggle()
                 dataController.save()
             } label: {
-                Label(habit.completed ? "Mark Incomplete" : "Mark Completed", systemImage: "bubble.left.and.exclamationmark.bubble.right")
+                Label(openCloseHabitButtonTitle, systemImage: "bubble.left.and.exclamationmark.bubble.right")
             }
-            
+
             Divider()
-            
+
             Section("Tags") {
                 TagsMenuView(habit: habit)
             }
-            
+
         } label: {
             Label("Actions", systemImage: "ellipsis.circle")
         }

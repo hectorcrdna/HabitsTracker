@@ -10,7 +10,7 @@ import SwiftUI
 struct TagsMenuView: View {
     @EnvironmentObject var dataController: DataController
     @ObservedObject var habit: Habit
-    
+
     var body: some View {
         Menu {
             ForEach(habit.habitTags) { tag in
@@ -20,12 +20,12 @@ struct TagsMenuView: View {
                     Label(tag.tagName, systemImage: "checkmark")
                 }
             }
-            
+
             let otherTags = dataController.missingTags(from: habit)
-            
+
             if otherTags.isEmpty == false {
                 Divider()
-                
+
                 Section("Add Tags") {
                     ForEach(otherTags) { tag in
                         Button(tag.tagName) {

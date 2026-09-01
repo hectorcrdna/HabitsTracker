@@ -10,7 +10,7 @@ import CoreData
 
 struct ContentView: View {
     @EnvironmentObject var dataController: DataController
-    
+
     var body: some View {
         List(selection: $dataController.selectedHabit) {
             ForEach(dataController.habitsForSelectedFilter()) { habit in
@@ -19,7 +19,11 @@ struct ContentView: View {
             .onDelete(perform: delete)
         }
         .navigationTitle("Habits")
-        .searchable(text: $dataController.filterText, tokens: $dataController.filterTokens, prompt: "Filter habits or type # to add tags") { tag in
+        .searchable(
+			text: $dataController.filterText,
+			tokens: $dataController.filterTokens,
+			prompt: "Filter habits or type # to add tags"
+		) { tag in
             Text(tag.tagName)
         }
         .searchSuggestions {
@@ -36,10 +40,10 @@ struct ContentView: View {
             ContentViewToolbar()
         }
     }
-    
+
     func delete(at offsets: IndexSet) {
         let habits = dataController.habitsForSelectedFilter()
-        
+
         for offset in offsets {
             let habit = habits[offset]
             dataController.delete(habit)
