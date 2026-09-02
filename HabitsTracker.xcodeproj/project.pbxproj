@@ -104,35 +104,91 @@
 			isa = PBXGroup;
 			children = (
 				8B202CF83039F1EC00885BA1 /* HabitsTrackerApp.swift */,
+				8B202D00303B1A4900885BA1 /* DataController.swift */,
+				8BE5674B3047F3A30005FF38 /* Filters */,
+				8BE5674C3047F3F20005FF38 /* Habits */,
+				8BE5674E3047F44A0005FF38 /* Editing */,
+				8BE5674F3047F4910005FF38 /* Awards */,
+				8BE567503047F4B20005FF38 /* Extensions */,
+				8BE567523047F5150005FF38 /* Localization */,
+				8BE567513047F4F10005FF38 /* Configuration */,
+				8B202D17304363D000885BA1 /* Colors.xcassets */,
+				8B202CF63039F1EC00885BA1 /* Assets.xcassets */,
+			);
+			path = HabitsTracker;
+			sourceTree = "<group>";
+		};
+		8BE5674B3047F3A30005FF38 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
 				8B202D08303B4CC800885BA1 /* Filter.swift */,
 				8B202D04303B4AC500885BA1 /* SidebarView.swift */,
+				8B202D373045B4C700885BA1 /* SidebarViewToolbar.swift */,
 				8B202D3F3045C87600885BA1 /* SmartFilterRow.swift */,
 				8B202D413045C94900885BA1 /* UserFilterRow.swift */,
-				8B202D373045B4C700885BA1 /* SidebarViewToolbar.swift */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		8BE5674C3047F3F20005FF38 /* Habits */ = {
+			isa = PBXGroup;
+			children = (
 				8B202CF73039F1EC00885BA1 /* ContentView.swift */,
 				8B202D3B3045B97E00885BA1 /* ContentViewToolbar.swift */,
 				8B202D0E303F43A200885BA1 /* HabitRow.swift */,
+			);
+			path = Habits;
+			sourceTree = "<group>";
+		};
+		8BE5674E3047F44A0005FF38 /* Editing */ = {
+			isa = PBXGroup;
+			children = (
 				8B202D06303B4AD500885BA1 /* DetailView.swift */,
 				8B202D10304012E900885BA1 /* HabitView.swift */,
-				8B202D3D3045C68E00885BA1 /* TagsMenuView.swift */,
 				8B202D393045B81900885BA1 /* HabitViewToolbar.swift */,
 				8B202D123040130000885BA1 /* NoHabitView.swift */,
+				8B202D3D3045C68E00885BA1 /* TagsMenuView.swift */,
+			);
+			path = Editing;
+			sourceTree = "<group>";
+		};
+		8BE5674F3047F4910005FF38 /* Awards */ = {
+			isa = PBXGroup;
+			children = (
 				8B202D1C3043685F00885BA1 /* AwardsView.swift */,
-				8B202D00303B1A4900885BA1 /* DataController.swift */,
+				8B202D1A3043649300885BA1 /* Award.swift */,
+				8B202D303045434500885BA1 /* Awards.json */,
+			);
+			path = Awards;
+			sourceTree = "<group>";
+		};
+		8BE567503047F4B20005FF38 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
 				8B202D0A303EC0E800885BA1 /* Habit-CoreDataHelpers.swift */,
 				8B202D0C303EC32200885BA1 /* Tag-CoreDataHelpers.swift */,
 				8B202D1430435CA600885BA1 /* Bundle-Decodable.swift */,
-				8B202D1A3043649300885BA1 /* Award.swift */,
-				8B202CFD303B16DD00885BA1 /* Main.xcdatamodeld */,
-				8B202D27304489F700885BA1 /* Localizable.strings */,
-				8B202D2A3044911300885BA1 /* Localizable.stringsdict */,
-				8B202D303045434500885BA1 /* Awards.json */,
-				8B202D17304363D000885BA1 /* Colors.xcassets */,
-				8B202CF63039F1EC00885BA1 /* Assets.xcassets */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8BE567513047F4F10005FF38 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
 				8B202D02303B2D2600885BA1 /* HabitsTracker.entitlements */,
 				8B202D03303B2D3D00885BA1 /* Info.plist */,
+				8B202CFD303B16DD00885BA1 /* Main.xcdatamodeld */,
 			);
-			path = HabitsTracker;
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		8BE567523047F5150005FF38 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				8B202D27304489F700885BA1 /* Localizable.strings */,
+				8B202D2A3044911300885BA1 /* Localizable.stringsdict */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,7 +474,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = HabitsTracker/HabitsTracker.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HabitsTracker/Configuration/HabitsTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4C95RNQFKZ;
@@ -428,7 +484,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HabitsTracker/Info.plist;
+				INFOPLIST_FILE = HabitsTracker/Configuration/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -465,7 +521,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = HabitsTracker/HabitsTracker.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HabitsTracker/Configuration/HabitsTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4C95RNQFKZ;
@@ -475,7 +531,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HabitsTracker/Info.plist;
+				INFOPLIST_FILE = HabitsTracker/Configuration/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
