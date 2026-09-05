@@ -35,6 +35,16 @@
 		8B202D423045C94900885BA1 /* UserFilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D413045C94900885BA1 /* UserFilterRow.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8BDA52D43049CA8900D67113 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B202CE03039F1CD00885BA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B202CE73039F1CD00885BA1;
+			remoteInfo = HabitsTracker;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		8B202CE83039F1CD00885BA1 /* HabitsTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitsTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B202CF63039F1EC00885BA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,10 +81,26 @@
 		8B202D3D3045C68E00885BA1 /* TagsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsMenuView.swift; sourceTree = "<group>"; };
 		8B202D3F3045C87600885BA1 /* SmartFilterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartFilterRow.swift; sourceTree = "<group>"; };
 		8B202D413045C94900885BA1 /* UserFilterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFilterRow.swift; sourceTree = "<group>"; };
+		8BDA52D03049CA8900D67113 /* HabitsTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitsTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		8BDA52D13049CA8900D67113 /* HabitsTrackerTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = HabitsTrackerTests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8B202CE53039F1CD00885BA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BDA52CD3049CA8900D67113 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -88,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				8B202CF93039F1EC00885BA1 /* HabitsTracker */,
+				8BDA52D13049CA8900D67113 /* HabitsTrackerTests */,
 				8B202CE93039F1CD00885BA1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				8B202CE83039F1CD00885BA1 /* HabitsTracker.app */,
+				8BDA52D03049CA8900D67113 /* HabitsTrackerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,6 +242,29 @@
 			productReference = 8B202CE83039F1CD00885BA1 /* HabitsTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8BDA52CF3049CA8900D67113 /* HabitsTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BDA52D63049CA8900D67113 /* Build configuration list for PBXNativeTarget "HabitsTrackerTests" */;
+			buildPhases = (
+				8BDA52CC3049CA8900D67113 /* Sources */,
+				8BDA52CD3049CA8900D67113 /* Frameworks */,
+				8BDA52CE3049CA8900D67113 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BDA52D53049CA8900D67113 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				8BDA52D13049CA8900D67113 /* HabitsTrackerTests */,
+			);
+			name = HabitsTrackerTests;
+			packageProductDependencies = (
+			);
+			productName = HabitsTrackerTests;
+			productReference = 8BDA52D03049CA8900D67113 /* HabitsTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -226,6 +277,10 @@
 				TargetAttributes = {
 					8B202CE73039F1CD00885BA1 = {
 						CreatedOnToolsVersion = 26.6;
+					};
+					8BDA52CF3049CA8900D67113 = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = 8B202CE73039F1CD00885BA1;
 					};
 				};
 			};
@@ -246,6 +301,7 @@
 			projectRoot = "";
 			targets = (
 				8B202CE73039F1CD00885BA1 /* HabitsTracker */,
+				8BDA52CF3049CA8900D67113 /* HabitsTrackerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -260,6 +316,13 @@
 				8B202D313045434500885BA1 /* Awards.json in Resources */,
 				8B202D2C3044911300885BA1 /* Localizable.stringsdict in Resources */,
 				8B202CFC3039F1EC00885BA1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BDA52CE3049CA8900D67113 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +378,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BDA52CC3049CA8900D67113 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8BDA52D53049CA8900D67113 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B202CE73039F1CD00885BA1 /* HabitsTracker */;
+			targetProxy = 8BDA52D43049CA8900D67113 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8B202D27304489F700885BA1 /* Localizable.strings */ = {
@@ -563,6 +641,53 @@
 			};
 			name = Release;
 		};
+		8BDA52D73049CA8900D67113 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4C95RNQFKZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Cardona.Figueroa.Hector.HabitsTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HabitsTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HabitsTracker";
+			};
+			name = Debug;
+		};
+		8BDA52D83049CA8900D67113 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4C95RNQFKZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Cardona.Figueroa.Hector.HabitsTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HabitsTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HabitsTracker";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -580,6 +705,15 @@
 			buildConfigurations = (
 				8B202CF43039F1CE00885BA1 /* Debug */,
 				8B202CF53039F1CE00885BA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BDA52D63049CA8900D67113 /* Build configuration list for PBXNativeTarget "HabitsTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BDA52D73049CA8900D67113 /* Debug */,
+				8BDA52D83049CA8900D67113 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

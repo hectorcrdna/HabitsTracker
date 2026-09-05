@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "26B042AD-5351-4B50-A7B5-93A304A2D240",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:HabitsTracker.xcodeproj",
+        "identifier" : "8BDA52CF3049CA8900D67113",
+        "name" : "HabitsTrackerTests"
+      }
+    }
+  ],
+  "version" : 1
+}
