@@ -14,11 +14,19 @@ final class AssetTest: XCTestCase {
 						 ColorResource(name: "My Light Blue", bundle: .main), ColorResource(name: "My Purple", bundle: .main)]
 
 		for color in allColors {
-			XCTAssertNotNil(UIColor(resource: color), "Failed to load color '\(color)' from asset catalog.")
+
+			XCTAssertNotNil(
+				UIColor(resource: color),
+				"Failed to load color '\(color)' from asset catalog."
+			)
 		}
 	}
 
 	func testAwardsLoadCorrectly() {
-		XCTAssertTrue(Award.allAwards.isEmpty == false, "Failed to load awards from JSON.")
+
+		XCTAssertFalse(
+			Award.allAwards.isEmpty,
+			"Failed to load awards from JSON."
+		)
 	}
 }

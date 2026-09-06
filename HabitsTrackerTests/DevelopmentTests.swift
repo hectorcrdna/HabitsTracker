@@ -43,7 +43,7 @@ final class DevelopmentTests: BaseTestCase {
 		)
 	}
 
-	func testSampleTagHasNoHabits() {
+	func testExampleTagHasNoHabits() {
 		let tag = Tag.example
 
 		XCTAssertEqual(
@@ -53,7 +53,7 @@ final class DevelopmentTests: BaseTestCase {
 		)
 	}
 
-	func testSampleHabitPriorityIsHigh() {
+	func testExampleHabitPriorityIsHigh() {
 		let habit = Habit.example
 
 		XCTAssertEqual(

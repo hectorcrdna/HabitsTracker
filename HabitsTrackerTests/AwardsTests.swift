@@ -14,13 +14,22 @@ final class AwardsTests: BaseTestCase {
 
 	func testAwardsIDsMatchNames() {
 		for award in awards {
-			XCTAssertEqual(award.id, award.name, "Award ID should match name")
+
+			XCTAssertEqual(
+				award.id,
+				award.name,
+				"Award ID should match name"
+			)
 		}
 	}
 
 	func testNewUsersHaveNoAwards() {
 		for award in awards {
-			XCTAssertFalse(dataController.hasEarned(award: award), "New users should not have any awards.")
+
+			XCTAssertFalse(
+				dataController.hasEarned(award: award),
+				"New users should not have any awards."
+			)
 		}
 	}
 
@@ -39,7 +48,12 @@ final class AwardsTests: BaseTestCase {
 				award.criterion == "habits" && dataController.hasEarned(award: award)
 			}
 
-			XCTAssertEqual(matches.count, count + 1, "Adding \(value) habits should earn \(count + 1) awards.")
+			XCTAssertEqual(
+				matches.count,
+				count + 1,
+				"Adding \(value) habits should earn \(count + 1) awards."
+			)
+
 			dataController.deleteAll()
 		}
 	}
@@ -60,7 +74,12 @@ final class AwardsTests: BaseTestCase {
 				award.criterion == "closed" && dataController.hasEarned(award: award)
 			}
 
-			XCTAssertEqual(matches.count, count + 1, "Completing \(value) habits should earn \(count + 1) awards.")
+			XCTAssertEqual(
+				matches.count,
+				count + 1,
+				"Completing \(value) habits should earn \(count + 1) awards."
+			)
+
 			dataController.deleteAll()
 		}
 	}
