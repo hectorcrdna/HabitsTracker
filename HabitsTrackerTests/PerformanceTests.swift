@@ -20,7 +20,7 @@ final class PerformanceTests: BaseTestCase {
 		XCTAssertEqual(
 			awards.count,
 			500,
-			"This checks that the array of awards is built correctly, change if you add awards."
+			"This checks that the array of awards is built correctly, change if you add more awards."
 		)
 
 		measure {

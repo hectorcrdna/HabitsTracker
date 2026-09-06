@@ -43,6 +43,13 @@
 			remoteGlobalIDString = 8B202CE73039F1CD00885BA1;
 			remoteInfo = HabitsTracker;
 		};
+		8BDA52F8304DB38D00D67113 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B202CE03039F1CD00885BA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B202CE73039F1CD00885BA1;
+			remoteInfo = HabitsTracker;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -82,12 +89,18 @@
 		8B202D3F3045C87600885BA1 /* SmartFilterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartFilterRow.swift; sourceTree = "<group>"; };
 		8B202D413045C94900885BA1 /* UserFilterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFilterRow.swift; sourceTree = "<group>"; };
 		8BDA52D03049CA8900D67113 /* HabitsTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitsTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BDA52F2304DB38D00D67113 /* HabitsTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitsTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8BDA52D13049CA8900D67113 /* HabitsTrackerTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = HabitsTrackerTests;
+			sourceTree = "<group>";
+		};
+		8BDA52F3304DB38D00D67113 /* HabitsTrackerUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = HabitsTrackerUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -107,6 +120,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BDA52EF304DB38D00D67113 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -115,6 +135,7 @@
 			children = (
 				8B202CF93039F1EC00885BA1 /* HabitsTracker */,
 				8BDA52D13049CA8900D67113 /* HabitsTrackerTests */,
+				8BDA52F3304DB38D00D67113 /* HabitsTrackerUITests */,
 				8B202CE93039F1CD00885BA1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,6 +145,7 @@
 			children = (
 				8B202CE83039F1CD00885BA1 /* HabitsTracker.app */,
 				8BDA52D03049CA8900D67113 /* HabitsTrackerTests.xctest */,
+				8BDA52F2304DB38D00D67113 /* HabitsTrackerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -265,6 +287,29 @@
 			productReference = 8BDA52D03049CA8900D67113 /* HabitsTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8BDA52F1304DB38D00D67113 /* HabitsTrackerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BDA52FA304DB38D00D67113 /* Build configuration list for PBXNativeTarget "HabitsTrackerUITests" */;
+			buildPhases = (
+				8BDA52EE304DB38D00D67113 /* Sources */,
+				8BDA52EF304DB38D00D67113 /* Frameworks */,
+				8BDA52F0304DB38D00D67113 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BDA52F9304DB38D00D67113 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				8BDA52F3304DB38D00D67113 /* HabitsTrackerUITests */,
+			);
+			name = HabitsTrackerUITests;
+			packageProductDependencies = (
+			);
+			productName = HabitsTrackerUITests;
+			productReference = 8BDA52F2304DB38D00D67113 /* HabitsTrackerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -279,6 +324,10 @@
 						CreatedOnToolsVersion = 26.6;
 					};
 					8BDA52CF3049CA8900D67113 = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = 8B202CE73039F1CD00885BA1;
+					};
+					8BDA52F1304DB38D00D67113 = {
 						CreatedOnToolsVersion = 26.6;
 						TestTargetID = 8B202CE73039F1CD00885BA1;
 					};
@@ -302,6 +351,7 @@
 			targets = (
 				8B202CE73039F1CD00885BA1 /* HabitsTracker */,
 				8BDA52CF3049CA8900D67113 /* HabitsTrackerTests */,
+				8BDA52F1304DB38D00D67113 /* HabitsTrackerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -320,6 +370,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8BDA52CE3049CA8900D67113 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BDA52F0304DB38D00D67113 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -385,6 +442,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BDA52EE304DB38D00D67113 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -392,6 +456,11 @@
 			isa = PBXTargetDependency;
 			target = 8B202CE73039F1CD00885BA1 /* HabitsTracker */;
 			targetProxy = 8BDA52D43049CA8900D67113 /* PBXContainerItemProxy */;
+		};
+		8BDA52F9304DB38D00D67113 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B202CE73039F1CD00885BA1 /* HabitsTracker */;
+			targetProxy = 8BDA52F8304DB38D00D67113 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -688,6 +757,51 @@
 			};
 			name = Release;
 		};
+		8BDA52FB304DB38D00D67113 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4C95RNQFKZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Cardona.Figueroa.Hector.HabitsTrackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HabitsTracker;
+			};
+			name = Debug;
+		};
+		8BDA52FC304DB38D00D67113 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4C95RNQFKZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Cardona.Figueroa.Hector.HabitsTrackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HabitsTracker;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -714,6 +828,15 @@
 			buildConfigurations = (
 				8BDA52D73049CA8900D67113 /* Debug */,
 				8BDA52D83049CA8900D67113 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BDA52FA304DB38D00D67113 /* Build configuration list for PBXNativeTarget "HabitsTrackerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BDA52FB304DB38D00D67113 /* Debug */,
+				8BDA52FC304DB38D00D67113 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

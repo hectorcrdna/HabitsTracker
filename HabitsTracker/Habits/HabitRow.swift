@@ -17,6 +17,7 @@ struct HabitRow: View {
                 Image(systemName: "exclamationmark.circle")
                     .imageScale(.large)
                     .opacity(habit.priority == 2 ? 1 : 0)
+					.accessibilityIdentifier(habit.priority == 2 ? "\(habit.habitTitle) High Priority" : "")
 
                 VStack(alignment: .leading) {
                     Text(habit.habitTitle)
@@ -44,6 +45,7 @@ struct HabitRow: View {
             }
         }
         .accessibilityHint(habit.priority == 2 ? "Hi priority" : "")
+		.accessibilityIdentifier(habit.habitTitle)
     }
 }
 

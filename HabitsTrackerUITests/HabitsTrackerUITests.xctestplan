@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "8E7C915D-1AF7-432C-AF9C-4BB8E37F8683",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:HabitsTracker.xcodeproj",
+        "identifier" : "8BDA52F1304DB38D00D67113",
+        "name" : "HabitsTrackerUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
