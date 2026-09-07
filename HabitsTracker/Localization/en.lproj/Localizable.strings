@@ -91,6 +91,13 @@
 //Navigation title.
 "Habits" = "Habits";
 
+//List row
+"Habit" = "Habit";
+"Habit %lld-%lld" = "Habit %lld-%lld";
+"Description of habit %lld-%lld" = "Description of habit %lld-%lld";
+"Tag %lld" = "Tag %lld";
+
+
 //Search box Prompt.
 "Filter habits or type # to add tags" = "Filter habits or type # to add tags";
 
@@ -118,7 +125,7 @@
 //Selected habit modified date.
 "**Modified:** %@" = "**Modified:** %@";
 //Selected habit status.
-"**Status:**" = "**Status:**";
+"**Status:** %@" = "**Status:** %@";
 //Selected habit priority title.
 "Priority" = "Priority";
 //Selected habit add or remove tags menu.

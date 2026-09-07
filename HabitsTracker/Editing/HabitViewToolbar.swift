@@ -11,7 +11,7 @@ struct HabitViewToolbar: View {
     @EnvironmentObject var dataController: DataController
 	@ObservedObject var habit: Habit
 
-	var openCloseHabitButtonTitle: String {
+	var openCloseHabitButtonTitle: LocalizedStringKey {
 		habit.completed ? "Mark Incomplete" : "Mark Completed"
 	}
 

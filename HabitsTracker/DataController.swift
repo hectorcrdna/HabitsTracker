@@ -113,12 +113,15 @@ class DataController: ObservableObject {
         for tagCount in 1...5 {
             let tag = Tag(context: viewContext)
             tag.id = UUID()
-            tag.name = "Tag \(tagCount)"
+			let tagFormat = NSLocalizedString("Tag %lld", comment: "")
+			tag.name = String.localizedStringWithFormat(tagFormat, tagCount)
 
             for habitCount in 1...10 {
                 let habit = Habit(context: viewContext)
-                habit.title = "Habit \(tagCount)-\(habitCount)"
-                habit.content = "Description of habit \(tagCount)-\(habitCount)"
+				let titleFormat = NSLocalizedString("Habit %lld-%lld", comment: "")
+				habit.title = String.localizedStringWithFormat(titleFormat, tagCount, habitCount)
+				let contentFormat = NSLocalizedString("Description of habit %lld-%lld", comment: "")
+				habit.content = String.localizedStringWithFormat(contentFormat, tagCount, habitCount)
                 habit.creationDate = .now
                 habit.completed = Bool.random()
                 habit.priority = Int16.random(in: 0...2)

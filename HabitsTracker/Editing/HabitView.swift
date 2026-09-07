@@ -16,17 +16,14 @@ struct HabitView: View {
         Form {
             Section {
                 VStack(alignment: .leading) {
-                    TextField("Title", text: $habit.habitTitle, prompt: Text("Enter the habit title here"))
+					TextField("Title", text: $habit.habitTitle, prompt: Text("Enter the habit title here"))
                         .font(.title)
 
                     Text("**Modified:** \(habit.habitModificationDate.formatted(date: .long, time: .shortened))")
                         .foregroundStyle(.secondary)
 
                     HStack {
-                        Text("**Status:**")
-                            .foregroundStyle(.secondary)
-
-                        Text(LocalizedStringKey(habit.habitStatus))
+						Text("**Status:** \(habit.habitStatus)")
                             .foregroundStyle(.secondary)
                     }
                 }
