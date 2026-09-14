@@ -28,7 +28,7 @@ struct ContentView: View {
         }
         .searchSuggestions {
             ForEach(dataController.suggestedFilterTokens) { tag in
-                if !dataController.filterTokens.contains(tag) {
+                if dataController.filterTokens.contains(tag) == false {
                     Button(tag.tagName) {
                         dataController.filterTokens.append(tag)
                         dataController.filterText = ""
@@ -41,6 +41,8 @@ struct ContentView: View {
         }
     }
 
+	/// Deletes a set of habits via `.onDelete` modifier.
+	/// - Parameter offsets: Set of habits to delete.
     func delete(at offsets: IndexSet) {
         let habits = dataController.habitsForSelectedFilter()
 

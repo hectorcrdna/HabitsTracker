@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// A type to be shown as a list rows in ``SidebarView``.
 struct Filter: Identifiable, Hashable {
     var id: UUID
     var name: String
@@ -18,7 +19,14 @@ struct Filter: Identifiable, Hashable {
         tag?.tagActiveHabits.count ?? 0
     }
 
-    static var all = Filter(id: UUID(), name: "All Habits", icon: "tray")
+	// The two static properties are made to act as "Smart Filters" in `SidebarView`,
+	// all other filters are generated in `SidebarView` as `tagFilters`.
+    static var all = Filter(
+		id: UUID(),
+		name: "All Habits",
+		icon: "tray"
+	)
+
     static var recent = Filter(
 		id: UUID(),
 		name: "Recent Habits",

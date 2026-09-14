@@ -24,6 +24,8 @@ struct HabitsTrackerApp: App {
             }
             .environment(\.managedObjectContext, dataController.container.viewContext)
             .environmentObject(dataController)
+
+			// If the user leaves the app while editing the changes are saved.
             .onChange(of: scenePhase) { _, newValue in
                 if newValue != .active {
                     dataController.save()

@@ -9,6 +9,7 @@ import Foundation
 import CoreData
 
 extension Habit {
+	// Properties to avoid nil coalescing in the main apps code.
     var habitTitle: String {
         get { title ?? "" }
         set { title = newValue }
@@ -32,6 +33,7 @@ extension Habit {
         return result.sorted()
     }
 
+	/// A list of tag names formatted to be displayed on screen.
     var habitTagsList: String {
 		let noTags = NSLocalizedString("No tags", comment: "The user has not added any tags to this habit.")
         guard let tags else { return noTags }
@@ -43,6 +45,7 @@ extension Habit {
         }
     }
 
+	/// The status of a habit formatted to a String to be displayed on screen.
     var habitStatus: String {
         if completed {
             return NSLocalizedString("Completed", comment: "This habit has been completed.")
@@ -51,10 +54,12 @@ extension Habit {
         }
     }
 
+	/// The creation date formatted to `.numeric`(0/0/0) with time omitted.
     var habitFormattedCreationDate: String {
         habitCreationDate.formatted(date: .numeric, time: .omitted)
     }
 
+	/// An example to be used on Canvas preview.
     static var example: Habit {
         let controller = DataController(inMemory: true)
         let viewContext = controller.container.viewContext

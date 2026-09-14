@@ -96,6 +96,8 @@
 "Habit %lld-%lld" = "Habit %lld-%lld";
 "Description of habit %lld-%lld" = "Description of habit %lld-%lld";
 "Tag %lld" = "Tag %lld";
+"No tags" = "No tags";
+
 
 
 //Search box Prompt.

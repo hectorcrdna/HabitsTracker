@@ -10,6 +10,7 @@ import CoreData
 import Combine
 
 extension Tag {
+	// Properties to avoid nil coalescing in the main apps code.
     var tagID: UUID {
         id ?? UUID()
     }
@@ -18,11 +19,13 @@ extension Tag {
         name ?? ""
     }
 
+	/// All habits that have yet to be completed grouped by tag.
     var tagActiveHabits: [Habit] {
         let result = habits?.allObjects as? [Habit] ?? []
         return result.filter { $0.completed == false }
     }
 
+	/// An example to be used on Canvas preview.
     static var example: Tag {
         let controller = DataController(inMemory: true)
         let viewContext = controller.container.viewContext

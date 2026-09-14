@@ -9,7 +9,11 @@ import SwiftUI
 
 struct UserFilterRow: View {
     var filter: Filter
+
+	/// A rename method passed in from ``SidebarView``.
     var rename: (Filter) -> Void
+
+	/// A delete method passed in from ``SidebarView``.
     var delete: (Filter) -> Void
 
     var body: some View {
