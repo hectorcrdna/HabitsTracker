@@ -29,6 +29,13 @@ struct HabitViewToolbar: View {
             } label: {
                 Label(openCloseHabitButtonTitle, systemImage: "bubble.left.and.exclamationmark.bubble.right")
             }
+			.sensoryFeedback(trigger: habit.completed) { _, newValue in
+				if newValue {
+					return .success
+				} else {
+					return nil
+				}
+			}
 
             Divider()
 
