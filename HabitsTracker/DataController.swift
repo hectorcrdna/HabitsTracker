@@ -36,6 +36,9 @@ class DataController: ObservableObject {
 	/// The container tasked with managing CoreData Models with CloudKit.
     let container: NSPersistentCloudKitContainer
 
+	/// The Spotlight delegate responsible for indexing and tracking changes in CoreData.
+	var spotlightDelegate: NSCoreDataCoreSpotlightDelegate?
+
 	/// The current Filter selected by the user in SidebarView List.
     @Published var selectedFilter: Filter? = .all
 
@@ -130,21 +133,32 @@ class DataController: ObservableObject {
 			using: remoteStoreChanged
 		)
 
-        container.loadPersistentStores { ( _, error) in
-            if let error {
-                fatalError("Error loading persistent stores: \(error.localizedDescription)")
-            }
-        }
+		container.loadPersistentStores { [weak self] _, error in
+			if let error {
+				fatalError("Error loading persistent stores: \(error.localizedDescription)")
+			}
 
-		// If were running test in Debug we delete all data to start
-		// with a clean slate every time we launch and disabled
-		// animations to make UI Test Faster.
-		#if DEBUG
-		if CommandLine.arguments.contains("enable-testing") {
-			self.deleteAll()
-			UIView.setAnimationsEnabled(false)
+			// Set CoreData's option for history tracking so it updates Spotlight accordingly.
+			if let description = self?.container.persistentStoreDescriptions.first {
+				description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+
+				// Coordinator for indexing
+				if let coordinator = self?.container.persistentStoreCoordinator {
+					self?.spotlightDelegate = NSCoreDataCoreSpotlightDelegate(forStoreWith: description, coordinator: coordinator)
+					self?.spotlightDelegate?.startSpotlightIndexing()
+				}
+			}
+
+			// If were running test in Debug we delete all data to start
+			// with a clean slate every time we launch and disabled
+			// animations to make UI Test Faster.
+			#if DEBUG
+			if CommandLine.arguments.contains("enable-testing") {
+				self?.deleteAll()
+				UIView.setAnimationsEnabled(false)
+			}
+			#endif
 		}
-		#endif
     }
 
 	/// Tells the UI there has been remote changes, fired by the observer added to ``init(inMemory:)``.
@@ -372,4 +386,14 @@ class DataController: ObservableObject {
 			fatalError("Unknown award criterion \(award.criterion)")
         }
     }
+
+	/// Finds a habit by unique identifier and returns it.
+	/// - Parameter identifier: The unique identifier given by Spotlight.
+	/// - Returns: The existing Habit with the unique identifier.
+	func habit(with identifier: String) -> Habit? {
+		guard let url = URL(string: identifier) else { return nil }
+		guard let id = container.persistentStoreCoordinator.managedObjectID(forURIRepresentation: url) else { return nil }
+
+		return try? container.viewContext.existingObject(with: id) as? Habit
+	}
 }
