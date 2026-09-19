@@ -135,6 +135,20 @@
 //Selected habit basic info prompt.
 "Enter the habit description here" = "Escribe la descripción del habito aquí";
 
+/* REMINDERS */
+"Reminders" = "Recordatorios";
+"Show reminders" = "Ver recordatorios";
+"Oops!" = "Oops!";
+"There was a problem setting your notification. Please check you have notifications enabled." = "Hubo un problema al configurar tu notificación. Por favor, asegúrate de tener las notificaciones activadas.";
+"Check Settings" = "Revisar la configuración";
+"Reminder date" = "Día del recordatorio";
+"Repeat" = "Repetir";
+"Never" = "Nunca";
+"Daily" = "Diario";
+"Weekly" = "Semanal";
+"Monthly" = "Mensual";
+"Yearly" = "Anual";
+
 
 
 

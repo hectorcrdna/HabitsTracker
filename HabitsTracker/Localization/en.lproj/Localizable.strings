@@ -137,6 +137,20 @@
 //Selected habit basic info prompt.
 "Enter the habit description here" = "Enter the habit description here";
 
+/* REMINDERS */
+"Reminders" = "Reminders";
+"Show reminders" = "Show reminders";
+"Oops!" = "Oops!";
+"There was a problem setting your notification. Please check you have notifications enabled." = "There was a problem setting your notification. Please check you have notifications enabled.";
+"Check Settings" = "Check Settings";
+"Reminder date" = "Reminder date";
+"Repeat" = "Repeat";
+"Never" = "Never";
+"Daily" = "Daily";
+"Weekly" = "Weekly";
+"Monthly" = "Monthly";
+"Yearly" = "Yearly";
+
 
 
 

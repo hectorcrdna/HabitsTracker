@@ -65,13 +65,12 @@ struct HabitView: View {
 				if habit.reminderEnabled {
 					DatePicker("Reminder date", selection: $habit.habitReminderDate)
 
-					let component = DateComponents()
 					Picker("Repeat", selection: $habit.notificationFrequency) {
-						Text("Never").tag(-1)
-						Text("Daily").tag(0)
-						Text("Weekly").tag(1)
-						Text("Monthly").tag(2)
-						Text("Yearly").tag(3)
+						Text("Never").tag(Frequency.none.rawValue)
+						Text("Daily").tag(Frequency.daily.rawValue)
+						Text("Weekly").tag(Frequency.weekly.rawValue)
+						Text("Monthly").tag(Frequency.monthly.rawValue)
+						Text("Yearly").tag(Frequency.yearly.rawValue)
 					}
 				}
 			}
@@ -88,7 +87,7 @@ struct HabitView: View {
 			Button("Check Settings", action: showAppSettings)
 			Button("Cancel", role: .cancel) {}
 		} message: {
-			Text("There was a problem setting your notifications. Please check you have notifications enabled.")
+			Text("There was a problem setting your notification. Please check you have notifications enabled.")
 		}
 		.onChange(of: habit.reminderEnabled) { _, _ in
 			updateReminder()
@@ -100,13 +99,13 @@ struct HabitView: View {
 			updateReminder()
 		}
 }
-	
+
 	/// Opens the Settings app.
 	func showAppSettings() {
 		guard let settingsURL = URL(string: UIApplication.openNotificationSettingsURLString) else { return }
 		openURL(settingsURL)
 	}
-	
+
 	/// Acts on the selection of the reminders toggle to add a reminder when turned on.
 	func updateReminder() {
 		// Removes any reminders in the system so there are no multiple reminders.

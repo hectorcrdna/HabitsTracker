@@ -30,6 +30,16 @@ enum Status {
 	case closed
 }
 
+/// A picker menu options to select frequency of notifications.
+/// There value is stored in CoreData's `notificationFrequency` property.
+enum Frequency: Int16 {
+	case none = 0
+	case daily = 1
+	case weekly = 2
+	case monthly = 3
+	case yearly = 4
+}
+
 /// Singleton class for the managing of local and remote data.
 class DataController: ObservableObject {
 
@@ -155,8 +165,7 @@ class DataController: ObservableObject {
 			#if DEBUG
 			if CommandLine.arguments.contains("enable-testing") {
 				self?.deleteAll()
-				//UIView.setAnimationsEnabled(false)
-			}
+ 			}
 			#endif
 		}
     }
@@ -266,19 +275,14 @@ class DataController: ObservableObject {
 	/// Filters out habits based on `SidebarView` filter selection, menu filter selection and search bar result.
 	/// - Returns: An filtered array of habits.
     func habitsForSelectedFilter() -> [Habit] {
-		// Gets the selected filter in `SidebarView`.
         let filter = selectedFilter ?? .all
         var predicates = [NSPredicate]()
 
-		// If the selected filter is a tag
-		// only show habits with that tag.
         if let tag = filter.tag {
             let tagPredicate = NSPredicate(format: "tags CONTAINS %@", tag)
             predicates.append(tagPredicate)
 
         } else {
-			// If the selected filter is not a tag
-			// then filter by modification date.
             let datePredicate = NSPredicate(format: "modificationDate > %@", filter.minModificationDate as NSDate)
             predicates.append(datePredicate)
         }
@@ -302,8 +306,6 @@ class DataController: ObservableObject {
             predicates.append(tokenPredicate)
         }
 
-		// If the menu filter in `ContentView` is enabled
-		// then add those filters.
         if filterEnabled {
             if filterPriority >= 0 {
                 let priorityFilter = NSPredicate(format: "priority = %d", filterPriority)
@@ -393,7 +395,6 @@ class DataController: ObservableObject {
 	func habit(with identifier: String) -> Habit? {
 		guard let url = URL(string: identifier) else { return nil }
 		guard let id = container.persistentStoreCoordinator.managedObjectID(forURIRepresentation: url) else { return nil }
-
 		return try? container.viewContext.existingObject(with: id) as? Habit
 	}
 }
