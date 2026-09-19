@@ -86,7 +86,7 @@ extension DataController {
 
 		let trigger = UNCalendarNotificationTrigger(
 			dateMatching: dateComponents,
-			repeats: habit.notificationFrequency == 0
+			repeats: habit.notificationFrequency == Frequency.daily.rawValue
 		)
 
 		let id = habit.objectID.uriRepresentation().absoluteString
@@ -101,14 +101,14 @@ extension DataController {
 	private func notificationFrequency(for habit: Habit) -> DateComponents {
 		let calendar = Calendar.current
 
-		switch Int(habit.notificationFrequency) {
-		case 1:
+		switch habit.notificationFrequency {
+		case Frequency.weekly.rawValue:
 			return calendar.dateComponents([.weekday, .hour, .minute], from: habit.habitReminderDate)
 
-		case 2:
+		case Frequency.monthly.rawValue:
 			return calendar.dateComponents([.day, .hour, .minute], from: habit.habitReminderDate)
 
-		case 3:
+		case Frequency.yearly.rawValue:
 			return calendar.dateComponents([.month, .day, .hour, .minute], from: habit.habitReminderDate)
 
 		default:
