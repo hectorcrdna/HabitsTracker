@@ -5,8 +5,8 @@
 //  Created by Hector Cardona on 8/26/26.
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 extension Habit {
 	// Properties to avoid nil coalescing in the main apps code.
@@ -27,6 +27,11 @@ extension Habit {
     var habitModificationDate: Date {
         modificationDate ?? .now
     }
+
+	var habitReminderDate: Date {
+		get { reminderDate ?? .now }
+		set { reminderDate = newValue }
+	}
 
     var habitTags: [Tag] {
         let result = tags?.allObjects as? [Tag] ?? []

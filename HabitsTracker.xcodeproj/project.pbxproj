@@ -33,6 +33,7 @@
 		8B202D3E3045C68E00885BA1 /* TagsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D3D3045C68E00885BA1 /* TagsMenuView.swift */; };
 		8B202D403045C87600885BA1 /* SmartFilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D3F3045C87600885BA1 /* SmartFilterRow.swift */; };
 		8B202D423045C94900885BA1 /* UserFilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D413045C94900885BA1 /* UserFilterRow.swift */; };
+		8BD2F949305DE1C600879725 /* DataController-Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2F948305DE1C600879725 /* DataController-Notifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		8B202D3D3045C68E00885BA1 /* TagsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsMenuView.swift; sourceTree = "<group>"; };
 		8B202D3F3045C87600885BA1 /* SmartFilterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartFilterRow.swift; sourceTree = "<group>"; };
 		8B202D413045C94900885BA1 /* UserFilterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFilterRow.swift; sourceTree = "<group>"; };
+		8BD2F948305DE1C600879725 /* DataController-Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController-Notifications.swift"; sourceTree = "<group>"; };
 		8BDA52D03049CA8900D67113 /* HabitsTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitsTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDA52F2304DB38D00D67113 /* HabitsTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitsTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -155,6 +157,7 @@
 			children = (
 				8B202CF83039F1EC00885BA1 /* HabitsTrackerApp.swift */,
 				8B202D00303B1A4900885BA1 /* DataController.swift */,
+				8BD2F948305DE1C600879725 /* DataController-Notifications.swift */,
 				8BE5674B3047F3A30005FF38 /* Filters */,
 				8BE5674C3047F3F20005FF38 /* Habits */,
 				8BE5674E3047F44A0005FF38 /* Editing */,
@@ -431,6 +434,7 @@
 				8B202D423045C94900885BA1 /* UserFilterRow.swift in Sources */,
 				8B202D0F303F43A200885BA1 /* HabitRow.swift in Sources */,
 				8B202CFA3039F1EC00885BA1 /* ContentView.swift in Sources */,
+				8BD2F949305DE1C600879725 /* DataController-Notifications.swift in Sources */,
 				8B202CFB3039F1EC00885BA1 /* HabitsTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

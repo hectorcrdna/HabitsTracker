@@ -5,8 +5,8 @@
 //  Created by Hector Cardona on 8/23/26.
 //
 
-import CoreData
 import Combine
+import CoreData
 import SwiftUI
 
 // IMPORTANT: The raw values directly match CoreData's property names,
@@ -149,13 +149,13 @@ class DataController: ObservableObject {
 				}
 			}
 
-			// If were running test in Debug we delete all data to start
+			// If we're running test in Debug we delete all data to start
 			// with a clean slate every time we launch and disabled
-			// animations to make UI Test Faster.
+			// animations to make UI Test faster.
 			#if DEBUG
 			if CommandLine.arguments.contains("enable-testing") {
 				self?.deleteAll()
-				UIView.setAnimationsEnabled(false)
+				//UIView.setAnimationsEnabled(false)
 			}
 			#endif
 		}

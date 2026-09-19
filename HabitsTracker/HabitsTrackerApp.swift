@@ -5,9 +5,9 @@
 //  Created by Hector Cardona on 8/22/26.
 //
 
-import SwiftUI
 import CoreData
 import CoreSpotlight
+import SwiftUI
 
 @main
 struct HabitsTrackerApp: App {

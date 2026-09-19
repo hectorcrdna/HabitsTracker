@@ -5,9 +5,9 @@
 //  Created by Hector Cardona on 8/26/26.
 //
 
-import Foundation
-import CoreData
 import Combine
+import CoreData
+import Foundation
 
 extension Tag {
 	// Properties to avoid nil coalescing in the main apps code.

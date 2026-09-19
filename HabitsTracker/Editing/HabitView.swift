@@ -5,12 +5,18 @@
 //  Created by Hector Cardona on 8/27/26.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct HabitView: View {
     @EnvironmentObject var dataController: DataController
     @ObservedObject var habit: Habit
+
+	// Will show an alert telling the user the app is not authorized to send notifications.
+	@State private var showingNotificationError = false
+
+	// opens a URL to the notifications settings.
+	@Environment(\.openURL) var openURL
 
     var body: some View {
         Form {
@@ -52,6 +58,23 @@ struct HabitView: View {
 
                 }
             }
+
+			Section("Reminders") {
+				Toggle("Show reminders", isOn: $habit.reminderEnabled.animation())
+
+				if habit.reminderEnabled {
+					DatePicker("Reminder date", selection: $habit.habitReminderDate)
+
+					let component = DateComponents()
+					Picker("Repeat", selection: $habit.notificationFrequency) {
+						Text("Never").tag(-1)
+						Text("Daily").tag(0)
+						Text("Weekly").tag(1)
+						Text("Monthly").tag(2)
+						Text("Yearly").tag(3)
+					}
+				}
+			}
         }
         .disabled(habit.isDeleted)
         .onReceive(habit.objectWillChange) { _ in
@@ -61,7 +84,49 @@ struct HabitView: View {
         .toolbar {
             HabitViewToolbar(habit: habit)
         }
-    }
+		.alert("Oops!", isPresented: $showingNotificationError) {
+			Button("Check Settings", action: showAppSettings)
+			Button("Cancel", role: .cancel) {}
+		} message: {
+			Text("There was a problem setting your notifications. Please check you have notifications enabled.")
+		}
+		.onChange(of: habit.reminderEnabled) { _, _ in
+			updateReminder()
+		}
+		.onChange(of: habit.reminderDate) { _, _ in
+			updateReminder()
+		}
+		.onChange(of: habit.notificationFrequency) { _, _ in
+			updateReminder()
+		}
+}
+	
+	/// Opens the Settings app.
+	func showAppSettings() {
+		guard let settingsURL = URL(string: UIApplication.openNotificationSettingsURLString) else { return }
+		openURL(settingsURL)
+	}
+	
+	/// Acts on the selection of the reminders toggle to add a reminder when turned on.
+	func updateReminder() {
+		// Removes any reminders in the system so there are no multiple reminders.
+		dataController.removeReminders(for: habit)
+
+		Task { @MainActor in
+			if habit.reminderEnabled {
+				// Tries to set the reminder if it cant lets the user know.
+				let success = await dataController.addReminder(for: habit)
+
+				if success == false {
+					habit.reminderEnabled = false
+					showingNotificationError = true
+				}
+			} else {
+				// Once the reminder is turned off we remove it from the badge count.
+				await dataController.removeFromBadgeCount(habit)
+			}
+		}
+	}
 }
 
 #Preview {

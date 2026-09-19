@@ -5,6 +5,7 @@
 //  Created by Hector Cardona on 8/23/26.
 //
 
+import CoreData
 import SwiftUI
 
 struct SidebarView: View {
