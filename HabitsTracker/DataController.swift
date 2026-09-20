@@ -72,8 +72,14 @@ class DataController: ObservableObject {
 	/// A filter menu option to sort by most recent.
     @Published var sortNewestFirst = true
 
+	/// The Task that monitors transactions in our app.
+	private var storeTask: Task<Void, Never>?
+
 	/// The Task that handles saving for the ``queueSave()`` Method.
     private var saveTask: Task<Void, Error>?
+
+	/// The UserDefaults suite where were saving user data.
+	let defaults: UserDefaults
 
 	/// The ManagedObjectModel for CoreData.
 	///
@@ -118,10 +124,15 @@ class DataController: ObservableObject {
 	/// and sets the options for merging changes across devices.
 	/// - Parameter inMemory: If `true` data will not be saved to disk and
 	/// discarded once the app finishes, used for previewing purposes. Defaults to `false`.
-    init(inMemory: Bool = false) {
-
+	/// - Parameter defaults: The UserDefaults where user data should be stored.
+	init(inMemory: Bool = false, defaults: UserDefaults = .standard) {
+		self.defaults = defaults
 		// Container initialized with the static property 'model' to avoid crash error.
 		container = NSPersistentCloudKitContainer(name: "Main", managedObjectModel: Self.model)
+
+		storeTask = Task {
+			await monitorTransactions()
+		}
 
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
@@ -327,12 +338,26 @@ class DataController: ObservableObject {
         return allHabits
     }
 
-	/// Creates a new Tag with a default name then saves the change.
-    func newTag() {
+	/// Checks the version of the app and allows a maximum of 3 tags made
+	/// if the user has not bought the full version.
+	/// - Returns: Returns `True` if the tag was successfully created.
+    func newTag() -> Bool {
+		var shouldCreate = fullVersionUnlocked
+
+		if shouldCreate == false {
+			shouldCreate = count(for: Tag.fetchRequest()) < 3
+		}
+
+		guard shouldCreate else {
+			return false
+		}
+
         let tag = Tag(context: container.viewContext)
         tag.id = UUID()
         tag.name = NSLocalizedString("New tag", comment: "Create a new tag.")
         save()
+
+		return true
     }
 
 	/// Creates a new Habit with a default name then saves the change.
