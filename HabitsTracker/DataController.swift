@@ -410,7 +410,8 @@ class DataController: ObservableObject {
             return awardCount >= award.value
 
         default:
-			fatalError("Unknown award criterion \(award.criterion)")
+			return false
+			// fatalError("Unknown award criterion \(award.criterion)")
         }
     }
 
