@@ -23,6 +23,16 @@
           "description" : "Get access to the full app.",
           "displayName" : "Premium Unlock",
           "locale" : "en_US"
+        },
+        {
+          "description" : "Hozzáférés a teljes alkalmazáshoz",
+          "displayName" : "Prémium feloldás",
+          "locale" : "hu"
+        },
+        {
+          "description" : "Obtén acceso a la aplicación completa.",
+          "displayName" : "Desbloqueo Premium",
+          "locale" : "es_ES"
         }
       ],
       "productID" : "Cardona.Figueroa.Hector.HabitsTracker.PremiumUnlock",
@@ -40,7 +50,78 @@
     "_renewalBillingIssuesEnabled" : false,
     "_storefront" : "USA",
     "_storeKitErrors" : [
-
+      {
+        "current" : {
+          "index" : 2,
+          "type" : "generic"
+        },
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : {
+          "index" : 1,
+          "type" : "purchase"
+        },
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : {
+          "index" : 0,
+          "type" : "verification"
+        },
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : {
+          "index" : 2,
+          "type" : "generic"
+        },
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : {
+          "index" : 2,
+          "type" : "generic"
+        },
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : {
+          "index" : 3,
+          "type" : "generic"
+        },
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : {
+          "index" : 3,
+          "type" : "generic"
+        },
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : {
+          "index" : 0,
+          "type" : "refund request"
+        },
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : {
+          "index" : 4,
+          "type" : "generic"
+        },
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
     ],
     "_timeRate" : 0
   },

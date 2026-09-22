@@ -61,4 +61,13 @@ extension DataController {
 			await transaction.finish()
 		}
 	}
+
+	/// Loads an Array of products to be shown in the store.
+	@MainActor
+	func loadProducts() async throws {
+		guard products.isEmpty else { return }
+
+		try await Task.sleep(for: .seconds(0.2))
+		products = try await Product.products(for: [Self.unlockPremiumProductID])
+	}
 }

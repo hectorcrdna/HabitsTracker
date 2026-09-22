@@ -158,3 +158,14 @@
 
 //Body button to create new habit.
 "New Habit" = "Habito Nuevo";
+
+
+/* STORE */
+"Upgrade Today!" = "¡Actualízate Hoy!";
+"Get the most out of the app" = "Obtén el máximo de nuestra aplicazión";
+"Fetching offers..." = "Buscando ofertas...";
+"Sorry, there was an error loading our store." = "Lo sentimos, hubo un problema cargando nuestra tienda.";
+"Try Again" = "Trata Denuevo";
+"Restore Purchases" = "Restaurar Compras";
+"In-app purchases are disabled" = "Compras en la aplicación no están disponíbles";
+"You can't purchase the premium unlock because in-app purchases are disabled on this device.\n\nPlease ask whomever manages your device for assistance." = "No puedes comprar el desbloqueo premium porque las compras dentro de la aplicación no están disponíbles en este dispositivo.\n\nPor favor, solicita ayuda a la persona que administra tu dispositivo.";

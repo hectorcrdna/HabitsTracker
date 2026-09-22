@@ -7,6 +7,7 @@
 
 import Combine
 import CoreData
+import StoreKit
 import SwiftUI
 
 // IMPORTANT: The raw values directly match CoreData's property names,
@@ -80,6 +81,14 @@ class DataController: ObservableObject {
 
 	/// The UserDefaults suite where were saving user data.
 	let defaults: UserDefaults
+
+	/// The StoreKit products we've loaded.
+	@Published var products = [Product]()
+
+	/// Ask for a app review if the user has created 5 or more tags.
+	var shouldRequestReview: Bool {
+		return count(for: Tag.fetchRequest()) >= 5
+	}
 
 	/// The ManagedObjectModel for CoreData.
 	///
@@ -392,27 +401,29 @@ class DataController: ObservableObject {
 	/// - Parameter award: The award to query.
 	/// - Returns: A Bool indicating if the award has been earned.
     func hasEarned(award: Award) -> Bool {
-        switch award.criterion {
-        case "habits":
+		switch award.criterion {
+		case "habits":
             let fetchRequest = Habit.fetchRequest()
             let awardCount = count(for: fetchRequest)
             return awardCount >= award.value
 
-        case "closed":
+		case "closed":
             let fetchRequest = Habit.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "completed = true")
             let awardCount = count(for: fetchRequest)
             return awardCount >= award.value
 
-        case "tags":
+		case "tags":
             let fetchRequest = Tag.fetchRequest()
             let awardCount = count(for: fetchRequest)
             return awardCount >= award.value
 
-        default:
-			return false
-			// fatalError("Unknown award criterion \(award.criterion)")
-        }
+		case "unlock":
+			return fullVersionUnlocked
+
+		default:
+			fatalError("Unknown award criterion \(award.criterion)")
+		}
     }
 
 	/// Finds a habit by unique identifier and returns it.
@@ -423,4 +434,5 @@ class DataController: ObservableObject {
 		guard let id = container.persistentStoreCoordinator.managedObjectID(forURIRepresentation: url) else { return nil }
 		return try? container.viewContext.existingObject(with: id) as? Habit
 	}
+	// swiftlint:disable:next file_length
 }
