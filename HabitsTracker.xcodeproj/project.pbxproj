@@ -37,6 +37,8 @@
 		8BD2F94B3060318700879725 /* StoreKitConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 8BD2F94A3060318700879725 /* StoreKitConfiguration.storekit */; };
 		8BD2F94D3060338700879725 /* DataController-StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2F94C3060338700879725 /* DataController-StoreKit.swift */; };
 		8BD2F9503060627200879725 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2F94F3060627200879725 /* StoreView.swift */; };
+		8BF560593064EE5E00AC530C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF560583064EE5E00AC530C /* AppDelegate.swift */; };
+		8BF5605B3064EE8E00AC530C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5605A3064EE8E00AC530C /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		8BD2F94F3060627200879725 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		8BDA52D03049CA8900D67113 /* HabitsTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitsTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDA52F2304DB38D00D67113 /* HabitsTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitsTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BF560583064EE5E00AC530C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8BF5605A3064EE8E00AC530C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -162,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				8B202CF83039F1EC00885BA1 /* HabitsTrackerApp.swift */,
+				8BF560583064EE5E00AC530C /* AppDelegate.swift */,
+				8BF5605A3064EE8E00AC530C /* SceneDelegate.swift */,
 				8B202D00303B1A4900885BA1 /* DataController.swift */,
 				8BD2F94C3060338700879725 /* DataController-StoreKit.swift */,
 				8BD2F948305DE1C600879725 /* DataController-Notifications.swift */,
@@ -445,6 +451,7 @@
 				8BD2F9503060627200879725 /* StoreView.swift in Sources */,
 				8B202D07303B4AD500885BA1 /* DetailView.swift in Sources */,
 				8B202D01303B1A4900885BA1 /* DataController.swift in Sources */,
+				8BF560593064EE5E00AC530C /* AppDelegate.swift in Sources */,
 				8B202D11304012E900885BA1 /* HabitView.swift in Sources */,
 				8B202D3C3045B97E00885BA1 /* ContentViewToolbar.swift in Sources */,
 				8B202D05303B4AC500885BA1 /* SidebarView.swift in Sources */,
@@ -452,6 +459,7 @@
 				8B202D3A3045B81900885BA1 /* HabitViewToolbar.swift in Sources */,
 				8B202D133040130000885BA1 /* NoHabitView.swift in Sources */,
 				8B202D423045C94900885BA1 /* UserFilterRow.swift in Sources */,
+				8BF5605B3064EE8E00AC530C /* SceneDelegate.swift in Sources */,
 				8B202D0F303F43A200885BA1 /* HabitRow.swift in Sources */,
 				8B202CFA3039F1EC00885BA1 /* ContentView.swift in Sources */,
 				8BD2F949305DE1C600879725 /* DataController-Notifications.swift in Sources */,

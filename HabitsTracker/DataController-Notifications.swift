@@ -14,7 +14,7 @@ extension DataController {
 	///
 	/// If the user has never added a reminder the app will request permission to send notifications.
 	/// - Parameter habit: The habit associated with the notification.
-	/// - Returns: Returns `true` if the user has authorized the use of app notification,
+	/// - Returns: Returns `true` if the reminder can be placed,
 	/// otherwise returns `false`.
 	func addReminder(for habit: Habit) async -> Bool {
 		do {

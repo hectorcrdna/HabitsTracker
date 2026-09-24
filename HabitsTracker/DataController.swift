@@ -376,7 +376,7 @@ class DataController: ObservableObject {
 	/// so ``DetailView`` will update.
     func newHabit() {
         let habit = Habit(context: container.viewContext)
-        habit.title =  NSLocalizedString("New habit", comment: "Create a new habit.")
+        habit.title =  NSLocalizedString("New Habit", comment: "Create a new habit.")
         habit.creationDate = .now
         habit.priority = 1
 
