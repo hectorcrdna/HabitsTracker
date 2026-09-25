@@ -9,6 +9,7 @@ import Combine
 import CoreData
 import StoreKit
 import SwiftUI
+import WidgetKit
 
 // IMPORTANT: The raw values directly match CoreData's property names,
 // do not change one without changing the other.
@@ -145,7 +146,13 @@ class DataController: ObservableObject {
 
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
-        }
+		} else {
+			let groupID = "group.Cardona.Figueroa.Hector.HabitsTracker"
+
+			if let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupID) {
+				container.persistentStoreDescriptions.first?.url = url.appending(path: "Main.sqlite")
+			}
+		}
 
         container.viewContext.automaticallyMergesChangesFromParent = true
         container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
@@ -153,6 +160,12 @@ class DataController: ObservableObject {
         container.persistentStoreDescriptions.first?.setOption(
 			true as NSNumber,
 			forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey
+		)
+
+		// Set CoreData's option for history tracking so it updates Spotlight accordingly.
+		container.persistentStoreDescriptions.first?.setOption(
+			true as NSNumber,
+			forKey: NSPersistentHistoryTrackingKey
 		)
 
 		// An Observer added to update UI when remote changes happen.
@@ -168,10 +181,7 @@ class DataController: ObservableObject {
 				fatalError("Error loading persistent stores: \(error.localizedDescription)")
 			}
 
-			// Set CoreData's option for history tracking so it updates Spotlight accordingly.
 			if let description = self?.container.persistentStoreDescriptions.first {
-				description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
-
 				// Coordinator for indexing
 				if let coordinator = self?.container.persistentStoreCoordinator {
 					self?.spotlightDelegate = NSCoreDataCoreSpotlightDelegate(forStoreWith: description, coordinator: coordinator)
@@ -230,6 +240,7 @@ class DataController: ObservableObject {
 
         if container.viewContext.hasChanges {
             try? container.viewContext.save()
+			WidgetCenter.shared.reloadAllTimelines()
         }
     }
 
@@ -395,35 +406,6 @@ class DataController: ObservableObject {
 	/// - Returns: An int - the count of objects in the fetch request.
     func count<T>(for fetchRequest: NSFetchRequest<T>) -> Int {
         (try? container.viewContext.count(for: fetchRequest)) ?? 0
-    }
-
-	/// Returns true if the user has earned the award.
-	/// - Parameter award: The award to query.
-	/// - Returns: A Bool indicating if the award has been earned.
-    func hasEarned(award: Award) -> Bool {
-		switch award.criterion {
-		case "habits":
-            let fetchRequest = Habit.fetchRequest()
-            let awardCount = count(for: fetchRequest)
-            return awardCount >= award.value
-
-		case "closed":
-            let fetchRequest = Habit.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "completed = true")
-            let awardCount = count(for: fetchRequest)
-            return awardCount >= award.value
-
-		case "tags":
-            let fetchRequest = Tag.fetchRequest()
-            let awardCount = count(for: fetchRequest)
-            return awardCount >= award.value
-
-		case "unlock":
-			return fullVersionUnlocked
-
-		default:
-			fatalError("Unknown award criterion \(award.criterion)")
-		}
     }
 
 	/// Finds a habit by unique identifier and returns it.

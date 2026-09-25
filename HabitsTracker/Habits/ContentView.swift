@@ -69,7 +69,7 @@ struct ContentView: View {
 			requestReview()
 		}
 	}
-	
+
 	/// Creates a new habit when the user presses on the home screen application shortcut.
 	/// - Parameter url: The URL used to identify the shortcut command.
 	func openURL(_ url: URL) {
