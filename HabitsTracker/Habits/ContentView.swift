@@ -13,6 +13,8 @@ struct ContentView: View {
     @EnvironmentObject var dataController: DataController
 	@Environment(\.requestReview) var requestReview
 
+	private let newHabitActivity = "Cardona.Figueroa.Hector.HabitsTracker.NewHabit"
+
     var body: some View {
         List(selection: $dataController.selectedHabit) {
             ForEach(dataController.habitsForSelectedFilter()) { habit in
@@ -43,6 +45,11 @@ struct ContentView: View {
         }
 		.onAppear(perform: askForReview)
 		.onOpenURL(perform: openURL)
+		.userActivity(newHabitActivity) { activity in
+			activity.isEligibleForPrediction = true
+			activity.title = "New Habit"
+		}
+		.onContinueUserActivity(newHabitActivity, perform: resumeActivity)
     }
 
 	/// Deletes a set of habits via `.onDelete` modifier.
@@ -69,6 +76,10 @@ struct ContentView: View {
 		if url.absoluteString.contains("NewHabit") {
 			dataController.newHabit()
 		}
+	}
+
+	func resumeActivity(_ activity: NSUserActivity) {
+		dataController.newHabit()
 	}
 }
 

@@ -15,6 +15,10 @@
 			</array>
 		</dict>
 	</array>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>Cardona.Figueroa.Hector.HabitsTracker.NewHabit</string>
+	</array>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
