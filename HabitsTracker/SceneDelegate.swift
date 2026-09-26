@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// A Delegate that takes care of opening the url that comes from the home screen shortcut item.
 class SceneDelegate: NSObject, UIWindowSceneDelegate {
 	@MainActor
 	func windowScene(

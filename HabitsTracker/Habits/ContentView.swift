@@ -78,6 +78,8 @@ struct ContentView: View {
 		}
 	}
 
+	/// Creates a new habit using the Shortcut App.
+	/// - Parameter activity: The current activity performed by the user.
 	func resumeActivity(_ activity: NSUserActivity) {
 		dataController.newHabit()
 	}

@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+/// The UIKit Application Delegate that takes care of assigning the ``SceneDelegate`` as delegate to handle opening
+/// the url's that come from the home screen shortcuts.
 class AppDelegate: NSObject, UIApplicationDelegate {
 	func application(
 		_ application: UIApplication,

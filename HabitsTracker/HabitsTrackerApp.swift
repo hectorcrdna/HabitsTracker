@@ -14,6 +14,7 @@ struct HabitsTrackerApp: App {
     @StateObject var dataController = DataController()
     @Environment(\.scenePhase) var scenePhase
 
+	/// The connection between SwiftUI and UIKit's AppDelegate.
 	@UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
