@@ -86,7 +86,7 @@ extension DataController {
 
 		let trigger = UNCalendarNotificationTrigger(
 			dateMatching: dateComponents,
-			repeats: habit.notificationFrequency == Frequency.daily.rawValue
+			repeats: habit.notificationFrequency != Frequency.none.rawValue
 		)
 
 		let id = habit.objectID.uriRepresentation().absoluteString
