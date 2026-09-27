@@ -22,9 +22,9 @@
 //List group title "Smart Filters".
 "Smart Filters" = "Filtros Inteligentes";
 //Row "All Habits" title.
-"All Habits" = "Todos Los Habitos";
+"All Habits" = "Todos Los Hábitos";
 //Row "Recent Habits" title.
-"Recent Habits" = "Habitos Recientes";
+"Recent Habits" = "Hábitos Recientes";
 
 //List group title "Tags".
 "Tags" = "Etiquetas";
@@ -86,20 +86,20 @@
 "High" = "Alta";
 
 //Toolbar menu button "New Habit" to create a new habit.
-"New Habit" = "Habito Nuevo";
+"New Habit" = "Hábito Nuevo";
 
 //Navigation title.
-"Habits" = "Habitos";
+"Habits" = "Hábitos";
 
 //List row
-"Habit" = "Habito";
-"Habit %lld-%lld" = "Habito %lld-%lld";
-"Description of habit %lld-%lld" = "Descripción del habito %lld-%lld";
+"Habit" = "Hábito";
+"Habit %lld-%lld" = "Hábito %lld-%lld";
+"Description of habit %lld-%lld" = "Descripción del hábito %lld-%lld";
 "Tag %lld" = "Etiqueta %lld";
 "No tags" = "Sin etiquetas";
 
 //Search box Prompt.
-"Filter habits or type # to add tags" = "Filtra los habitos o escribe # para añadir etiquetas";
+"Filter habits or type # to add tags" = "Filtra los hábitos o escribe # para añadir etiquetas";
 
 
 
@@ -115,13 +115,13 @@
 //Toolbar button "Actions" for habits.
 "Actions" = "Acciones";
 //"Actions" item "Copy habit title".
-"Copy Habit Title" = "Copiar Titulo de Habito";
+"Copy Habit Title" = "Copiar Titulo de Hábito";
 //"Actions" item "Mark Completed/Incomplete".
 "Mark Completed" = "Marcar Completado";
 "Mark Incomplete" = "Marcar Incompleto";
 
 //Selected habit title prompt.
-"Enter the habit title here" = "Escribe el titulo del habito aquí";
+"Enter the habit title here" = "Escribe el titulo del hábito aquí";
 //Selected habit modifide date.
 "**Modified:** %@" = "**Modificado:** %@";
 //Selected habit status.
@@ -133,7 +133,7 @@
 //Selected habit basic info title.
 "Basic Information" = "Información Basica";
 //Selected habit basic info prompt.
-"Enter the habit description here" = "Escribe la descripción del habito aquí";
+"Enter the habit description here" = "Escribe la descripción del hábito aquí";
 
 /* REMINDERS */
 "Reminders" = "Recordatorios";
@@ -154,18 +154,24 @@
 
 /* NOHABITVIEW */
 //Body text.
-"No Habit Selected" = "Ningun Habito Seleccionado";
+"No Habit Selected" = "Ningun Hábito Seleccionado";
 
 //Body button to create new habit.
-"New Habit" = "Habito Nuevo";
+"New Habit" = "Hábito Nuevo";
 
 
 /* STORE */
 "Upgrade Today!" = "¡Actualízate Hoy!";
 "Get the most out of the app" = "Obtén el máximo de nuestra aplicazión";
-"Fetching offers..." = "Buscando ofertas...";
+"Fetching offers…" = "Buscando ofertas…";
 "Sorry, there was an error loading our store." = "Lo sentimos, hubo un problema cargando nuestra tienda.";
 "Try Again" = "Trata Denuevo";
 "Restore Purchases" = "Restaurar Compras";
 "In-app purchases are disabled" = "Compras en la aplicación no están disponíbles";
 "You can't purchase the premium unlock because in-app purchases are disabled on this device.\n\nPlease ask whomever manages your device for assistance." = "No puedes comprar el desbloqueo premium porque las compras dentro de la aplicación no están disponíbles en este dispositivo.\n\nPor favor, solicita ayuda a la persona que administra tu dispositivo.";
+
+
+/* WIDGETS */
+"Up next…" = "Proximo…";
+"Nothing!" = "Nada!";
+"Your most important habits." = "Tus hábitos más importantes.";

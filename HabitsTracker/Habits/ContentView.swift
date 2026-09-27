@@ -44,7 +44,7 @@ struct ContentView: View {
             ContentViewToolbar()
         }
 		.onAppear(perform: askForReview)
-		.onOpenURL(perform: openURL)
+		.onOpenURL(perform: dataController.openURL)
 		.userActivity(newHabitActivity) { activity in
 			activity.isEligibleForPrediction = true
 			activity.title = "New Habit"
@@ -67,14 +67,6 @@ struct ContentView: View {
 	func askForReview() {
 		if dataController.shouldRequestReview {
 			requestReview()
-		}
-	}
-
-	/// Creates a new habit when the user presses on the home screen application shortcut.
-	/// - Parameter url: The URL used to identify the shortcut command.
-	func openURL(_ url: URL) {
-		if url.absoluteString.contains("NewHabit") {
-			dataController.newHabit()
 		}
 	}
 

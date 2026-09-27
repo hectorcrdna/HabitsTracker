@@ -127,7 +127,7 @@ class DataController: ObservableObject {
             request.predicate = NSPredicate(format: "name CONTAINS[c] %@", trimmedFilterText)
         }
 
-        return (try? container.viewContext.fetch(request).sorted()) ?? []
+		return results(for: request).sorted()
     }
 
 	/// Initializes the CoreData persistent store in memory or on disk
@@ -295,7 +295,7 @@ class DataController: ObservableObject {
 	/// - Returns: An array of Tags not assigned to the habit.
     func missingTags(from habit: Habit) -> [Tag] {
         let request = Tag.fetchRequest()
-        let allTags = (try? container.viewContext.fetch(request)) ?? []
+        let allTags = results(for: request)
 
         let allTagsSet = Set(allTags)
         let difference = allTagsSet.symmetricDifference(habit.habitTags)
@@ -354,7 +354,7 @@ class DataController: ObservableObject {
         request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
         request.sortDescriptors = [NSSortDescriptor(key: sortType.rawValue, ascending: sortNewestFirst)]
 
-        let allHabits = (try? container.viewContext.fetch(request)) ?? []
+        let allHabits = results(for: request)
         return allHabits
     }
 
@@ -415,6 +415,42 @@ class DataController: ObservableObject {
 		guard let url = URL(string: identifier) else { return nil }
 		guard let id = container.persistentStoreCoordinator.managedObjectID(forURIRepresentation: url) else { return nil }
 		return try? container.viewContext.existingObject(with: id) as? Habit
+	}
+
+	/// Creates a fetch request for the top incomplete habits by priority.
+	/// - Parameter count: The amount of habits to fetch.
+	/// - Returns: the fetch request.
+	func fetchRequestForTopHabits(count: Int) -> NSFetchRequest<Habit> {
+		let request = Habit.fetchRequest()
+		request.predicate = NSPredicate(format: "completed = false")
+
+		request.sortDescriptors = [
+			NSSortDescriptor(keyPath: \Habit.priority, ascending: false)
+		]
+
+		request.fetchLimit = count
+
+		return request
+	}
+
+	/// Fetches the request for habits or tags.
+	/// - Parameter request: The request to perform.
+	/// - Returns: An array of the requested items.
+	func results<T: NSManagedObject>(for request: NSFetchRequest<T>) -> [T] {
+		(try? container.viewContext.fetch(request)) ?? []
+	}
+
+	/// Performs a command sent by the system as a URL
+	///
+	/// The command can create a new habit or navigate to a specific one.
+	/// - Parameter url: The URL used to identify the command.
+	func openURL(_ url: URL) {
+		if url.absoluteString.contains("NewHabit") {
+			newHabit()
+		} else if let habit = habit(with: url.absoluteString) {
+			selectedHabit = habit
+			selectedFilter = .all
+		}
 	}
 	// swiftlint:disable:next file_length
 }

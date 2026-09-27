@@ -45,7 +45,7 @@ struct StoreView: View {
 					VStack {
 						switch loadState {
 						case .loading:
-							Text("Fetching offers...")
+							Text("Fetching offers…")
 								.font(.title2.bold())
 								.padding(.top, 50)
 

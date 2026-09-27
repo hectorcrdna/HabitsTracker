@@ -5,33 +5,32 @@
 //  Created by Hector Cardona on 9/25/26.
 //
 
-import WidgetKit
+import CoreData
 import SwiftUI
+import WidgetKit
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), emoji: "😀")
+		SimpleEntry(date: Date.now, habits: [.example])
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
+		let entry = SimpleEntry(date: Date.now, habits: loadHabits())
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
-        var entries: [SimpleEntry] = []
+		let entry = SimpleEntry(date: Date.now, habits: loadHabits())
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, emoji: "😀")
-            entries.append(entry)
-        }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
+		let timeline = Timeline(entries: [entry], policy: .never)
         completion(timeline)
     }
+
+	func loadHabits() -> [Habit] {
+		let dataController = DataController()
+		let request = dataController.fetchRequestForTopHabits(count: 7)
+		return dataController.results(for: request)
+	}
 
 //    func relevances() async -> WidgetRelevances<Void> {
 //        // Generate a list containing the contexts this widget is relevant in.
@@ -40,20 +39,54 @@ struct Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let emoji: String
+    let habits: [Habit]
 }
 
 struct TrackerWidgetEntryView: View {
+	@Environment(\.widgetFamily) var widgetFamily
+	@Environment(\.dynamicTypeSize) var dynamicTypeSize
     var entry: Provider.Entry
 
-    var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
+	var habits: ArraySlice<Habit> {
+		var count: Int
 
-            Text("Emoji:")
-            Text(entry.emoji)
-        }
+		switch widgetFamily {
+		case .systemSmall:
+			count = 2
+		case .systemLarge, .systemExtraLarge, .systemExtraLargePortrait:
+			if dynamicTypeSize < .xLarge {
+				count = 7
+			} else {
+				count = 5
+			}
+		default:
+			if dynamicTypeSize < .xLarge {
+				count = 3
+			} else {
+				count = 2
+			}
+		}
+		return entry.habits.prefix(count)
+	}
+
+    var body: some View {
+        VStack(spacing: 10) {
+			ForEach(habits) { habit in
+				Link(destination: habit.objectID.uriRepresentation()) {
+					VStack(alignment: .leading) {
+						Text(habit.habitTitle)
+							.font(.headline)
+							.layoutPriority(1)
+
+						if habit.habitTags.isEmpty == false {
+							Text(habit.habitTagsList)
+								.foregroundStyle(.secondary)
+						}
+					}
+					.frame(maxWidth: .infinity, alignment: .leading)
+				}
+			}
+		}
     }
 }
 
@@ -71,14 +104,14 @@ struct TrackerWidget: Widget {
                     .background()
             }
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Up Next…")
+        .description("Your most important habits.")
     }
 }
 
 #Preview(as: .systemSmall) {
     TrackerWidget()
 } timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
+	SimpleEntry(date: .now, habits: [.example])
+    SimpleEntry(date: .now, habits: [.example])
 }
