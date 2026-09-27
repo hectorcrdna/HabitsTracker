@@ -22,6 +22,7 @@ struct ContentView: View {
             }
             .onDelete(perform: delete)
         }
+		.macFrame(minWidth: 300)
         .navigationTitle("Habits")
         .searchable(
 			text: $dataController.filterText,
@@ -46,7 +47,10 @@ struct ContentView: View {
 		.onAppear(perform: askForReview)
 		.onOpenURL(perform: dataController.openURL)
 		.userActivity(newHabitActivity) { activity in
+			#if !os(macOS)
 			activity.isEligibleForPrediction = true
+			#endif
+
 			activity.title = "New Habit"
 		}
 		.onContinueUserActivity(newHabitActivity, perform: resumeActivity)

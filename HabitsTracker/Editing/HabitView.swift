@@ -24,6 +24,7 @@ struct HabitView: View {
                 VStack(alignment: .leading) {
 					TextField("Title", text: $habit.habitTitle, prompt: Text("Enter the habit title here"))
                         .font(.title)
+						.labelsHidden()
 
                     Text("**Modified:** \(habit.habitModificationDate.formatted(date: .long, time: .shortened))")
                         .foregroundStyle(.secondary)
@@ -55,6 +56,7 @@ struct HabitView: View {
 						prompt: Text("Enter the habit description here"),
 						axis: .vertical
 					)
+					.labelsHidden()
 
                 }
             }
@@ -75,6 +77,7 @@ struct HabitView: View {
 				}
 			}
         }
+		.formStyle(.grouped)
         .disabled(habit.isDeleted)
         .onReceive(habit.objectWillChange) { _ in
             dataController.queueSave()
@@ -84,27 +87,35 @@ struct HabitView: View {
             HabitViewToolbar(habit: habit)
         }
 		.alert("Oops!", isPresented: $showingNotificationError) {
+			#if os(macOS)
+			SettingsLink {
+				Text("Check Settings")
+			}
+			#else
 			Button("Check Settings", action: showAppSettings)
+			#endif
 			Button("Cancel", role: .cancel) {}
 		} message: {
 			Text("There was a problem setting your notification. Please check you have notifications enabled.")
 		}
-		.onChange(of: habit.reminderEnabled) { _, _ in
+		.onChange(of: habit.reminderEnabled) {
 			updateReminder()
 		}
-		.onChange(of: habit.reminderDate) { _, _ in
+		.onChange(of: habit.reminderDate) {
 			updateReminder()
 		}
-		.onChange(of: habit.notificationFrequency) { _, _ in
+		.onChange(of: habit.notificationFrequency) {
 			updateReminder()
 		}
 }
 
+	#if os(iOS)
 	/// Opens the Settings app.
 	func showAppSettings() {
 		guard let settingsURL = URL(string: UIApplication.openNotificationSettingsURLString) else { return }
 		openURL(settingsURL)
 	}
+	#endif
 
 	/// Acts on the selection of the reminders toggle to add a reminder when turned on.
 	func updateReminder() {

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+#if os(iOS)
 /// The UIKit Application Delegate that takes care of assigning the ``SceneDelegate`` as delegate to handle opening
 /// the url's that come from the home screen shortcuts.
 class AppDelegate: NSObject, UIApplicationDelegate {
@@ -20,3 +21,4 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 		return sceneConfiguration
 	}
 }
+#endif

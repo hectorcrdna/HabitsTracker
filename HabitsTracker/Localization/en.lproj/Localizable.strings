@@ -36,6 +36,7 @@
 /* SIDEBARVIEW - AWARDS SHEET */
 //Navigation title "Awards".
 "Awards" = "Awards";
+"Close" = "Close";
 
 //Awards alert title.
 "Unlocked: %@" = "Unlocked: %@";
@@ -72,10 +73,12 @@
 //"Sort By" items".
 "Date Created" = "Date Created";
 "Date Modified" = "Date Modified";
+"Sort Order" = "Sort Order";
 "Newest to Oldest" = "Newest to Oldest";
 "Oldest to Newest" = "Oldest to Newest";
 
 //"Filter" item "Status".
+"Status" = "Status";
 "All" = "All";
 "Completed" = "Completed";
 "Incomplete" = "Incomplete";
@@ -123,6 +126,7 @@
 "Mark Incomplete" = "Mark Incomplete";
 
 //Selected habit title prompt.
+"Title" = "Title";
 "Enter the habit title here" = "Enter the habit title here";
 //Selected habit modified date.
 "**Modified:** %@" = "**Modified:** %@";
@@ -135,6 +139,7 @@
 //Selected habit basic info title.
 "Basic Information" = "Basic Information";
 //Selected habit basic info prompt.
+"Description" = "Description";
 "Enter the habit description here" = "Enter the habit description here";
 
 /* REMINDERS */

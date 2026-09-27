@@ -41,7 +41,7 @@
 		8BF5605B3064EE8E00AC530C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5605A3064EE8E00AC530C /* SceneDelegate.swift */; };
 		8BF5608A3066EADE00AC530C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF560893066EADE00AC530C /* WidgetKit.framework */; };
 		8BF5608C3066EADE00AC530C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF5608B3066EADE00AC530C /* SwiftUI.framework */; };
-		8BF560973066EAE000AC530C /* TrackerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8BF560873066EADE00AC530C /* TrackerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8BF560973066EAE000AC530C /* TrackerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8BF560873066EADE00AC530C /* TrackerWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8BF5609D3066EBF600AC530C /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B202CFD303B16DD00885BA1 /* Main.xcdatamodeld */; };
 		8BF5609E3066EC2500AC530C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D00303B1A4900885BA1 /* DataController.swift */; };
 		8BF5609F3066EC2F00AC530C /* Tag-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D0C303EC32200885BA1 /* Tag-CoreDataHelpers.swift */; };
@@ -50,6 +50,17 @@
 		8BF560A33066ED4500AC530C /* DataController-Awards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF560A23066ED4500AC530C /* DataController-Awards.swift */; };
 		8BF560A43066EE0500AC530C /* DataController-StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2F94C3060338700879725 /* DataController-StoreKit.swift */; };
 		8BF560A630686A7E00AC530C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B202D27304489F700885BA1 /* Localizable.strings */; };
+		8BF560A93069803400AC530C /* InlineNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF560A83069803400AC530C /* InlineNavigationBar.swift */; };
+		8BF560AF306985C500AC530C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF560893066EADE00AC530C /* WidgetKit.framework */; };
+		8BF560B0306985C500AC530C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF5608B3066EADE00AC530C /* SwiftUI.framework */; };
+		8BF560BB306985C700AC530C /* TrackerWidgetMacExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8BF560AE306985C500AC530C /* TrackerWidgetMacExtension.appex */; platformFilters = (macos, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8BF560C03069865100AC530C /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D08303B4CC800885BA1 /* Filter.swift */; };
+		8BF560C33069865100AC530C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D00303B1A4900885BA1 /* DataController.swift */; };
+		8BF560C43069865100AC530C /* Tag-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D0C303EC32200885BA1 /* Tag-CoreDataHelpers.swift */; };
+		8BF560C63069865100AC530C /* DataController-StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2F94C3060338700879725 /* DataController-StoreKit.swift */; };
+		8BF560C83069865C00AC530C /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B202CFD303B16DD00885BA1 /* Main.xcdatamodeld */; };
+		8BF560CA306987C700AC530C /* Habit-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D0A303EC0E800885BA1 /* Habit-CoreDataHelpers.swift */; };
+		8BF560CC30699A5E00AC530C /* MacFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF560CB30699A5E00AC530C /* MacFrame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +85,13 @@
 			remoteGlobalIDString = 8BF560863066EADE00AC530C;
 			remoteInfo = TrackerWidgetExtension;
 		};
+		8BF560B9306985C700AC530C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B202CE03039F1CD00885BA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BF560AD306985C500AC530C;
+			remoteInfo = TrackerWidgetMacExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -84,6 +102,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				8BF560973066EAE000AC530C /* TrackerWidgetExtension.appex in Embed Foundation Extensions */,
+				8BF560BB306985C700AC530C /* TrackerWidgetMacExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +158,10 @@
 		8BF5608B3066EADE00AC530C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		8BF560A23066ED4500AC530C /* DataController-Awards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController-Awards.swift"; sourceTree = "<group>"; };
 		8BF560A53066EFFF00AC530C /* TrackerWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrackerWidgetExtension.entitlements; sourceTree = "<group>"; };
+		8BF560A83069803400AC530C /* InlineNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineNavigationBar.swift; sourceTree = "<group>"; };
+		8BF560AE306985C500AC530C /* TrackerWidgetMacExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TrackerWidgetMacExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BF560C9306986D100AC530C /* TrackerWidgetMacExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrackerWidgetMacExtension.entitlements; sourceTree = "<group>"; };
+		8BF560CB30699A5E00AC530C /* MacFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacFrame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -148,6 +171,21 @@
 				Info.plist,
 			);
 			target = 8BF560863066EADE00AC530C /* TrackerWidgetExtension */;
+		};
+		8BF560BC306985C700AC530C /* Exceptions for "TrackerWidgetMac" folder in "TrackerWidgetMacExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8BF560AD306985C500AC530C /* TrackerWidgetMacExtension */;
+		};
+		8BF560C73069865200AC530C /* Exceptions for "TrackerWidget" folder in "TrackerWidgetMacExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				TrackerWidget.swift,
+				TrackerWidgetBundle.swift,
+			);
+			target = 8BF560AD306985C500AC530C /* TrackerWidgetMacExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -166,8 +204,17 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				8BF560983066EAE000AC530C /* Exceptions for "TrackerWidget" folder in "TrackerWidgetExtension" target */,
+				8BF560C73069865200AC530C /* Exceptions for "TrackerWidget" folder in "TrackerWidgetMacExtension" target */,
 			);
 			path = TrackerWidget;
+			sourceTree = "<group>";
+		};
+		8BF560B1306985C500AC530C /* TrackerWidgetMac */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8BF560BC306985C700AC530C /* Exceptions for "TrackerWidgetMac" folder in "TrackerWidgetMacExtension" target */,
+			);
+			path = TrackerWidgetMac;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -203,17 +250,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BF560AB306985C500AC530C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BF560B0306985C500AC530C /* SwiftUI.framework in Frameworks */,
+				8BF560AF306985C500AC530C /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		8B202CDF3039F1CD00885BA1 = {
 			isa = PBXGroup;
 			children = (
+				8BF560C9306986D100AC530C /* TrackerWidgetMacExtension.entitlements */,
 				8BF560A53066EFFF00AC530C /* TrackerWidgetExtension.entitlements */,
 				8B202CF93039F1EC00885BA1 /* HabitsTracker */,
 				8BDA52D13049CA8900D67113 /* HabitsTrackerTests */,
 				8BDA52F3304DB38D00D67113 /* HabitsTrackerUITests */,
 				8BF5608D3066EADE00AC530C /* TrackerWidget */,
+				8BF560B1306985C500AC530C /* TrackerWidgetMac */,
 				8BF560883066EADE00AC530C /* Frameworks */,
 				8B202CE93039F1CD00885BA1 /* Products */,
 			);
@@ -226,6 +284,7 @@
 				8BDA52D03049CA8900D67113 /* HabitsTrackerTests.xctest */,
 				8BDA52F2304DB38D00D67113 /* HabitsTrackerUITests.xctest */,
 				8BF560873066EADE00AC530C /* TrackerWidgetExtension.appex */,
+				8BF560AE306985C500AC530C /* TrackerWidgetMacExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,6 +292,7 @@
 		8B202CF93039F1EC00885BA1 /* HabitsTracker */ = {
 			isa = PBXGroup;
 			children = (
+				8BF560A730697FCB00AC530C /* PlatformAdjustments */,
 				8B202CF83039F1EC00885BA1 /* HabitsTrackerApp.swift */,
 				8BF560583064EE5E00AC530C /* AppDelegate.swift */,
 				8BF5605A3064EE8E00AC530C /* SceneDelegate.swift */,
@@ -345,6 +405,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8BF560A730697FCB00AC530C /* PlatformAdjustments */ = {
+			isa = PBXGroup;
+			children = (
+				8BF560A83069803400AC530C /* InlineNavigationBar.swift */,
+				8BF560CB30699A5E00AC530C /* MacFrame.swift */,
+			);
+			path = PlatformAdjustments;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,6 +431,7 @@
 			);
 			dependencies = (
 				8BF560963066EAE000AC530C /* PBXTargetDependency */,
+				8BF560BA306985C700AC530C /* PBXTargetDependency */,
 			);
 			name = HabitsTracker;
 			packageProductDependencies = (
@@ -438,6 +508,28 @@
 			productReference = 8BF560873066EADE00AC530C /* TrackerWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		8BF560AD306985C500AC530C /* TrackerWidgetMacExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BF560BD306985C700AC530C /* Build configuration list for PBXNativeTarget "TrackerWidgetMacExtension" */;
+			buildPhases = (
+				8BF560AA306985C500AC530C /* Sources */,
+				8BF560AB306985C500AC530C /* Frameworks */,
+				8BF560AC306985C500AC530C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8BF560B1306985C500AC530C /* TrackerWidgetMac */,
+			);
+			name = TrackerWidgetMacExtension;
+			packageProductDependencies = (
+			);
+			productName = TrackerWidgetMacExtension;
+			productReference = 8BF560AE306985C500AC530C /* TrackerWidgetMacExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -462,6 +554,9 @@
 					8BF560863066EADE00AC530C = {
 						CreatedOnToolsVersion = 27.0;
 					};
+					8BF560AD306985C500AC530C = {
+						CreatedOnToolsVersion = 27.0;
+					};
 				};
 			};
 			buildConfigurationList = 8B202CE33039F1CD00885BA1 /* Build configuration list for PBXProject "HabitsTracker" */;
@@ -484,6 +579,7 @@
 				8BDA52CF3049CA8900D67113 /* HabitsTrackerTests */,
 				8BDA52F1304DB38D00D67113 /* HabitsTrackerUITests */,
 				8BF560863066EADE00AC530C /* TrackerWidgetExtension */,
+				8BF560AD306985C500AC530C /* TrackerWidgetMacExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -521,6 +617,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BF560A630686A7E00AC530C /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BF560AC306985C500AC530C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +671,8 @@
 				8B202D01303B1A4900885BA1 /* DataController.swift in Sources */,
 				8BF560593064EE5E00AC530C /* AppDelegate.swift in Sources */,
 				8B202D11304012E900885BA1 /* HabitView.swift in Sources */,
+				8BF560CC30699A5E00AC530C /* MacFrame.swift in Sources */,
+				8BF560A93069803400AC530C /* InlineNavigationBar.swift in Sources */,
 				8B202D3C3045B97E00885BA1 /* ContentViewToolbar.swift in Sources */,
 				8B202D05303B4AC500885BA1 /* SidebarView.swift in Sources */,
 				8B202D383045B4C700885BA1 /* SidebarViewToolbar.swift in Sources */,
@@ -609,6 +714,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BF560AA306985C500AC530C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BF560C03069865100AC530C /* Filter.swift in Sources */,
+				8BF560CA306987C700AC530C /* Habit-CoreDataHelpers.swift in Sources */,
+				8BF560C33069865100AC530C /* DataController.swift in Sources */,
+				8BF560C43069865100AC530C /* Tag-CoreDataHelpers.swift in Sources */,
+				8BF560C83069865C00AC530C /* Main.xcdatamodeld in Sources */,
+				8BF560C63069865100AC530C /* DataController-StoreKit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -624,8 +742,17 @@
 		};
 		8BF560963066EAE000AC530C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 8BF560863066EADE00AC530C /* TrackerWidgetExtension */;
 			targetProxy = 8BF560953066EAE000AC530C /* PBXContainerItemProxy */;
+		};
+		8BF560BA306985C700AC530C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilters = (
+				macos,
+			);
+			target = 8BF560AD306985C500AC530C /* TrackerWidgetMacExtension */;
+			targetProxy = 8BF560B9306985C700AC530C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1042,6 +1169,76 @@
 			};
 			name = Release;
 		};
+		8BF560BE306985C700AC530C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TrackerWidgetMacExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4C95RNQFKZ;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TrackerWidgetMac/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TrackerWidgetMac;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Cardona.Figueroa.Hector.HabitsTracker.TrackerWidgetMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8BF560BF306985C700AC530C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TrackerWidgetMacExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4C95RNQFKZ;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TrackerWidgetMac/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TrackerWidgetMac;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Cardona.Figueroa.Hector.HabitsTracker.TrackerWidgetMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1086,6 +1283,15 @@
 			buildConfigurations = (
 				8BF5609A3066EAE000AC530C /* Debug */,
 				8BF5609B3066EAE000AC530C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BF560BD306985C700AC530C /* Build configuration list for PBXNativeTarget "TrackerWidgetMacExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BF560BE306985C700AC530C /* Debug */,
+				8BF560BF306985C700AC530C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -36,6 +36,7 @@
 /* SIDEBARVIEW - AWARDS SHEET */
 //Navigation title "Awards".
 "Awards" = "trofeos";
+"Close" = "Cerrar";
 
 //Awards alert title.
 "Unlocked: %@" = "Ganado: %@";
@@ -72,10 +73,12 @@
 //"Sort By" items".
 "Date Created" = "Fecha de Creación";
 "Date Modified" = "Fecha de Modificación";
+"Sort Order" = "Ordenación";
 "Newest to Oldest" = "Reciente a Antiguo";
 "Oldest to Newest" = "Antiguo a Reciente";
 
 //"Filter" item "Status".
+"Status" = "Status";
 "All" = "Todos";
 "Completed" = "Completado";
 "Incomplete" = "Incompleto";
@@ -121,6 +124,7 @@
 "Mark Incomplete" = "Marcar Incompleto";
 
 //Selected habit title prompt.
+"Title" = "Titulo";
 "Enter the habit title here" = "Escribe el titulo del hábito aquí";
 //Selected habit modifide date.
 "**Modified:** %@" = "**Modificado:** %@";
@@ -133,6 +137,7 @@
 //Selected habit basic info title.
 "Basic Information" = "Información Basica";
 //Selected habit basic info prompt.
+"Description" = "Descripción";
 "Enter the habit description here" = "Escribe la descripción del hábito aquí";
 
 /* REMINDERS */

@@ -38,6 +38,7 @@ struct SidebarView: View {
                 .onDelete(perform: delete)
             }
         }
+		.macFrame(minWidth: 230)
         .toolbar {
             SidebarViewToolbar()
         }

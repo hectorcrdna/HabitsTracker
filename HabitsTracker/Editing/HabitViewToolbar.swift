@@ -17,11 +17,7 @@ struct HabitViewToolbar: View {
 
     var body: some View {
         Menu {
-            Button {
-                UIPasteboard.general.string = habit.title
-            } label: {
-                Label("Copy Habit Title", systemImage: "doc.on.doc")
-            }
+            Button("Copy Habit Title", systemImage: "doc.on.doc", action: copyToClipboard)
 
             Button {
                 habit.completed.toggle()
@@ -47,6 +43,15 @@ struct HabitViewToolbar: View {
             Label("Actions", systemImage: "ellipsis.circle")
         }
     }
+
+	func copyToClipboard() {
+		#if os(iOS)
+		UIPasteboard.general.string = habit.title
+		#else
+		NSPasteboard.general.prepareForNewContents()
+		NSPasteboard.general.setString(habit.habitTitle, forType: .string)
+		#endif
+	}
 }
 
 #Preview {
