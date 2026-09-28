@@ -52,6 +52,7 @@ extension DataController {
 		center.removePendingNotificationRequests(withIdentifiers: [id])
 	}
 
+	#if !os(watchOS)
 	/// Removes a delivered notification from the badge count.
 	/// - Parameter habit: The habit associated with the notification
 	func removeFromBadgeCount(_ habit: Habit) async {
@@ -60,7 +61,7 @@ extension DataController {
 		center.removeDeliveredNotifications(withIdentifiers: [id])
 		try? await center.setBadgeCount(center.deliveredNotifications().count)
 	}
-
+	#endif
 	/// Requests permission to send the user "alerts, badge and sounds" notifications.
 	/// - Returns: `true` if authorized by the user, otherwise `false`.
 	private func requestNotification() async throws -> Bool {
@@ -76,7 +77,9 @@ extension DataController {
 		let content = UNMutableNotificationContent()
 		content.title = habit.habitTitle
 		content.sound = .default
+		#if !os(watchOS)
 		content.badge = await (center.deliveredNotifications().count + 1) as NSNumber
+		#endif
 
 		if let habitContent = habit.content {
 			content.subtitle = habitContent

@@ -11,6 +11,7 @@ struct ContentViewToolbar: View {
     @EnvironmentObject var dataController: DataController
 
     var body: some View {
+		#if !os(watchOS)
         Menu {
             Button(dataController.filterEnabled ? "Turn Filter Off" : "Turn Filter On") {
                 dataController.filterEnabled.toggle()
@@ -56,12 +57,12 @@ struct ContentViewToolbar: View {
                 .symbolVariant(dataController.filterEnabled ? .fill : .none)
         }
 		.help("Filter")
+		#endif
 
         Button(action: dataController.newHabit) {
             Label("New Habit", systemImage: "square.and.pencil")
         }
 		.help("New Habit")
-
     }
 }
 

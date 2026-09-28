@@ -61,6 +61,47 @@
 		8BF560C83069865C00AC530C /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B202CFD303B16DD00885BA1 /* Main.xcdatamodeld */; };
 		8BF560CA306987C700AC530C /* Habit-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D0A303EC0E800885BA1 /* Habit-CoreDataHelpers.swift */; };
 		8BF560CC30699A5E00AC530C /* MacFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF560CB30699A5E00AC530C /* MacFrame.swift */; };
+		8BF560E9306ADE1900AC530C /* TrackerWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8BF560DF306ADE1700AC530C /* TrackerWatch Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8BF560EE306ADEF600AC530C /* HabitRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D0E303F43A200885BA1 /* HabitRow.swift */; };
+		8BF560EF306ADEF600AC530C /* HabitViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D393045B81900885BA1 /* HabitViewToolbar.swift */; };
+		8BF560F0306ADEF600AC530C /* Tag-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D0C303EC32200885BA1 /* Tag-CoreDataHelpers.swift */; };
+		8BF560F1306ADEF600AC530C /* InlineNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF560A83069803400AC530C /* InlineNavigationBar.swift */; };
+		8BF560F2306ADEF600AC530C /* UserFilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D413045C94900885BA1 /* UserFilterRow.swift */; };
+		8BF560F3306ADEF600AC530C /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D04303B4AC500885BA1 /* SidebarView.swift */; };
+		8BF560F4306ADEF600AC530C /* TagsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D3D3045C68E00885BA1 /* TagsMenuView.swift */; };
+		8BF560F5306ADEF600AC530C /* SmartFilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D3F3045C87600885BA1 /* SmartFilterRow.swift */; };
+		8BF560F6306ADEF600AC530C /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D1430435CA600885BA1 /* Bundle-Decodable.swift */; };
+		8BF560F7306ADEF600AC530C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202CF73039F1EC00885BA1 /* ContentView.swift */; };
+		8BF560F8306ADEF600AC530C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5605A3064EE8E00AC530C /* SceneDelegate.swift */; };
+		8BF560F9306ADEF600AC530C /* MacFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF560CB30699A5E00AC530C /* MacFrame.swift */; };
+		8BF560FA306ADEF600AC530C /* DataController-Awards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF560A23066ED4500AC530C /* DataController-Awards.swift */; };
+		8BF560FB306ADEF600AC530C /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D08303B4CC800885BA1 /* Filter.swift */; };
+		8BF560FC306ADEF600AC530C /* ContentViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D3B3045B97E00885BA1 /* ContentViewToolbar.swift */; };
+		8BF560FD306ADEF600AC530C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D00303B1A4900885BA1 /* DataController.swift */; };
+		8BF560FE306ADEF600AC530C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D06303B4AD500885BA1 /* DetailView.swift */; };
+		8BF560FF306ADEF600AC530C /* SidebarViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D373045B4C700885BA1 /* SidebarViewToolbar.swift */; };
+		8BF56100306ADEF600AC530C /* HabitsTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202CF83039F1EC00885BA1 /* HabitsTrackerApp.swift */; };
+		8BF56101306ADEF600AC530C /* HabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D10304012E900885BA1 /* HabitView.swift */; };
+		8BF56102306ADEF600AC530C /* DataController-StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2F94C3060338700879725 /* DataController-StoreKit.swift */; };
+		8BF56103306ADEF600AC530C /* Habit-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D0A303EC0E800885BA1 /* Habit-CoreDataHelpers.swift */; };
+		8BF56104306ADEF600AC530C /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D1C3043685F00885BA1 /* AwardsView.swift */; };
+		8BF56105306ADEF600AC530C /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2F94F3060627200879725 /* StoreView.swift */; };
+		8BF56106306ADEF600AC530C /* NoHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D123040130000885BA1 /* NoHabitView.swift */; };
+		8BF56107306ADEF600AC530C /* DataController-Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2F948305DE1C600879725 /* DataController-Notifications.swift */; };
+		8BF56108306ADEF600AC530C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF560583064EE5E00AC530C /* AppDelegate.swift */; };
+		8BF56109306ADEF600AC530C /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D1A3043649300885BA1 /* Award.swift */; };
+		8BF5610B306ADF0F00AC530C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B202D17304363D000885BA1 /* Colors.xcassets */; };
+		8BF5610C306ADF1600AC530C /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B202CFD303B16DD00885BA1 /* Main.xcdatamodeld */; };
+		8BF5610D306ADF3000AC530C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B202D27304489F700885BA1 /* Localizable.strings */; };
+		8BF5610E306ADF3000AC530C /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 8B202D2A3044911300885BA1 /* Localizable.stringsdict */; };
+		8BF5610F306ADF4000AC530C /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B202D303045434500885BA1 /* Awards.json */; };
+		8BF56111306AE30500AC530C /* NumberBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF56110306AE30400AC530C /* NumberBadge.swift */; };
+		8BF56112306AE30500AC530C /* NumberBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF56110306AE30400AC530C /* NumberBadge.swift */; };
+		8BF56114306AEAC800AC530C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B202CF63039F1EC00885BA1 /* Assets.xcassets */; };
+		8BF56116306AF0FA00AC530C /* HabitRowWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF56115306AF0FA00AC530C /* HabitRowWatch.swift */; };
+		8BF56117306AF0FA00AC530C /* HabitRowWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF56115306AF0FA00AC530C /* HabitRowWatch.swift */; };
+		8BF56119306AF49300AC530C /* ToolbarItemPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF56118306AF49300AC530C /* ToolbarItemPlacement.swift */; };
+		8BF5611A306AF49300AC530C /* ToolbarItemPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF56118306AF49300AC530C /* ToolbarItemPlacement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +133,13 @@
 			remoteGlobalIDString = 8BF560AD306985C500AC530C;
 			remoteInfo = TrackerWidgetMacExtension;
 		};
+		8BF560E7306ADE1900AC530C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B202CE03039F1CD00885BA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BF560DE306ADE1700AC530C;
+			remoteInfo = "TrackerWatch Watch App";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -105,6 +153,17 @@
 				8BF560BB306985C700AC530C /* TrackerWidgetMacExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BF560ED306ADE1900AC530C /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				8BF560E9306ADE1900AC530C /* TrackerWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -162,6 +221,10 @@
 		8BF560AE306985C500AC530C /* TrackerWidgetMacExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TrackerWidgetMacExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF560C9306986D100AC530C /* TrackerWidgetMacExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrackerWidgetMacExtension.entitlements; sourceTree = "<group>"; };
 		8BF560CB30699A5E00AC530C /* MacFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacFrame.swift; sourceTree = "<group>"; };
+		8BF560DF306ADE1700AC530C /* TrackerWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TrackerWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BF56110306AE30400AC530C /* NumberBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberBadge.swift; sourceTree = "<group>"; };
+		8BF56115306AF0FA00AC530C /* HabitRowWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRowWatch.swift; sourceTree = "<group>"; };
+		8BF56118306AF49300AC530C /* ToolbarItemPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarItemPlacement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -217,6 +280,11 @@
 			path = TrackerWidgetMac;
 			sourceTree = "<group>";
 		};
+		8BF560E0306ADE1700AC530C /* TrackerWatch Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "TrackerWatch Watch App";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +327,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BF560DC306ADE1700AC530C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -272,6 +347,7 @@
 				8BDA52F3304DB38D00D67113 /* HabitsTrackerUITests */,
 				8BF5608D3066EADE00AC530C /* TrackerWidget */,
 				8BF560B1306985C500AC530C /* TrackerWidgetMac */,
+				8BF560E0306ADE1700AC530C /* TrackerWatch Watch App */,
 				8BF560883066EADE00AC530C /* Frameworks */,
 				8B202CE93039F1CD00885BA1 /* Products */,
 			);
@@ -285,6 +361,7 @@
 				8BDA52F2304DB38D00D67113 /* HabitsTrackerUITests.xctest */,
 				8BF560873066EADE00AC530C /* TrackerWidgetExtension.appex */,
 				8BF560AE306985C500AC530C /* TrackerWidgetMacExtension.appex */,
+				8BF560DF306ADE1700AC530C /* TrackerWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -340,6 +417,7 @@
 				8B202CF73039F1EC00885BA1 /* ContentView.swift */,
 				8B202D3B3045B97E00885BA1 /* ContentViewToolbar.swift */,
 				8B202D0E303F43A200885BA1 /* HabitRow.swift */,
+				8BF56115306AF0FA00AC530C /* HabitRowWatch.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -410,6 +488,8 @@
 			children = (
 				8BF560A83069803400AC530C /* InlineNavigationBar.swift */,
 				8BF560CB30699A5E00AC530C /* MacFrame.swift */,
+				8BF56110306AE30400AC530C /* NumberBadge.swift */,
+				8BF56118306AF49300AC530C /* ToolbarItemPlacement.swift */,
 			);
 			path = PlatformAdjustments;
 			sourceTree = "<group>";
@@ -426,12 +506,14 @@
 				8B202CE63039F1CD00885BA1 /* Resources */,
 				8BE5674A304729590005FF38 /* ShellScript */,
 				8BF5609C3066EAE000AC530C /* Embed Foundation Extensions */,
+				8BF560ED306ADE1900AC530C /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				8BF560963066EAE000AC530C /* PBXTargetDependency */,
 				8BF560BA306985C700AC530C /* PBXTargetDependency */,
+				8BF560E8306ADE1900AC530C /* PBXTargetDependency */,
 			);
 			name = HabitsTracker;
 			packageProductDependencies = (
@@ -530,6 +612,28 @@
 			productReference = 8BF560AE306985C500AC530C /* TrackerWidgetMacExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		8BF560DE306ADE1700AC530C /* TrackerWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BF560EA306ADE1900AC530C /* Build configuration list for PBXNativeTarget "TrackerWatch Watch App" */;
+			buildPhases = (
+				8BF560DB306ADE1700AC530C /* Sources */,
+				8BF560DC306ADE1700AC530C /* Frameworks */,
+				8BF560DD306ADE1700AC530C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8BF560E0306ADE1700AC530C /* TrackerWatch Watch App */,
+			);
+			name = "TrackerWatch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "TrackerWatch Watch App";
+			productReference = 8BF560DF306ADE1700AC530C /* TrackerWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -557,6 +661,9 @@
 					8BF560AD306985C500AC530C = {
 						CreatedOnToolsVersion = 27.0;
 					};
+					8BF560DE306ADE1700AC530C = {
+						CreatedOnToolsVersion = 27.0;
+					};
 				};
 			};
 			buildConfigurationList = 8B202CE33039F1CD00885BA1 /* Build configuration list for PBXProject "HabitsTracker" */;
@@ -580,6 +687,7 @@
 				8BDA52F1304DB38D00D67113 /* HabitsTrackerUITests */,
 				8BF560863066EADE00AC530C /* TrackerWidgetExtension */,
 				8BF560AD306985C500AC530C /* TrackerWidgetMacExtension */,
+				8BF560DE306ADE1700AC530C /* TrackerWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -627,6 +735,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BF560DD306ADE1700AC530C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BF5610F306ADF4000AC530C /* Awards.json in Resources */,
+				8BF5610B306ADF0F00AC530C /* Colors.xcassets in Resources */,
+				8BF5610D306ADF3000AC530C /* Localizable.strings in Resources */,
+				8BF5610E306ADF3000AC530C /* Localizable.stringsdict in Resources */,
+				8BF56114306AEAC800AC530C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -671,12 +791,15 @@
 				8B202D01303B1A4900885BA1 /* DataController.swift in Sources */,
 				8BF560593064EE5E00AC530C /* AppDelegate.swift in Sources */,
 				8B202D11304012E900885BA1 /* HabitView.swift in Sources */,
+				8BF56119306AF49300AC530C /* ToolbarItemPlacement.swift in Sources */,
 				8BF560CC30699A5E00AC530C /* MacFrame.swift in Sources */,
 				8BF560A93069803400AC530C /* InlineNavigationBar.swift in Sources */,
+				8BF56116306AF0FA00AC530C /* HabitRowWatch.swift in Sources */,
 				8B202D3C3045B97E00885BA1 /* ContentViewToolbar.swift in Sources */,
 				8B202D05303B4AC500885BA1 /* SidebarView.swift in Sources */,
 				8B202D383045B4C700885BA1 /* SidebarViewToolbar.swift in Sources */,
 				8B202D3A3045B81900885BA1 /* HabitViewToolbar.swift in Sources */,
+				8BF56111306AE30500AC530C /* NumberBadge.swift in Sources */,
 				8B202D133040130000885BA1 /* NoHabitView.swift in Sources */,
 				8B202D423045C94900885BA1 /* UserFilterRow.swift in Sources */,
 				8BF5605B3064EE8E00AC530C /* SceneDelegate.swift in Sources */,
@@ -727,6 +850,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BF560DB306ADE1700AC530C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BF560EE306ADEF600AC530C /* HabitRow.swift in Sources */,
+				8BF560EF306ADEF600AC530C /* HabitViewToolbar.swift in Sources */,
+				8BF560F0306ADEF600AC530C /* Tag-CoreDataHelpers.swift in Sources */,
+				8BF560F1306ADEF600AC530C /* InlineNavigationBar.swift in Sources */,
+				8BF560F2306ADEF600AC530C /* UserFilterRow.swift in Sources */,
+				8BF560F3306ADEF600AC530C /* SidebarView.swift in Sources */,
+				8BF560F4306ADEF600AC530C /* TagsMenuView.swift in Sources */,
+				8BF560F5306ADEF600AC530C /* SmartFilterRow.swift in Sources */,
+				8BF560F6306ADEF600AC530C /* Bundle-Decodable.swift in Sources */,
+				8BF560F7306ADEF600AC530C /* ContentView.swift in Sources */,
+				8BF560F8306ADEF600AC530C /* SceneDelegate.swift in Sources */,
+				8BF560F9306ADEF600AC530C /* MacFrame.swift in Sources */,
+				8BF560FA306ADEF600AC530C /* DataController-Awards.swift in Sources */,
+				8BF560FB306ADEF600AC530C /* Filter.swift in Sources */,
+				8BF560FC306ADEF600AC530C /* ContentViewToolbar.swift in Sources */,
+				8BF560FD306ADEF600AC530C /* DataController.swift in Sources */,
+				8BF5611A306AF49300AC530C /* ToolbarItemPlacement.swift in Sources */,
+				8BF560FE306ADEF600AC530C /* DetailView.swift in Sources */,
+				8BF560FF306ADEF600AC530C /* SidebarViewToolbar.swift in Sources */,
+				8BF56117306AF0FA00AC530C /* HabitRowWatch.swift in Sources */,
+				8BF56100306ADEF600AC530C /* HabitsTrackerApp.swift in Sources */,
+				8BF56101306ADEF600AC530C /* HabitView.swift in Sources */,
+				8BF56102306ADEF600AC530C /* DataController-StoreKit.swift in Sources */,
+				8BF56103306ADEF600AC530C /* Habit-CoreDataHelpers.swift in Sources */,
+				8BF56112306AE30500AC530C /* NumberBadge.swift in Sources */,
+				8BF56104306ADEF600AC530C /* AwardsView.swift in Sources */,
+				8BF5610C306ADF1600AC530C /* Main.xcdatamodeld in Sources */,
+				8BF56105306ADEF600AC530C /* StoreView.swift in Sources */,
+				8BF56106306ADEF600AC530C /* NoHabitView.swift in Sources */,
+				8BF56107306ADEF600AC530C /* DataController-Notifications.swift in Sources */,
+				8BF56108306ADEF600AC530C /* AppDelegate.swift in Sources */,
+				8BF56109306ADEF600AC530C /* Award.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -753,6 +915,12 @@
 			);
 			target = 8BF560AD306985C500AC530C /* TrackerWidgetMacExtension */;
 			targetProxy = 8BF560B9306985C700AC530C /* PBXContainerItemProxy */;
+		};
+		8BF560E8306ADE1900AC530C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 8BF560DE306ADE1700AC530C /* TrackerWatch Watch App */;
+			targetProxy = 8BF560E7306ADE1900AC530C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1239,6 +1407,79 @@
 			};
 			name = Release;
 		};
+		8BF560EB306ADE1900AC530C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "TrackerWatch Watch App/TrackerWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4C95RNQFKZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TrackerWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = Cardona.Figueroa.Hector.HabitsTracker;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Cardona.Figueroa.Hector.HabitsTracker.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_WATCHOS_DEPLOYMENT_TARGET)";
+			};
+			name = Debug;
+		};
+		8BF560EC306ADE1900AC530C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "TrackerWatch Watch App/TrackerWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4C95RNQFKZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TrackerWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = Cardona.Figueroa.Hector.HabitsTracker;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Cardona.Figueroa.Hector.HabitsTracker.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_WATCHOS_DEPLOYMENT_TARGET)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1292,6 +1533,15 @@
 			buildConfigurations = (
 				8BF560BE306985C700AC530C /* Debug */,
 				8BF560BF306985C700AC530C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BF560EA306ADE1900AC530C /* Build configuration list for PBXNativeTarget "TrackerWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BF560EB306ADE1900AC530C /* Debug */,
+				8BF560EC306ADE1900AC530C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

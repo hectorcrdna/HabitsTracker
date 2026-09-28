@@ -11,19 +11,26 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var dataController: DataController
+	#if !os(watchOS)
 	@Environment(\.requestReview) var requestReview
+	#endif
 
 	private let newHabitActivity = "Cardona.Figueroa.Hector.HabitsTracker.NewHabit"
 
     var body: some View {
         List(selection: $dataController.selectedHabit) {
             ForEach(dataController.habitsForSelectedFilter()) { habit in
+				#if os(watchOS)
+				HabitRowWatch(habit: habit)
+				#else
                 HabitRow(habit: habit)
+				#endif
             }
             .onDelete(perform: delete)
         }
 		.macFrame(minWidth: 300)
         .navigationTitle("Habits")
+		#if !os(watchOS)
         .searchable(
 			text: $dataController.filterText,
 			tokens: $dataController.filterTokens,
@@ -41,6 +48,7 @@ struct ContentView: View {
                 }
             }
         }
+		#endif
         .toolbar {
             ContentViewToolbar()
         }
@@ -69,9 +77,11 @@ struct ContentView: View {
 
 	/// Performs the request for review if the user has made 5 or more tags.
 	func askForReview() {
+		#if !os(watchOS)
 		if dataController.shouldRequestReview {
 			requestReview()
 		}
+		#endif
 	}
 
 	/// Creates a new habit using the Shortcut App.

@@ -6,7 +6,9 @@
 //
 
 import CoreData
+#if canImport(CoreSpotlight)
 import CoreSpotlight
+#endif
 import SwiftUI
 
 @main
@@ -37,14 +39,15 @@ struct HabitsTrackerApp: App {
                     dataController.save()
                 }
             }
-
+			#if canImport(CoreSpotlight)
 			// If the user uses Spotlight to search for a Habit's title or content and
 			// there is a match, the user can then tap the item and the app will launch
 			// and load the Habit on to the screen.
 			.onContinueUserActivity(CSSearchableItemActionType, perform: loadSpotlightItem)
+			#endif
         }
     }
-
+	#if canImport(CoreSpotlight)
 	/// Loads the Habit selected in Spotlight search.
 	/// - Parameter userActivity: The NSUserActivity sent to us by Spotlight.
 	func loadSpotlightItem(_ userActivity: NSUserActivity) {
@@ -53,4 +56,5 @@ struct HabitsTrackerApp: App {
 			dataController.selectedFilter = .all
 		}
 	}
+	#endif
 }

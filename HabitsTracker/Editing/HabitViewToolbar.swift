@@ -16,6 +16,7 @@ struct HabitViewToolbar: View {
 	}
 
     var body: some View {
+		#if !os(watchOS)
         Menu {
             Button("Copy Habit Title", systemImage: "doc.on.doc", action: copyToClipboard)
 
@@ -42,12 +43,13 @@ struct HabitViewToolbar: View {
         } label: {
             Label("Actions", systemImage: "ellipsis.circle")
         }
+		#endif
     }
 
 	func copyToClipboard() {
 		#if os(iOS)
 		UIPasteboard.general.string = habit.title
-		#else
+		#elseif os(macOS)
 		NSPasteboard.general.prepareForNewContents()
 		NSPasteboard.general.setString(habit.habitTitle, forType: .string)
 		#endif

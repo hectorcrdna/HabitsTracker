@@ -48,8 +48,10 @@ class DataController: ObservableObject {
 	/// The container tasked with managing CoreData Models with CloudKit.
     let container: NSPersistentCloudKitContainer
 
+	#if !os(watchOS)
 	/// The Spotlight delegate responsible for indexing and tracking changes in CoreData.
 	var spotlightDelegate: NSCoreDataCoreSpotlightDelegate?
+	#endif
 
 	/// The current Filter selected by the user in SidebarView List.
     @Published var selectedFilter: Filter? = .all
@@ -182,11 +184,13 @@ class DataController: ObservableObject {
 			}
 
 			if let description = self?.container.persistentStoreDescriptions.first {
+				#if !os(watchOS)
 				// Coordinator for indexing
 				if let coordinator = self?.container.persistentStoreCoordinator {
 					self?.spotlightDelegate = NSCoreDataCoreSpotlightDelegate(forStoreWith: description, coordinator: coordinator)
 					self?.spotlightDelegate?.startSpotlightIndexing()
 				}
+				#endif
 			}
 
 			// If we're running test in Debug we delete all data to start

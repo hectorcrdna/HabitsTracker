@@ -41,11 +41,13 @@ struct AwardsView: View {
                 }
             }
             .navigationTitle("Awards")
+			#if !os(watchOS)
 			.toolbar {
 				Button("Close") {
 					dismiss()
 				}
 			}
+			#endif
         }
         .alert(awardTitle, isPresented: $showingAwardDetails) {
         } message: {

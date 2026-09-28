@@ -7,40 +7,45 @@
 
 import SwiftUI
 
-struct SidebarViewToolbar: View {
+struct SidebarViewToolbar: ToolbarContent {
     @EnvironmentObject var dataController: DataController
 	@State private var showingStore = false
 
     @State private var showingAwards = false
 
-    var body: some View {
-        Button(action: tryNewTag) {
-            Label("Add tag", systemImage: "plus")
-        }
-		.sheet(isPresented: $showingStore) {
-			StoreView()
+    var body: some ToolbarContent {
+		ToolbarItem(placement: .automaticOrTrailing) {
+			Button(action: tryNewTag) {
+				Label("Add tag", systemImage: "plus")
+			}
+			.sheet(isPresented: $showingStore) {
+				StoreView()
+			}
+			.help("Add tag")
 		}
-		.help("Add tag")
 
-        Button {
-            showingAwards.toggle()
-        } label: {
-            Label("Show awards", systemImage: "rosette")
-        }
-		.help("Show awards")
-        .sheet(isPresented: $showingAwards) {
-            AwardsView()
-        }
+		ToolbarItem(placement: .automaticOrLeading) {
+			Button {
+				showingAwards.toggle()
+			} label: {
+				Label("Show awards", systemImage: "rosette")
+			}
+			.help("Show awards")
+			.sheet(isPresented: $showingAwards) {
+				AwardsView()
+			}
+		}
 
-        #if DEBUG
-        Button {
-            dataController.deleteAll()
-            dataController.createSampleData()
-        } label: {
-            Label("Add Samples", systemImage: "flame")
-        }
-        #endif
-
+//		#if DEBUG
+//		ToolbarItem(placement: .automatic) {
+//			Button {
+//				dataController.deleteAll()
+//				dataController.createSampleData()
+//			} label: {
+//				Label("Add Samples", systemImage: "flame")
+//			}
+//		}
+//		#endif
     }
 
 	func tryNewTag() {
@@ -48,8 +53,4 @@ struct SidebarViewToolbar: View {
 			showingStore = true
 		}
 	}
-}
-
-#Preview {
-    SidebarViewToolbar()
 }

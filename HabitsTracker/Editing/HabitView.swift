@@ -91,7 +91,7 @@ struct HabitView: View {
 			SettingsLink {
 				Text("Check Settings")
 			}
-			#else
+			#elseif os(iOS)
 			Button("Check Settings", action: showAppSettings)
 			#endif
 			Button("Cancel", role: .cancel) {}
@@ -132,8 +132,10 @@ struct HabitView: View {
 					showingNotificationError = true
 				}
 			} else {
+				#if !os(watchOS)
 				// Once the reminder is turned off we remove it from the badge count.
 				await dataController.removeFromBadgeCount(habit)
+				#endif
 			}
 		}
 	}
