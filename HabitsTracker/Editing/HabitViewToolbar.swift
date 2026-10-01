@@ -26,13 +26,7 @@ struct HabitViewToolbar: View {
             } label: {
                 Label(openCloseHabitButtonTitle, systemImage: "bubble.left.and.exclamationmark.bubble.right")
             }
-			.sensoryFeedback(trigger: habit.completed) { _, newValue in
-				if newValue {
-					return .success
-				} else {
-					return nil
-				}
-			}
+			.visionSensoryFeedback(trigger: habit.completed)
 
             Divider()
 
@@ -43,6 +37,8 @@ struct HabitViewToolbar: View {
         } label: {
             Label("Actions", systemImage: "ellipsis.circle")
         }
+		#else
+		CompleteIncompleteButtonView(habit: habit)
 		#endif
     }
 

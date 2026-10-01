@@ -18,6 +18,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8BF560AD306985C500AC530C"
                BuildableName = "TrackerWidgetMacExtension.appex"
+               BlueprintName = "TrackerWidgetMacExtension"
                ReferencedContainer = "container:HabitsTracker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

@@ -12,6 +12,15 @@ struct HabitView: View {
     @EnvironmentObject var dataController: DataController
     @ObservedObject var habit: Habit
 
+	let dateRange: ClosedRange<Date> = {
+		let calendar = Calendar.current
+		let startComponents = calendar.dateComponents([.year], from: .now)
+		let endComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: .distantFuture)
+		return calendar.date(from: startComponents)!
+			...
+			calendar.date(from: endComponents)!
+	}()
+
 	// Will show an alert telling the user the app is not authorized to send notifications.
 	@State private var showingNotificationError = false
 
@@ -61,11 +70,12 @@ struct HabitView: View {
                 }
             }
 
+			#if !os(watchOS)
 			Section("Reminders") {
 				Toggle("Show reminders", isOn: $habit.reminderEnabled.animation())
 
 				if habit.reminderEnabled {
-					DatePicker("Reminder date", selection: $habit.habitReminderDate)
+					DatePicker("Reminder date", selection: $habit.habitReminderDate, in: dateRange)
 
 					Picker("Repeat", selection: $habit.notificationFrequency) {
 						Text("Never").tag(Frequency.none.rawValue)
@@ -76,11 +86,12 @@ struct HabitView: View {
 					}
 				}
 			}
+			#endif
         }
 		.formStyle(.grouped)
         .disabled(habit.isDeleted)
         .onReceive(habit.objectWillChange) { _ in
-            dataController.queueSave()
+            dataController.save()
         }
         .onSubmit(dataController.save)
         .toolbar {
@@ -107,7 +118,7 @@ struct HabitView: View {
 		.onChange(of: habit.notificationFrequency) {
 			updateReminder()
 		}
-}
+	}
 
 	#if os(iOS)
 	/// Opens the Settings app.
@@ -124,7 +135,7 @@ struct HabitView: View {
 
 		Task { @MainActor in
 			if habit.reminderEnabled {
-				// Tries to set the reminder if it cant lets the user know.
+				// Tries to set the reminder if it can't lets the user know.
 				let success = await dataController.addReminder(for: habit)
 
 				if success == false {
@@ -134,7 +145,7 @@ struct HabitView: View {
 			} else {
 				#if !os(watchOS)
 				// Once the reminder is turned off we remove it from the badge count.
-				await dataController.removeFromBadgeCount(habit)
+				dataController.removeFromBadgeCount(habit)
 				#endif
 			}
 		}

@@ -14,6 +14,9 @@ struct StoreView: View {
 		case loading, loaded, error
 	}
 
+	#if os(visionOS)
+	@Environment(\.purchase) var purchaseAction
+	#endif
 	@EnvironmentObject var dataController: DataController
 	@Environment(\.dismiss) var dismiss
 
@@ -125,7 +128,7 @@ struct StoreView: View {
 		}
 	}
 
-	/// Starts the purchasing process iff the user is allowed to do so on there device.
+	/// Starts the purchasing process iff the user is allowed to do so on their device.
 	/// - Parameter product: The product to purchase.
 	func purchase(_ product: Product) {
 		guard AppStore.canMakePayments else {
@@ -134,7 +137,17 @@ struct StoreView: View {
 		}
 
 		Task { @MainActor in
+			#if os(visionOS)
+			let result = try? await purchaseAction(product)
+
+			if case let .success(validation) = result {
+				try? await dataController.finalize(validation.payloadValue)
+			}
+
+			#else
 			try? await dataController.purchase(product)
+			#endif
+
 		}
 	}
 

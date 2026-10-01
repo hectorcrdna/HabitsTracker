@@ -90,7 +90,15 @@ class DataController: ObservableObject {
 
 	/// Ask for a app review if the user has created 5 or more tags.
 	var shouldRequestReview: Bool {
-		return count(for: Tag.fetchRequest()) >= 5
+		if count(for: Tag.fetchRequest()) >= 5 {
+			let reviewRequestCount = UserDefaults.standard.integer(forKey: "reviewRequestCount")
+			UserDefaults.standard.set(reviewRequestCount + 1, forKey: "reviewRequestCount")
+
+			if reviewRequestCount.isMultiple(of: 10) {
+				return true
+			}
+		}
+		return false
 	}
 
 	/// The ManagedObjectModel for CoreData.
@@ -193,17 +201,7 @@ class DataController: ObservableObject {
 				#endif
 			}
 
-			// If we're running test in Debug we delete all data to start
-			// with a clean slate every time we launch and disabled
-			// animations to make UI Test faster.
-			#if DEBUG
-			if CommandLine.arguments.contains("enable-testing") {
-				self?.deleteAll()
-				#if os(iOS)
-				UIView.setAnimationsEnabled(false)
-				#endif
- 			}
-			#endif
+			self?.checkForTestEnvironment()
 		}
     }
 
@@ -213,33 +211,6 @@ class DataController: ObservableObject {
         objectWillChange.send()
     }
 
-	/// Creates 5 Tags and 10 Habits in each tag with random values for previewing
-	/// and testing purposes.
-    func createSampleData() {
-        let viewContext = container.viewContext
-
-        for tagCount in 1...5 {
-            let tag = Tag(context: viewContext)
-            tag.id = UUID()
-			let tagFormat = NSLocalizedString("Tag %lld", comment: "")
-			tag.name = String.localizedStringWithFormat(tagFormat, tagCount)
-
-            for habitCount in 1...10 {
-                let habit = Habit(context: viewContext)
-				let titleFormat = NSLocalizedString("Habit %lld-%lld", comment: "")
-				habit.title = String.localizedStringWithFormat(titleFormat, tagCount, habitCount)
-				let contentFormat = NSLocalizedString("Description of habit %lld-%lld", comment: "")
-				habit.content = String.localizedStringWithFormat(contentFormat, tagCount, habitCount)
-                habit.creationDate = .now
-                habit.completed = Bool.random()
-                habit.priority = Int16.random(in: 0...2)
-                tag.addToHabits(habit)
-            }
-        }
-
-        try? viewContext.save()
-    }
-
 	/// Saves any data only iff there has been changes.
     func save() {
 		// Cancels any save task that may be waiting so there are no multiple saves.
@@ -247,18 +218,10 @@ class DataController: ObservableObject {
 
         if container.viewContext.hasChanges {
             try? container.viewContext.save()
-			WidgetCenter.shared.reloadAllTimelines()
-        }
-    }
 
-	/// Queues the ``save()`` method to fire after 3 seconds.
-    func queueSave() {
-		// Cancels any save task that may be waiting so there are no multiple saves.
-        saveTask?.cancel()
-
-        saveTask = Task { @MainActor in
-            try await Task.sleep(for: .seconds(3))
-            save()
+			if #unavailable(visionOS 2.0) {
+				WidgetCenter.shared.reloadAllTimelines()
+			}
         }
     }
 
@@ -308,61 +271,6 @@ class DataController: ObservableObject {
         let difference = allTagsSet.symmetricDifference(habit.habitTags)
 
         return difference.sorted()
-    }
-
-	/// Filters out habits based on `SidebarView` filter selection, menu filter selection and search bar result.
-	/// - Returns: An filtered array of habits.
-    func habitsForSelectedFilter() -> [Habit] {
-        let filter = selectedFilter ?? .all
-        var predicates = [NSPredicate]()
-
-        if let tag = filter.tag {
-            let tagPredicate = NSPredicate(format: "tags CONTAINS %@", tag)
-            predicates.append(tagPredicate)
-
-        } else {
-            let datePredicate = NSPredicate(format: "modificationDate > %@", filter.minModificationDate as NSDate)
-            predicates.append(datePredicate)
-        }
-
-		// Gets the text from the search bar.
-        let trimmedFilterText = filterText.trimmingCharacters(in: .whitespaces)
-
-        if trimmedFilterText.isEmpty == false {
-            let titlePredicate = NSPredicate(format: "title CONTAINS[c] %@", trimmedFilterText)
-            let contentPredicate = NSPredicate(format: "content CONTAINS[c] %@", trimmedFilterText)
-
-            let combinedPredicate = NSCompoundPredicate(
-				orPredicateWithSubpredicates: [titlePredicate, contentPredicate]
-			)
-
-            predicates.append(combinedPredicate)
-        }
-
-        if filterTokens.isEmpty == false {
-            let tokenPredicate = NSPredicate(format: "ANY tags in %@", filterTokens)
-            predicates.append(tokenPredicate)
-        }
-
-        if filterEnabled {
-            if filterPriority >= 0 {
-                let priorityFilter = NSPredicate(format: "priority = %d", filterPriority)
-                predicates.append(priorityFilter)
-            }
-
-            if filterStatus != .all {
-                let lookForClosed = filterStatus == .closed
-                let statusFilter = NSPredicate(format: "completed = %@", NSNumber(value: lookForClosed))
-                predicates.append(statusFilter)
-            }
-        }
-
-        let request = Habit.fetchRequest()
-        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
-        request.sortDescriptors = [NSSortDescriptor(key: sortType.rawValue, ascending: sortNewestFirst)]
-
-        let allHabits = results(for: request)
-        return allHabits
     }
 
 	/// Checks the version of the app and allows a maximum of 3 tags made
@@ -459,5 +367,4 @@ class DataController: ObservableObject {
 			selectedFilter = .all
 		}
 	}
-	// swiftlint:disable:next file_length
 }

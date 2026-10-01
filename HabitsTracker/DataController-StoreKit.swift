@@ -41,6 +41,7 @@ extension DataController {
 		}
 	}
 
+	#if !os(visionOS)
 	/// Try's to make the purchase of a product.
 	/// - Parameter product: The product being bought.
 	func purchase(_ product: Product) async throws {
@@ -50,7 +51,7 @@ extension DataController {
 			try await finalize(validation.payloadValue)
 		}
 	}
-
+	#endif
 	/// Finalizes a purchase made by unlocking the product bought.
 	/// - Parameter transaction: The transaction made past or present.
 	@MainActor

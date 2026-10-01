@@ -18,6 +18,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8BF560863066EADE00AC530C"
                BuildableName = "TrackerWidgetExtension.appex"
+               BlueprintName = "TrackerWidgetExtension"
                ReferencedContainer = "container:HabitsTracker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -64,6 +65,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8BF560863066EADE00AC530C"
             BuildableName = "TrackerWidgetExtension.appex"
+            BlueprintName = "TrackerWidgetExtension"
             ReferencedContainer = "container:HabitsTracker.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>

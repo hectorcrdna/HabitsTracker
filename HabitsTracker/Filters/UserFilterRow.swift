@@ -20,20 +20,20 @@ struct UserFilterRow: View {
         NavigationLink(value: filter) {
             Label(filter.name, systemImage: filter.icon)
                 .numberBadge(filter.activeHabitsCount)
-                .contextMenu {
-                    Button {
-                        rename(filter)
-                    } label: {
-                        Label("Rename", systemImage: "pencil")
-                    }
+				.actionButtons {
+					Button {
+						rename(filter)
+					} label: {
+						Label("Rename", systemImage: "pencil")
+					}
 
-                    Button(role: .destructive) {
-                        delete(filter)
-                    } label: {
-                        Label("Delete", systemImage: "trash")
-                    }
-                }
-                .accessibilityElement()
+					Button(role: .destructive) {
+						delete(filter)
+					} label: {
+						Label("Delete", systemImage: "trash")
+					}
+				}
+				.accessibilityElement()
                 .accessibilityLabel(filter.name)
                 .accessibilityHint("\(filter.activeHabitsCount) habits")
         }

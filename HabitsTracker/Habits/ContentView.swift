@@ -71,6 +71,10 @@ struct ContentView: View {
 
         for offset in offsets {
             let habit = habits[offset]
+			dataController.removeReminders(for: habit)
+			#if !os(watchOS)
+			dataController.removeFromBadgeCount(habit)
+			#endif
             dataController.delete(habit)
         }
     }
