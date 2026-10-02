@@ -120,6 +120,12 @@
 		8BF5616A306D7D4A00AC530C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BF56167306D7D1500AC530C /* Assets.xcassets */; };
 		8BF5616B306D7D4A00AC530C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BF56167306D7D1500AC530C /* Assets.xcassets */; };
 		8BF5616E306D821E00AC530C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BF56167306D7D1500AC530C /* Assets.xcassets */; };
+		8BF56170306EF10900AC530C /* NotificationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5616F306EF10900AC530C /* NotificationsDelegate.swift */; };
+		8BF56171306EF10900AC530C /* NotificationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5616F306EF10900AC530C /* NotificationsDelegate.swift */; };
+		8BF56172306EF10900AC530C /* NotificationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5616F306EF10900AC530C /* NotificationsDelegate.swift */; };
+		8BF56173306EF10900AC530C /* NotificationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5616F306EF10900AC530C /* NotificationsDelegate.swift */; };
+		8BF56174306EF10900AC530C /* NotificationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5616F306EF10900AC530C /* NotificationsDelegate.swift */; };
+		8BF56175306EF10900AC530C /* NotificationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5616F306EF10900AC530C /* NotificationsDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -249,6 +255,7 @@
 		8BF5614E306D4DD500AC530C /* ActionButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtons.swift; sourceTree = "<group>"; };
 		8BF5615C306D76D500AC530C /* CompleteIncompleteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteIncompleteButtonView.swift; sourceTree = "<group>"; };
 		8BF56167306D7D1500AC530C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BF5616F306EF10900AC530C /* NotificationsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -397,6 +404,7 @@
 				8B202CF83039F1EC00885BA1 /* HabitsTrackerApp.swift */,
 				8BF560583064EE5E00AC530C /* AppDelegate.swift */,
 				8BF5605A3064EE8E00AC530C /* SceneDelegate.swift */,
+				8BF5616F306EF10900AC530C /* NotificationsDelegate.swift */,
 				8B202D00303B1A4900885BA1 /* DataController.swift */,
 				8BF56140306D4BC600AC530C /* DataController-FilterAndSearch.swift */,
 				8BF56139306D4B3A00AC530C /* DataController-SampleData.swift */,
@@ -836,6 +844,7 @@
 				8B202D05303B4AC500885BA1 /* SidebarView.swift in Sources */,
 				8B202D383045B4C700885BA1 /* SidebarViewToolbar.swift in Sources */,
 				8B202D3A3045B81900885BA1 /* HabitViewToolbar.swift in Sources */,
+				8BF56170306EF10900AC530C /* NotificationsDelegate.swift in Sources */,
 				8BF56111306AE30500AC530C /* NumberBadge.swift in Sources */,
 				8B202D133040130000885BA1 /* NoHabitView.swift in Sources */,
 				8B202D423045C94900885BA1 /* UserFilterRow.swift in Sources */,
@@ -852,6 +861,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BF56172306EF10900AC530C /* NotificationsDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -859,6 +869,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BF56173306EF10900AC530C /* NotificationsDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -871,6 +882,7 @@
 				8BF560A13066EC8A00AC530C /* Filter.swift in Sources */,
 				8BF5609D3066EBF600AC530C /* Main.xcdatamodeld in Sources */,
 				8BF56165306D787800AC530C /* DataController-Testing.swift in Sources */,
+				8BF56174306EF10900AC530C /* NotificationsDelegate.swift in Sources */,
 				8BF5609E3066EC2500AC530C /* DataController.swift in Sources */,
 				8BF5609F3066EC2F00AC530C /* Tag-CoreDataHelpers.swift in Sources */,
 				8BF560A03066EC2F00AC530C /* Habit-CoreDataHelpers.swift in Sources */,
@@ -885,6 +897,7 @@
 				8BF56164306D785B00AC530C /* DataController-SampleData.swift in Sources */,
 				8BF560CA306987C700AC530C /* Habit-CoreDataHelpers.swift in Sources */,
 				8BF56166306D787800AC530C /* DataController-Testing.swift in Sources */,
+				8BF56175306EF10900AC530C /* NotificationsDelegate.swift in Sources */,
 				8BF560C33069865100AC530C /* DataController.swift in Sources */,
 				8BF560C43069865100AC530C /* Tag-CoreDataHelpers.swift in Sources */,
 				8BF560C83069865C00AC530C /* Main.xcdatamodeld in Sources */,
@@ -925,6 +938,7 @@
 				8BF56101306ADEF600AC530C /* HabitView.swift in Sources */,
 				8BF56102306ADEF600AC530C /* DataController-StoreKit.swift in Sources */,
 				8BF56103306ADEF600AC530C /* Habit-CoreDataHelpers.swift in Sources */,
+				8BF56171306EF10900AC530C /* NotificationsDelegate.swift in Sources */,
 				8BF56112306AE30500AC530C /* NumberBadge.swift in Sources */,
 				8BF56104306ADEF600AC530C /* AwardsView.swift in Sources */,
 				8BF5610C306ADF1600AC530C /* Main.xcdatamodeld in Sources */,

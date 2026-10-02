@@ -32,6 +32,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8B202CE73039F1CD00885BA1"
                BuildableName = "HabitsTracker.app"
+               BlueprintName = "HabitsTracker"
                ReferencedContainer = "container:HabitsTracker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -63,6 +64,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B202CE73039F1CD00885BA1"
             BuildableName = "HabitsTracker.app"
+            BlueprintName = "HabitsTracker"
             ReferencedContainer = "container:HabitsTracker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -98,6 +100,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B202CE73039F1CD00885BA1"
             BuildableName = "HabitsTracker.app"
+            BlueprintName = "HabitsTracker"
             ReferencedContainer = "container:HabitsTracker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

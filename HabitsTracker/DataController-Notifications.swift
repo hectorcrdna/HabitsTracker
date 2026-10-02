@@ -96,6 +96,8 @@ extension DataController {
 		)
 
 		let id = habit.objectID.uriRepresentation().absoluteString
+		content.userInfo = ["id": id]
+
 		let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
 
 		return try await center.add(request)

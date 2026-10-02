@@ -53,6 +53,9 @@ class DataController: ObservableObject {
 	var spotlightDelegate: NSCoreDataCoreSpotlightDelegate?
 	#endif
 
+	/// The Notifications delegate responsible for the user selected action on a notification.
+	var notificationsDelegate: NotificationsDelegate?
+
 	/// The current Filter selected by the user in SidebarView List.
     @Published var selectedFilter: Filter? = .all
 
@@ -78,9 +81,6 @@ class DataController: ObservableObject {
 
 	/// The Task that monitors transactions in our app.
 	private var storeTask: Task<Void, Never>?
-
-	/// The Task that handles saving for the ``queueSave()`` Method.
-    private var saveTask: Task<Void, Error>?
 
 	/// The UserDefaults suite where were saving user data.
 	let defaults: UserDefaults
@@ -146,6 +146,7 @@ class DataController: ObservableObject {
 	/// discarded once the app finishes, used for previewing purposes. Defaults to `false`.
 	/// - Parameter defaults: The UserDefaults where user data should be stored.
 	init(inMemory: Bool = false, defaults: UserDefaults = .standard) {
+
 		self.defaults = defaults
 		// Container initialized with the static property 'model' to avoid crash error.
 		container = NSPersistentCloudKitContainer(name: "Main", managedObjectModel: Self.model)
@@ -203,6 +204,9 @@ class DataController: ObservableObject {
 
 			self?.checkForTestEnvironment()
 		}
+
+		notificationsDelegate = NotificationsDelegate(controller: self)
+		UNUserNotificationCenter.current().delegate = notificationsDelegate
     }
 
 	/// Tells the UI there has been remote changes, fired by the observer added to ``init(inMemory:)``.
@@ -213,9 +217,6 @@ class DataController: ObservableObject {
 
 	/// Saves any data only iff there has been changes.
     func save() {
-		// Cancels any save task that may be waiting so there are no multiple saves.
-        saveTask?.cancel()
-
         if container.viewContext.hasChanges {
             try? container.viewContext.save()
 
