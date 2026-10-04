@@ -147,6 +147,7 @@ struct HabitView: View {
 				// Once the reminder is turned off we remove it from the badge count.
 				dataController.removeFromBadgeCount(habit)
 				#endif
+				habit.reminderDate = nil
 			}
 		}
 	}

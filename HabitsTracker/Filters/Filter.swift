@@ -19,7 +19,7 @@ struct Filter: Identifiable, Hashable {
         tag?.tagActiveHabits.count ?? 0
     }
 
-	// The two static properties are made to act as "Smart Filters" in `SidebarView`,
+	// The three static properties are made to act as "Smart Filters" in `SidebarView`,
 	// all other filters are generated in `SidebarView` as `tagFilters`.
     static var all = Filter(
 		id: UUID(),
@@ -32,6 +32,12 @@ struct Filter: Identifiable, Hashable {
 		name: "Recent Habits",
 		icon: "clock",
 		minModificationDate: .now.addingTimeInterval(86400 * -7)
+	)
+
+	static var pastDue = Filter(
+		id: UUID(),
+		name: "Past Due Habits",
+		icon: "calendar.badge.exclamationmark"
 	)
 
     func hash(into hasher: inout Hasher) {

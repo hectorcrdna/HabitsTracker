@@ -25,6 +25,8 @@
 "All Habits" = "Todos Los Hábitos";
 //Row "Recent Habits" title.
 "Recent Habits" = "Hábitos Recientes";
+//Row "Past Due Habits" title.
+"Past Due Habits" = "Hábitos Pendientes";
 
 //List group title "Tags".
 "Tags" = "Etiquetas";

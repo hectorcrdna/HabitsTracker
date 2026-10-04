@@ -23,6 +23,7 @@ struct HabitRow: View {
                     Text(habit.habitTitle)
                         .font(.headline)
                         .lineLimit(1)
+						.foregroundStyle(habit.habitReminderDate < Date.now ? .red : .primary)
 
                     Text(habit.habitTagsList)
                         .foregroundStyle(.secondary)

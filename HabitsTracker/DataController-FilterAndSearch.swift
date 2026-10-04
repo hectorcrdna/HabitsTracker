@@ -19,6 +19,10 @@ extension DataController {
 			let tagPredicate = NSPredicate(format: "tags CONTAINS %@", tag)
 			predicates.append(tagPredicate)
 
+		} else if filter == .pastDue {
+			let pastDuePredicate = NSPredicate(format: "reminderDate < %@", Date.now as NSDate)
+			predicates.append(pastDuePredicate)
+
 		} else {
 			let datePredicate = NSPredicate(format: "modificationDate > %@", filter.minModificationDate as NSDate)
 			predicates.append(datePredicate)
