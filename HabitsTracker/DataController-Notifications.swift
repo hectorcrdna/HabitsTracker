@@ -10,6 +10,28 @@ import Foundation
 import UserNotifications
 
 extension DataController {
+	/// Acts on the selection of the reminders toggle to add a reminder when turned on.
+	func updateNotifications(for habit: Habit) async -> (addReminder: Bool, removedBadge: Bool) {
+		// Removes any reminders in the system so there are no multiple reminders.
+		removeReminders(for: habit)
+
+		if habit.reminderEnabled && habit.completed == false {
+			// Tries to set the reminder if it can't lets the user know.
+			if await addReminder(for: habit) {
+				return (true, false)
+			}
+
+		} else {
+			#if !os(watchOS)
+			// Once the reminder is turned off we remove it from the badge count.
+			removeFromBadgeCount(habit)
+			#endif
+
+			return (false, true)
+		}
+		return (false, false)
+	}
+
 	/// Adds a notification iff allowed by the user.
 	///
 	/// If the user has never added a reminder the app will request permission to send notifications.
@@ -92,7 +114,7 @@ extension DataController {
 
 		let trigger = UNCalendarNotificationTrigger(
 			dateMatching: dateComponents,
-			repeats: habit.notificationFrequency != Frequency.none.rawValue
+			repeats: false
 		)
 
 		let id = habit.objectID.uriRepresentation().absoluteString
@@ -106,7 +128,7 @@ extension DataController {
 	/// Chooses the right date components from the time, date and frequency the user wants to be reminded of a habit.
 	/// - Parameter habit: The habit to remind the user of.
 	/// - Returns: `DateComponents` for the use of a notification request.
-	private func notificationFrequency(for habit: Habit) -> DateComponents {
+	func notificationFrequency(for habit: Habit) -> DateComponents {
 		let calendar = Calendar.current
 
 		switch habit.notificationFrequency {

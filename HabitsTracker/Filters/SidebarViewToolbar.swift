@@ -36,16 +36,16 @@ struct SidebarViewToolbar: ToolbarContent {
 			}
 		}
 
-//		#if DEBUG
-//		ToolbarItem(placement: .automatic) {
-//			Button {
-//				dataController.deleteAll()
-//				dataController.createSampleData()
-//			} label: {
-//				Label("Add Samples", systemImage: "flame")
-//			}
-//		}
-//		#endif
+		#if DEBUG
+		ToolbarItem(placement: .automatic) {
+			Button {
+				dataController.deleteAll()
+				dataController.createSampleData()
+			} label: {
+				Label("Add Samples", systemImage: "flame")
+			}
+		}
+		#endif
     }
 
 	func tryNewTag() {

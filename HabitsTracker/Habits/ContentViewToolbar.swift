@@ -59,10 +59,12 @@ struct ContentViewToolbar: View {
 		.help("Filter")
 		#endif
 
-        Button(action: dataController.newHabit) {
-            Label("New Habit", systemImage: "square.and.pencil")
-        }
-		.help("New Habit")
+		if dataController.selectedFilter != .pastDue {
+			Button(action: dataController.newHabit) {
+				Label("New Habit", systemImage: "square.and.pencil")
+			}
+			.help("New Habit")
+		}
     }
 }
 

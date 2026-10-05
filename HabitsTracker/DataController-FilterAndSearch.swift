@@ -20,8 +20,14 @@ extension DataController {
 			predicates.append(tagPredicate)
 
 		} else if filter == .pastDue {
+			let enabledPredicate = NSPredicate(format: "reminderEnabled = %@", NSNumber(value: true))
 			let pastDuePredicate = NSPredicate(format: "reminderDate < %@", Date.now as NSDate)
-			predicates.append(pastDuePredicate)
+			let completedPredicate = NSPredicate(format: "completed = %@", NSNumber(value: false))
+
+			let combinedPredicate = NSCompoundPredicate(
+				andPredicateWithSubpredicates: [completedPredicate, pastDuePredicate, enabledPredicate]
+			)
+			predicates.append(combinedPredicate)
 
 		} else {
 			let datePredicate = NSPredicate(format: "modificationDate > %@", filter.minModificationDate as NSDate)

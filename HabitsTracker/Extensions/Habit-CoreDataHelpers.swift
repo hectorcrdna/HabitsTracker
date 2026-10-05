@@ -29,7 +29,11 @@ extension Habit {
     }
 
 	var habitReminderDate: Date {
-		get { reminderDate ?? .now }
+		get {
+			let calendar = Calendar.current
+			let next = calendar.component(.hour, from: .now).advanced(by: 1)
+			return reminderDate ?? calendar.date(bySetting: .hour, value: next, of: .now) ?? .now
+		}
 		set { reminderDate = newValue }
 	}
 

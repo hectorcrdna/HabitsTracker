@@ -50,7 +50,7 @@ struct ContentView: View {
         }
 		#endif
         .toolbar {
-            ContentViewToolbar()
+			ContentViewToolbar()
         }
 		.onAppear(perform: askForReview)
 		.onOpenURL(perform: dataController.openURL)

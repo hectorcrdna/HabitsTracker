@@ -17,7 +17,7 @@ struct HabitRowWatch: View {
 				Text(habit.habitTitle)
 					.font(.headline)
 					.lineLimit(1)
-					.foregroundStyle(habit.habitReminderDate < Date.now ? .red : .primary)
+					.pastDueForegroundStyle(for: habit)
 
 				Text(habit.habitCreationDate.formatted(date: .numeric, time: .omitted))
 					.font(.subheadline)

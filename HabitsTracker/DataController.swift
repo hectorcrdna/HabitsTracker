@@ -10,6 +10,7 @@ import CoreData
 import StoreKit
 import SwiftUI
 import WidgetKit
+import UserNotifications
 
 // IMPORTANT: The raw values directly match CoreData's property names,
 // do not change one without changing the other.
@@ -314,6 +315,29 @@ class DataController: ObservableObject {
 
         selectedHabit = habit
     }
+
+	func copy(_ habit: Habit) -> Habit {
+		let habitCopy = Habit(context: container.viewContext)
+		habitCopy.completed = false
+		habitCopy.content = habit.content
+		habitCopy.creationDate = habit.creationDate
+		habitCopy.notificationFrequency = habit.notificationFrequency
+		habitCopy.priority = habit.priority
+
+		let calendar = Calendar.current
+		habitCopy.reminderDate = calendar.nextDate(after: habit.habitReminderDate,
+												   matching: notificationFrequency(for: habit),
+												   matchingPolicy: .strict
+		)
+
+		habitCopy.reminderEnabled = true
+		habitCopy.title = habit.title
+		habitCopy.tags = habit.tags
+		save()
+		habit.successorID = habitCopy.objectID.uriRepresentation()
+
+		return habitCopy
+	}
 
 	/// Counts the total amount of Tags or Habits saved.
 	///

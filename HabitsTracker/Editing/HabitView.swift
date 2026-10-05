@@ -70,12 +70,20 @@ struct HabitView: View {
                 }
             }
 
-			#if !os(watchOS)
 			Section("Reminders") {
 				Toggle("Show reminders", isOn: $habit.reminderEnabled.animation())
 
 				if habit.reminderEnabled {
-					DatePicker("Reminder date", selection: $habit.habitReminderDate, in: dateRange)
+					DatePicker("Reminder date",
+							   selection: $habit.habitReminderDate,
+							   in: dateRange,
+							   displayedComponents: .date
+					)
+					DatePicker("Reminder time",
+							   selection: $habit.habitReminderDate,
+							   in: dateRange,
+							   displayedComponents: .hourAndMinute
+					)
 
 					Picker("Repeat", selection: $habit.notificationFrequency) {
 						Text("Never").tag(Frequency.none.rawValue)
@@ -86,11 +94,10 @@ struct HabitView: View {
 					}
 				}
 			}
-			#endif
         }
 		.formStyle(.grouped)
         .disabled(habit.isDeleted)
-        .onReceive(habit.objectWillChange) { _ in
+        .onReceive(habit.objectWillChange) {
             dataController.save()
         }
         .onSubmit(dataController.save)
@@ -109,14 +116,30 @@ struct HabitView: View {
 		} message: {
 			Text("There was a problem setting your notification. Please check you have notifications enabled.")
 		}
-		.onChange(of: habit.reminderEnabled) {
-			updateReminder()
+		.onChange(of: habit.completed) { _, newValue in
+			if newValue {
+				if habit.notificationFrequency != Frequency.none.rawValue {
+					if let idString = habit.successorID?.absoluteString {
+						if dataController.habit(with: idString) != nil {
+							return updateReminder(for: habit)
+						}
+					}
+					return updateReminder(for: dataController.copy(habit))
+				}
+			}
+			updateReminder(for: habit)
 		}
-		.onChange(of: habit.reminderDate) {
-			updateReminder()
+		.onChange(of: habit.reminderEnabled) { _, newValue in
+			if newValue == false {
+				habit.reminderDate = nil
+			}
+			updateReminder(for: habit)
+		}
+		.onChange(of: habit.habitReminderDate) {
+			updateReminder(for: habit)
 		}
 		.onChange(of: habit.notificationFrequency) {
-			updateReminder()
+			updateReminder(for: habit)
 		}
 	}
 
@@ -129,25 +152,12 @@ struct HabitView: View {
 	#endif
 
 	/// Acts on the selection of the reminders toggle to add a reminder when turned on.
-	func updateReminder() {
-		// Removes any reminders in the system so there are no multiple reminders.
-		dataController.removeReminders(for: habit)
-
-		Task { @MainActor in
-			if habit.reminderEnabled {
-				// Tries to set the reminder if it can't lets the user know.
-				let success = await dataController.addReminder(for: habit)
-
-				if success == false {
-					habit.reminderEnabled = false
-					showingNotificationError = true
-				}
-			} else {
-				#if !os(watchOS)
-				// Once the reminder is turned off we remove it from the badge count.
-				dataController.removeFromBadgeCount(habit)
-				#endif
-				habit.reminderDate = nil
+	func updateReminder(for habit: Habit) {
+		Task {
+			let (addNotification, removeBadge) = await dataController.updateNotifications(for: habit)
+			if (addNotification, removeBadge) == (false, false) {
+				habit.reminderEnabled = false
+				showingNotificationError = true
 			}
 		}
 	}
