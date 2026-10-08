@@ -11,6 +11,18 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var dataController: DataController
+
+    var deferredBinding: Binding<Habit?> {
+        Binding(
+            get: { dataController.selectedHabit },
+            set: { newValue in
+                DispatchQueue.main.async {
+                    dataController.selectedHabit = newValue
+                }
+            }
+        )
+    }
+
 	#if !os(watchOS)
 	@Environment(\.requestReview) var requestReview
 	#endif
@@ -18,7 +30,7 @@ struct ContentView: View {
 	private let newHabitActivity = "Cardona.Figueroa.Hector.HabitsTracker.NewHabit"
 
     var body: some View {
-        List(selection: $dataController.selectedHabit) {
+        List(selection: deferredBinding) {
             ForEach(dataController.habitsForSelectedFilter()) { habit in
 				#if os(watchOS)
 				HabitRowWatch(habit: habit)

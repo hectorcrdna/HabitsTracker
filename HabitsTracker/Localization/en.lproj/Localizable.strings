@@ -151,6 +151,7 @@
 "There was a problem setting your notification. Please check you have notifications enabled." = "There was a problem setting your notification. Please check you have notifications enabled.";
 "Check Settings" = "Check Settings";
 "Reminder date" = "Reminder date";
+"Reminder time" = "Reminder time";
 "Repeat" = "Repeat";
 "Never" = "Never";
 "Daily" = "Daily";

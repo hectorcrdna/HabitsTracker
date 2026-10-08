@@ -154,6 +154,10 @@ struct HabitView: View {
 	/// Acts on the selection of the reminders toggle to add a reminder when turned on.
 	func updateReminder(for habit: Habit) {
 		Task {
+            defer {
+                dataController.save()
+            }
+
 			let (addNotification, removeBadge) = await dataController.updateNotifications(for: habit)
 			if (addNotification, removeBadge) == (false, false) {
 				habit.reminderEnabled = false

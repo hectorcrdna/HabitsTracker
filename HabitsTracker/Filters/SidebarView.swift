@@ -11,6 +11,17 @@ import SwiftUI
 struct SidebarView: View {
     @EnvironmentObject var dataController: DataController
 
+    var deferredBinding: Binding<Filter?> {
+        Binding(
+            get: { dataController.selectedFilter },
+            set: { newValue in
+                DispatchQueue.main.async {
+                    dataController.selectedFilter = newValue
+                }
+            }
+        )
+    }
+
     @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var tags: FetchedResults<Tag>
 
     @State private var tagToRename: Tag?
@@ -26,7 +37,7 @@ struct SidebarView: View {
     }
 
     var body: some View {
-        List(selection: $dataController.selectedFilter) {
+        List(selection: deferredBinding) {
             Section("Smart Filters") {
 				ForEach(smartFilters) { filter in
 					SmartFilterRow(filter: filter)

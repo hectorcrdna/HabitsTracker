@@ -149,6 +149,7 @@
 "There was a problem setting your notification. Please check you have notifications enabled." = "Hubo un problema al configurar tu notificación. Por favor, asegúrate de tener las notificaciones activadas.";
 "Check Settings" = "Revisar la configuración";
 "Reminder date" = "Día del recordatorio";
+"Reminder time" = "Tiempo del recordatorio";
 "Repeat" = "Repetir";
 "Never" = "Nunca";
 "Daily" = "Diario";
