@@ -31,6 +31,11 @@
 //List group title "Tags".
 "Tags" = "Tags";
 
+// New tag alert title.
+"Create New Tag" = "Create New Tag";
+// New tag alert textfield.
+"Name" = "Name";
+
 //New tag default title.
 "New tag" = "New tag";
 

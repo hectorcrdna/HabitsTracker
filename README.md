@@ -1,3 +1,3 @@
 # HabitsTracker
 
-This is my first portfolio app project.
+Help create and stay on top of new habits with squeduled reminders.

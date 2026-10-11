@@ -32,6 +32,12 @@
 		8B202D3E3045C68E00885BA1 /* TagsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D3D3045C68E00885BA1 /* TagsMenuView.swift */; };
 		8B202D403045C87600885BA1 /* SmartFilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D3F3045C87600885BA1 /* SmartFilterRow.swift */; };
 		8B202D423045C94900885BA1 /* UserFilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202D413045C94900885BA1 /* UserFilterRow.swift */; };
+		8B3CED593077D7E100F9F3B4 /* DataController-Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2F948305DE1C600879725 /* DataController-Notifications.swift */; };
+		8B3CED5A3077D7E100F9F3B4 /* DataController-Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2F948305DE1C600879725 /* DataController-Notifications.swift */; };
+		8B3CED5C3077D80900F9F3B4 /* PastDueForegroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3CED5B3077D80900F9F3B4 /* PastDueForegroundStyle.swift */; };
+		8B3CED5D3077D80900F9F3B4 /* PastDueForegroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3CED5B3077D80900F9F3B4 /* PastDueForegroundStyle.swift */; };
+		8B3CED5E3077D80900F9F3B4 /* PastDueForegroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3CED5B3077D80900F9F3B4 /* PastDueForegroundStyle.swift */; };
+		8B3CED5F3077D80900F9F3B4 /* PastDueForegroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3CED5B3077D80900F9F3B4 /* PastDueForegroundStyle.swift */; };
 		8BD2F949305DE1C600879725 /* DataController-Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2F948305DE1C600879725 /* DataController-Notifications.swift */; };
 		8BD2F94B3060318700879725 /* StoreKitConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 8BD2F94A3060318700879725 /* StoreKitConfiguration.storekit */; };
 		8BD2F94D3060338700879725 /* DataController-StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2F94C3060338700879725 /* DataController-StoreKit.swift */; };
@@ -227,6 +233,7 @@
 		8B202D3D3045C68E00885BA1 /* TagsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsMenuView.swift; sourceTree = "<group>"; };
 		8B202D3F3045C87600885BA1 /* SmartFilterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartFilterRow.swift; sourceTree = "<group>"; };
 		8B202D413045C94900885BA1 /* UserFilterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFilterRow.swift; sourceTree = "<group>"; };
+		8B3CED5B3077D80900F9F3B4 /* PastDueForegroundStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastDueForegroundStyle.swift; sourceTree = "<group>"; };
 		8BD2F948305DE1C600879725 /* DataController-Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController-Notifications.swift"; sourceTree = "<group>"; };
 		8BD2F94A3060318700879725 /* StoreKitConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; name = StoreKitConfiguration.storekit; path = HabitsTracker/StoreKitConfiguration.storekit; sourceTree = SOURCE_ROOT; };
 		8BD2F94C3060338700879725 /* DataController-StoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController-StoreKit.swift"; sourceTree = "<group>"; };
@@ -453,6 +460,7 @@
 				8B202D3B3045B97E00885BA1 /* ContentViewToolbar.swift */,
 				8B202D0E303F43A200885BA1 /* HabitRow.swift */,
 				8BF56115306AF0FA00AC530C /* HabitRowWatch.swift */,
+				8B3CED5B3077D80900F9F3B4 /* PastDueForegroundStyle.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -840,6 +848,7 @@
 				8BF56141306D4BC600AC530C /* DataController-FilterAndSearch.swift in Sources */,
 				8BF560A93069803400AC530C /* InlineNavigationBar.swift in Sources */,
 				8BF56116306AF0FA00AC530C /* HabitRowWatch.swift in Sources */,
+				8B3CED5D3077D80900F9F3B4 /* PastDueForegroundStyle.swift in Sources */,
 				8B202D3C3045B97E00885BA1 /* ContentViewToolbar.swift in Sources */,
 				8B202D05303B4AC500885BA1 /* SidebarView.swift in Sources */,
 				8B202D383045B4C700885BA1 /* SidebarViewToolbar.swift in Sources */,
@@ -880,7 +889,9 @@
 				8BF560A43066EE0500AC530C /* DataController-StoreKit.swift in Sources */,
 				8BF56163306D785B00AC530C /* DataController-SampleData.swift in Sources */,
 				8BF560A13066EC8A00AC530C /* Filter.swift in Sources */,
+				8B3CED5E3077D80900F9F3B4 /* PastDueForegroundStyle.swift in Sources */,
 				8BF5609D3066EBF600AC530C /* Main.xcdatamodeld in Sources */,
+				8B3CED593077D7E100F9F3B4 /* DataController-Notifications.swift in Sources */,
 				8BF56165306D787800AC530C /* DataController-Testing.swift in Sources */,
 				8BF56174306EF10900AC530C /* NotificationsDelegate.swift in Sources */,
 				8BF5609E3066EC2500AC530C /* DataController.swift in Sources */,
@@ -896,7 +907,9 @@
 				8BF560C03069865100AC530C /* Filter.swift in Sources */,
 				8BF56164306D785B00AC530C /* DataController-SampleData.swift in Sources */,
 				8BF560CA306987C700AC530C /* Habit-CoreDataHelpers.swift in Sources */,
+				8B3CED5F3077D80900F9F3B4 /* PastDueForegroundStyle.swift in Sources */,
 				8BF56166306D787800AC530C /* DataController-Testing.swift in Sources */,
+				8B3CED5A3077D7E100F9F3B4 /* DataController-Notifications.swift in Sources */,
 				8BF56175306EF10900AC530C /* NotificationsDelegate.swift in Sources */,
 				8BF560C33069865100AC530C /* DataController.swift in Sources */,
 				8BF560C43069865100AC530C /* Tag-CoreDataHelpers.swift in Sources */,
@@ -934,6 +947,7 @@
 				8BF56142306D4BC600AC530C /* DataController-FilterAndSearch.swift in Sources */,
 				8BF560FF306ADEF600AC530C /* SidebarViewToolbar.swift in Sources */,
 				8BF56117306AF0FA00AC530C /* HabitRowWatch.swift in Sources */,
+				8B3CED5C3077D80900F9F3B4 /* PastDueForegroundStyle.swift in Sources */,
 				8BF56100306ADEF600AC530C /* HabitsTrackerApp.swift in Sources */,
 				8BF56101306ADEF600AC530C /* HabitView.swift in Sources */,
 				8BF56102306ADEF600AC530C /* DataController-StoreKit.swift in Sources */,

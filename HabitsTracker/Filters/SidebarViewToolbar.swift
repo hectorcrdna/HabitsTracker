@@ -9,9 +9,11 @@ import SwiftUI
 
 struct SidebarViewToolbar: ToolbarContent {
     @EnvironmentObject var dataController: DataController
-	@State private var showingStore = false
 
+	@State private var showingStore = false
     @State private var showingAwards = false
+    @State private var showingNewTagAlert = false
+    @State private var newTagName = ""
 
     var body: some ToolbarContent {
 		ToolbarItem(placement: .automaticOrTrailing) {
@@ -21,6 +23,13 @@ struct SidebarViewToolbar: ToolbarContent {
 			.sheet(isPresented: $showingStore) {
 				StoreView()
 			}
+            .alert("Create New Tag", isPresented: $showingNewTagAlert) {
+                Button("OK") {
+                    dataController.newTag(named: newTagName)
+                }
+                Button("Cancel", role: .cancel) { }
+                TextField("Name", text: $newTagName)
+            }
 			.help("Add tag")
 		}
 
@@ -49,8 +58,10 @@ struct SidebarViewToolbar: ToolbarContent {
     }
 
 	func tryNewTag() {
-		if dataController.newTag() == false {
-			showingStore = true
-		}
+		if dataController.shouldCreateTag() {
+			showingNewTagAlert = true
+        } else {
+            showingStore = true
+        }
 	}
 }

@@ -275,10 +275,19 @@ class DataController: ObservableObject {
         return difference.sorted()
     }
 
-	/// Checks the version of the app and allows a maximum of 3 tags made
+    /// Creates a new tag with the given name.
+    /// - Parameter named: The name for the Tag.
+    func newTag(named: String) {
+        let tag = Tag(context: container.viewContext)
+        tag.id = UUID()
+        tag.name = NSLocalizedString(named, comment: "Create a new tag.")
+        save()
+    }
+
+    /// Checks the version of the app and allows a maximum of 3 tags made
 	/// if the user has not bought the full version.
-	/// - Returns: Returns `True` if the tag was successfully created.
-    func newTag() -> Bool {
+	/// - Returns: Returns `True` if the full version was bougth.
+    func shouldCreateTag() -> Bool {
 		var shouldCreate = fullVersionUnlocked
 
 		if shouldCreate == false {
@@ -288,11 +297,6 @@ class DataController: ObservableObject {
 		guard shouldCreate else {
 			return false
 		}
-
-        let tag = Tag(context: container.viewContext)
-        tag.id = UUID()
-        tag.name = NSLocalizedString("New tag", comment: "Create a new tag.")
-        save()
 
 		return true
     }
