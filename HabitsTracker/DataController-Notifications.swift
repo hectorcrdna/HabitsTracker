@@ -11,14 +11,14 @@ import UserNotifications
 
 extension DataController {
 	/// Acts on the selection of the reminders toggle to add a reminder when turned on.
-	func updateNotifications(for habit: Habit) async -> (addReminder: Bool, removedBadge: Bool) {
+	func updateNotifications(for habit: Habit) async -> Bool {
 		// Removes any reminders in the system so there are no multiple reminders.
 		removeReminders(for: habit)
 
 		if habit.reminderEnabled && habit.completed == false {
 			// Tries to set the reminder if it can't lets the user know.
 			if await addReminder(for: habit) {
-				return (true, false)
+				return true
 			}
 
 		} else {
@@ -27,9 +27,9 @@ extension DataController {
 			removeFromBadgeCount(habit)
 			#endif
 
-			return (false, true)
+			return true
 		}
-		return (false, false)
+		return false
 	}
 
 	/// Adds a notification iff allowed by the user.
@@ -87,6 +87,7 @@ extension DataController {
 		}
 	}
 	#endif
+    
 	/// Requests permission to send the user "alerts, badge and sounds" notifications.
 	/// - Returns: `true` if authorized by the user, otherwise `false`.
 	private func requestNotification() async throws -> Bool {

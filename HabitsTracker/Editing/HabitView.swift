@@ -158,8 +158,7 @@ struct HabitView: View {
                 dataController.save()
             }
 
-			let (addNotification, removeBadge) = await dataController.updateNotifications(for: habit)
-			if (addNotification, removeBadge) == (false, false) {
+			if await dataController.updateNotifications(for: habit) == false {
 				habit.reminderEnabled = false
 				showingNotificationError = true
 			}
