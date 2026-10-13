@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # HabitsTracker
 Help create and stay on top of new habits with squeduled reminders.
 =======
@@ -8,4 +6,3 @@ Help create and stay on top of new habits with squeduled reminders.
 # HabitsTracker
 
 Help create and stay on top of new habits with scheduled reminders.
->>>>>>> 33b0b4f3699e202c73acaec44ab55963009db372
