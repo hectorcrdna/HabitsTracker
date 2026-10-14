@@ -24,7 +24,7 @@ It is made using `Xcode 27.0`, minimum deployments are `iOS 17`, `macOS 14 Sonom
 - Localization (English, Spanish and Hungarian)
 - UnitTest
 
-  ## Challenges with watchOS
+## Challenges with watchOS
 
 A few problems integrating watchOS in this project, had to opt-out of using the search bar in the app since it was causing the view to render the bar behind the toolbar making it unusable, also watchOS does not have Menu support so had to remove the filter menu.
 
