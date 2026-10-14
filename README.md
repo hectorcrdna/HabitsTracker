@@ -21,6 +21,7 @@ It is made using `Xcode 27.0`, minimum deployments are `iOS 17`, `macOS 14 Sonom
 - UIKit (for Home Screen shortcut integration)
 - UserNotifications
 - StoreKit
+- App review request
 - WidgetKit (iOS, macOS)
 - Watch app
 - Localization (English, Spanish and Hungarian)
