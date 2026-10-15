@@ -87,7 +87,7 @@ extension DataController {
 		}
 	}
 	#endif
-    
+
 	/// Requests permission to send the user "alerts, badge and sounds" notifications.
 	/// - Returns: `true` if authorized by the user, otherwise `false`.
 	private func requestNotification() async throws -> Bool {

@@ -12,6 +12,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var dataController: DataController
 
+    /// A deferred binding used to adress an bug on macOS.
     var deferredBinding: Binding<Habit?> {
         Binding(
             get: { dataController.selectedHabit },

@@ -8,18 +8,12 @@
 import SwiftUI
 
 extension View {
-	@ViewBuilder
-	func visionSensoryFeedback(trigger: Bool) -> some View {
-		if #unavailable(visionOS 2.0) {
-			self.sensoryFeedback(trigger: trigger) { _, newValue in
-				if newValue {
-					return .success
-				} else {
-					return nil
-				}
-			}
-		} else {
-			self
+    func visionSensoryFeedback(trigger: Bool) -> some View {
+		if #available(visionOS 26, *, iOS 17, *, macOS 14, *) {
+            return self.sensoryFeedback(trigger: trigger) {
+                trigger ? .success : nil
+            }
 		}
+        return self
 	}
 }

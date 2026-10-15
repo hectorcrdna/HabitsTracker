@@ -103,6 +103,8 @@ struct HabitView: View {
         .onSubmit(dataController.save)
         .toolbar {
             HabitViewToolbar(habit: habit)
+                .visionSensoryFeedback(trigger: habit.completed)
+
         }
 		.alert("Oops!", isPresented: $showingNotificationError) {
 			#if os(macOS)

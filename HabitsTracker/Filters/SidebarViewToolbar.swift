@@ -26,8 +26,11 @@ struct SidebarViewToolbar: ToolbarContent {
             .alert("Create New Tag", isPresented: $showingNewTagAlert) {
                 Button("OK") {
                     dataController.newTag(named: newTagName)
+                    newTagName = ""
                 }
-                Button("Cancel", role: .cancel) { }
+                Button("Cancel", role: .cancel) {
+                    newTagName = ""
+                }
                 TextField("Name", text: $newTagName)
             }
 			.help("Add tag")
