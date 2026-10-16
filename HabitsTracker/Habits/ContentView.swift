@@ -67,14 +67,6 @@ struct ContentView: View {
         }
 		.onAppear(perform: askForReview)
 		.onOpenURL(perform: dataController.openURL)
-		.userActivity(newHabitActivity) { activity in
-			#if !os(macOS)
-			activity.isEligibleForPrediction = true
-			#endif
-
-			activity.title = "New Habit"
-		}
-		.onContinueUserActivity(newHabitActivity, perform: resumeActivity)
     }
 
 	/// Deletes a set of habits via `.onDelete` modifier.
@@ -99,12 +91,6 @@ struct ContentView: View {
 			requestReview()
 		}
 		#endif
-	}
-
-	/// Creates a new habit using the Shortcut App.
-	/// - Parameter activity: The current activity performed by the user.
-	func resumeActivity(_ activity: NSUserActivity) {
-		dataController.newHabit()
 	}
 }
 

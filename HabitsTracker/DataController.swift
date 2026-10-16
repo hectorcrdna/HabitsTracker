@@ -9,8 +9,8 @@ import Combine
 import CoreData
 import StoreKit
 import SwiftUI
-import WidgetKit
 import UserNotifications
+import WidgetKit
 
 // IMPORTANT: The raw values directly match CoreData's property names,
 // do not change one without changing the other.
@@ -45,6 +45,8 @@ enum Frequency: Int16 {
 
 /// Singleton class for the managing of local and remote data.
 class DataController: ObservableObject {
+
+    static let shared = DataController()
 
 	/// The container tasked with managing CoreData Models with CloudKit.
     let container: NSPersistentCloudKitContainer

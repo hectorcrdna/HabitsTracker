@@ -10,10 +10,10 @@ import SwiftUI
 import UserNotifications
 
 class NotificationsDelegate: NSObject, UNUserNotificationCenterDelegate {
-	let controller: DataController!
+	let dataController: DataController!
 
-	init(controller: DataController!) {
-		self.controller = controller
+	init(controller: DataController) {
+		self.dataController = controller
 	}
 
 	func userNotificationCenter(
@@ -26,8 +26,8 @@ class NotificationsDelegate: NSObject, UNUserNotificationCenterDelegate {
 
 				if let habitId = userInfo["id"] as? String {
 
-					if let url = URL(string: habitId) {
-						controller.openURL(url)
+                    if let url = URL(string: habitId) {
+                        dataController.openURL(url)
 					}
 				}
 			}
@@ -41,7 +41,7 @@ class NotificationsDelegate: NSObject, UNUserNotificationCenterDelegate {
 		withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
 
 			DispatchQueue.main.async {
-				self.controller.objectWillChange.send()
+				self.dataController.objectWillChange.send()
 			}
 			completionHandler([.banner, .sound, .badge])
 	}

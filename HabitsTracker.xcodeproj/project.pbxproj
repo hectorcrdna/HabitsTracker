@@ -38,6 +38,10 @@
 		8B3CED5D3077D80900F9F3B4 /* PastDueForegroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3CED5B3077D80900F9F3B4 /* PastDueForegroundStyle.swift */; };
 		8B3CED5E3077D80900F9F3B4 /* PastDueForegroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3CED5B3077D80900F9F3B4 /* PastDueForegroundStyle.swift */; };
 		8B3CED5F3077D80900F9F3B4 /* PastDueForegroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3CED5B3077D80900F9F3B4 /* PastDueForegroundStyle.swift */; };
+		8B3CEDCB30825DC700F9F3B4 /* NewHabitIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3CEDCA30825DC700F9F3B4 /* NewHabitIntent.swift */; };
+		8B3CEDCC30825DC700F9F3B4 /* NewHabitIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3CEDCA30825DC700F9F3B4 /* NewHabitIntent.swift */; };
+		8B3CEDCD30825DC700F9F3B4 /* NewHabitIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3CEDCA30825DC700F9F3B4 /* NewHabitIntent.swift */; };
+		8B3CEDCE30825DC700F9F3B4 /* NewHabitIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3CEDCA30825DC700F9F3B4 /* NewHabitIntent.swift */; };
 		8BD2F949305DE1C600879725 /* DataController-Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2F948305DE1C600879725 /* DataController-Notifications.swift */; };
 		8BD2F94B3060318700879725 /* StoreKitConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 8BD2F94A3060318700879725 /* StoreKitConfiguration.storekit */; };
 		8BD2F94D3060338700879725 /* DataController-StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2F94C3060338700879725 /* DataController-StoreKit.swift */; };
@@ -234,6 +238,7 @@
 		8B202D3F3045C87600885BA1 /* SmartFilterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartFilterRow.swift; sourceTree = "<group>"; };
 		8B202D413045C94900885BA1 /* UserFilterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFilterRow.swift; sourceTree = "<group>"; };
 		8B3CED5B3077D80900F9F3B4 /* PastDueForegroundStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastDueForegroundStyle.swift; sourceTree = "<group>"; };
+		8B3CEDCA30825DC700F9F3B4 /* NewHabitIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitIntent.swift; sourceTree = "<group>"; };
 		8BD2F948305DE1C600879725 /* DataController-Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController-Notifications.swift"; sourceTree = "<group>"; };
 		8BD2F94A3060318700879725 /* StoreKitConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; name = StoreKitConfiguration.storekit; path = HabitsTracker/StoreKitConfiguration.storekit; sourceTree = SOURCE_ROOT; };
 		8BD2F94C3060338700879725 /* DataController-StoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController-StoreKit.swift"; sourceTree = "<group>"; };
@@ -412,6 +417,7 @@
 				8BF560583064EE5E00AC530C /* AppDelegate.swift */,
 				8BF5605A3064EE8E00AC530C /* SceneDelegate.swift */,
 				8BF5616F306EF10900AC530C /* NotificationsDelegate.swift */,
+				8B3CEDCA30825DC700F9F3B4 /* NewHabitIntent.swift */,
 				8B202D00303B1A4900885BA1 /* DataController.swift */,
 				8BF56140306D4BC600AC530C /* DataController-FilterAndSearch.swift */,
 				8BF56139306D4B3A00AC530C /* DataController-SampleData.swift */,
@@ -825,6 +831,7 @@
 			files = (
 				8BF560A33066ED4500AC530C /* DataController-Awards.swift in Sources */,
 				8B202D09303B4CC800885BA1 /* Filter.swift in Sources */,
+				8B3CEDCD30825DC700F9F3B4 /* NewHabitIntent.swift in Sources */,
 				8BF5613A306D4B3A00AC530C /* DataController-SampleData.swift in Sources */,
 				8BF5615E306D76D500AC530C /* CompleteIncompleteButtonView.swift in Sources */,
 				8B202D3E3045C68E00885BA1 /* TagsMenuView.swift in Sources */,
@@ -891,6 +898,7 @@
 				8BF560A13066EC8A00AC530C /* Filter.swift in Sources */,
 				8B3CED5E3077D80900F9F3B4 /* PastDueForegroundStyle.swift in Sources */,
 				8BF5609D3066EBF600AC530C /* Main.xcdatamodeld in Sources */,
+				8B3CEDCB30825DC700F9F3B4 /* NewHabitIntent.swift in Sources */,
 				8B3CED593077D7E100F9F3B4 /* DataController-Notifications.swift in Sources */,
 				8BF56165306D787800AC530C /* DataController-Testing.swift in Sources */,
 				8BF56174306EF10900AC530C /* NotificationsDelegate.swift in Sources */,
@@ -909,6 +917,7 @@
 				8BF560CA306987C700AC530C /* Habit-CoreDataHelpers.swift in Sources */,
 				8B3CED5F3077D80900F9F3B4 /* PastDueForegroundStyle.swift in Sources */,
 				8BF56166306D787800AC530C /* DataController-Testing.swift in Sources */,
+				8B3CEDCE30825DC700F9F3B4 /* NewHabitIntent.swift in Sources */,
 				8B3CED5A3077D7E100F9F3B4 /* DataController-Notifications.swift in Sources */,
 				8BF56175306EF10900AC530C /* NotificationsDelegate.swift in Sources */,
 				8BF560C33069865100AC530C /* DataController.swift in Sources */,
@@ -924,6 +933,7 @@
 			files = (
 				8BF560EE306ADEF600AC530C /* HabitRow.swift in Sources */,
 				8BF560EF306ADEF600AC530C /* HabitViewToolbar.swift in Sources */,
+				8B3CEDCC30825DC700F9F3B4 /* NewHabitIntent.swift in Sources */,
 				8BF5613B306D4B3A00AC530C /* DataController-SampleData.swift in Sources */,
 				8BF5615D306D76D500AC530C /* CompleteIncompleteButtonView.swift in Sources */,
 				8BF560F0306ADEF600AC530C /* Tag-CoreDataHelpers.swift in Sources */,

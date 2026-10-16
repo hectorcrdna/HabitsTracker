@@ -13,7 +13,7 @@ import SwiftUI
 
 @main
 struct HabitsTrackerApp: App {
-    @StateObject var dataController = DataController()
+    @StateObject var dataController = DataController.shared
     @Environment(\.scenePhase) var scenePhase
 
 	#if os(iOS)
