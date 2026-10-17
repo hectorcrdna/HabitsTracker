@@ -16,7 +16,7 @@ It is made using `Xcode 27.0`, minimum deployments are `iOS 17`, `macOS 14 Sonom
 - CoreSpotlight
 - VoiceOver support
 - HapticFeedback
-- Shortcuts app integration
+- AppIntents
 - SwiftUI
 - UIKit (for Home Screen shortcut integration)
 - UserNotifications
