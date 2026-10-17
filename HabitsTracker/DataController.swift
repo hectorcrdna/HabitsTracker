@@ -9,7 +9,6 @@ import Combine
 import CoreData
 import StoreKit
 import SwiftUI
-import UserNotifications
 import WidgetKit
 
 // IMPORTANT: The raw values directly match CoreData's property names,
@@ -208,8 +207,7 @@ class DataController: ObservableObject {
 			self?.checkForTestEnvironment()
 		}
 
-		notificationsDelegate = NotificationsDelegate(controller: self)
-		UNUserNotificationCenter.current().delegate = notificationsDelegate
+		notificationsDelegate = NotificationsDelegate()
     }
 
 	/// Tells the UI there has been remote changes, fired by the observer added to ``init(inMemory:)``.
