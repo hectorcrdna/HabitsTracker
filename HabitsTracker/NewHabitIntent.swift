@@ -21,3 +21,14 @@ struct NewHabitIntent: AppIntent {
 
     static var openAppWhenRun: Bool = true
 }
+
+struct NewHabitShortcuts: AppShortcutsProvider {
+    static var appShortcuts: [AppShortcut] {
+        AppShortcut(
+            intent: NewHabitIntent(),
+            phrases: ["Create a new \(.applicationName)"],
+            shortTitle: "New Habit",
+            systemImageName: "plus.circle"
+        )
+    }
+}

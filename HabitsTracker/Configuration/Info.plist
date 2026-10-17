@@ -15,6 +15,13 @@
 			</array>
 		</dict>
 	</array>
+	<key>INAlternativeAppNames</key>
+	<array>
+		<dict>
+			<key>INAlternativeAppName</key>
+			<string>habit</string>
+		</dict>
+	</array>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
