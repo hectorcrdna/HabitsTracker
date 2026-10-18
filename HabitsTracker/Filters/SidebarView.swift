@@ -29,6 +29,9 @@ struct SidebarView: View {
     @State private var renamingTag = false
     @State private var tagName = ""
 
+    @State private var showingAwards = false
+    @State private var showingStore = false
+
 	let smartFilters: [Filter] = [.all, .recent, .pastDue]
 
     var tagFilters: [Filter] {
@@ -54,7 +57,13 @@ struct SidebarView: View {
         }
 		.macFrame(minWidth: 230)
         .toolbar {
-            SidebarViewToolbar()
+            SidebarViewToolbar(showingStore: $showingStore, showingAwards: $showingAwards)
+        }
+        .sheet(isPresented: $showingStore) {
+            StoreView()
+        }
+        .sheet(isPresented: $showingAwards) {
+            AwardsView()
         }
         .alert("Rename Tag", isPresented: $renamingTag) {
             Button("OK", action: completeRename)
