@@ -37,6 +37,10 @@ extension Habit {
 		set { reminderDate = newValue }
 	}
 
+    var habitPastDue: Bool {
+        habitReminderDate < .now && reminderEnabled && completed == false
+    }
+
     var habitTags: [Tag] {
         let result = tags?.allObjects as? [Tag] ?? []
         return result.sorted()

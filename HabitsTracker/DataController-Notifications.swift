@@ -10,27 +10,49 @@ import Foundation
 import UserNotifications
 
 extension DataController {
-	/// Acts on the selection of the reminders toggle to add a reminder when turned on.
-	func updateNotifications(for habit: Habit) async -> Bool {
-		// Removes any reminders in the system so there are no multiple reminders.
-		removeReminders(for: habit)
+    enum NotificationType {
+        case delivered, pending
+    }
 
-		if habit.reminderEnabled && habit.completed == false {
-			// Tries to set the reminder if it can't lets the user know.
-			if await addReminder(for: habit) {
-				return true
-			}
+	func processNotications(for habit: Habit) async -> Bool {
+        await remove(.delivered, for: habit)
 
-		} else {
-			#if !os(watchOS)
-			// Once the reminder is turned off we remove it from the badge count.
-			removeFromBadgeCount(habit)
-			#endif
+        if habit.habitReminderDate > .now || habit.notificationFrequency != Frequency.none.rawValue {
+            await remove(.pending, for: habit)
 
-			return true
-		}
-		return false
-	}
+            guard habit.completed == false, habit.reminderEnabled else { return true }
+            if await addReminder(for: habit) {
+                return true
+            } else {
+                return false
+            }
+        }
+        return true
+    }
+
+    func remove(_ notification: NotificationType, for habit: Habit) async {
+        let center = UNUserNotificationCenter.current()
+        let ids: [String]
+
+        switch notification {
+        case .delivered:
+            ids = await center.deliveredNotifications().map({$0.request.identifier})
+            let id = ids.filter({$0 == habit.objectID.uriRepresentation().absoluteString})
+
+            center.removeDeliveredNotifications(withIdentifiers: id)
+
+            #if !os(watchOS)
+            try? await center.setBadgeCount(ids.count - id.count)
+            #endif
+
+        case .pending:
+            ids = await center.pendingNotificationRequests()
+                .map({$0.identifier})
+                .filter({$0 == habit.objectID.uriRepresentation().absoluteString})
+
+            center.removePendingNotificationRequests(withIdentifiers: ids)
+        }
+    }
 
 	/// Adds a notification iff allowed by the user.
 	///
@@ -65,28 +87,6 @@ extension DataController {
 			return false
 		}
 	}
-
-	/// Removes any pending notifications for a specified habit.
-	/// - Parameter habit: The habit associated with the notification.
-	func removeReminders(for habit: Habit) {
-		let center = UNUserNotificationCenter.current()
-		let id = habit.objectID.uriRepresentation().absoluteString
-		center.removePendingNotificationRequests(withIdentifiers: [id])
-	}
-
-	#if !os(watchOS)
-	/// Removes a delivered notification from the badge count.
-	/// - Parameter habit: The habit associated with the notification
-	func removeFromBadgeCount(_ habit: Habit) {
-		let center = UNUserNotificationCenter.current()
-		let id = habit.objectID.uriRepresentation().absoluteString
-		center.removeDeliveredNotifications(withIdentifiers: [id])
-
-		center.getDeliveredNotifications { notifications in
-			center.setBadgeCount(notifications.count)
-		}
-	}
-	#endif
 
 	/// Requests permission to send the user "alerts, badge and sounds" notifications.
 	/// - Returns: `true` if authorized by the user, otherwise `false`.

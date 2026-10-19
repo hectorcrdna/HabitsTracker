@@ -12,10 +12,8 @@ struct SmartFilterRow: View {
 
 	var pastDueAndIncompleteCount: Int {
 		let request = Habit.fetchRequest()
-		return dataController.results(for: request).filter {
-			guard $0.reminderEnabled else { return false }
-			guard let date = $0.reminderDate else { return false }
-			return $0.completed == false && date < Date.now
+		return dataController.results(for: request).filter { habit in
+            return habit.completed == false && habit.habitPastDue
 		}.count
 	}
 

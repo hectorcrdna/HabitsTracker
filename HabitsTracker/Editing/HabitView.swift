@@ -118,30 +118,22 @@ struct HabitView: View {
 		} message: {
 			Text("There was a problem setting your notification. Please check you have notifications enabled.")
 		}
-		.onChange(of: habit.completed) { _, newValue in
-			if newValue {
-				if habit.notificationFrequency != Frequency.none.rawValue {
-					if let idString = habit.successorID?.absoluteString {
-						if dataController.habit(with: idString) != nil {
-							return updateReminder(for: habit)
-						}
-					}
-					return updateReminder(for: dataController.copy(habit))
-				}
-			}
-			updateReminder(for: habit)
-		}
+        .onAppear(perform: processNotifications)
+		.onChange(of: habit.completed) {
+            processNotifications()
+        }
 		.onChange(of: habit.reminderEnabled) { _, newValue in
-			if newValue == false {
-				habit.reminderDate = nil
-			}
-			updateReminder(for: habit)
+            processNotifications()
+
+            if newValue == false {
+                habit.reminderDate = nil
+            }
 		}
 		.onChange(of: habit.habitReminderDate) {
-			updateReminder(for: habit)
+            processNotifications()
 		}
 		.onChange(of: habit.notificationFrequency) {
-			updateReminder(for: habit)
+            processNotifications()
 		}
 	}
 
@@ -153,18 +145,17 @@ struct HabitView: View {
 	}
 	#endif
 
-	/// Acts on the selection of the reminders toggle to add a reminder when turned on.
-	func updateReminder(for habit: Habit) {
-		Task {
+	func processNotifications() {
+        Task {
             defer {
                 dataController.save()
             }
 
-			if await dataController.updateNotifications(for: habit) == false {
-				habit.reminderEnabled = false
-				showingNotificationError = true
-			}
-		}
+            if await dataController.processNotications(for: habit) == false {
+                habit.reminderEnabled = false
+                showingNotificationError = true
+            }
+        }
 	}
 }
 

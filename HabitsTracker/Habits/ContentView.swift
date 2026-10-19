@@ -76,10 +76,9 @@ struct ContentView: View {
 
         for offset in offsets {
             let habit = habits[offset]
-			dataController.removeReminders(for: habit)
-			#if !os(watchOS)
-			dataController.removeFromBadgeCount(habit)
-			#endif
+            Task {
+                await dataController.processNotications(for: habit)
+            }
             dataController.delete(habit)
         }
     }
