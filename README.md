@@ -2,12 +2,23 @@
     <img width="756" height="476.5" alt="Screenshot 2026-10-11 at 2 54 03 PM" src="https://github.com/user-attachments/assets/4d9e0d70-096b-4e7e-9702-b7b6406c7222" />
 </p>
 
-<p align="center">
-  <img width="147" height="320" alt="HTDemoMainWorkflow1" src="https://github.com/user-attachments/assets/ac828ab8-7f60-4926-9b63-f17e6a738eb0" />
-  Main Workflow 1
-  <img width="147" height="320" alt="HTDemoMainWorkflow2" src="https://github.com/user-attachments/assets/a8daadaa-1089-4646-910c-5de9201059f4" />
-  Main Workflow 2
-</p>
+[Main Workflow 1](https://github.com/user-attachments/assets/ac828ab8-7f60-4926-9b63-f17e6a738eb0)
+
+[Main Workflow 2](https://github.com/user-attachments/assets/a8daadaa-1089-4646-910c-5de9201059f4)
+
+[Awards View](https://github.com/user-attachments/assets/67a12053-1eee-4264-affc-c62d99d453c4)
+
+[Filtering](https://github.com/user-attachments/assets/255bb336-3ccc-4633-a275-3cd4957c097c) 
+
+[Searching](https://github.com/user-attachments/assets/a5939d41-6d7e-4b2d-9fca-3b1f590b8332)
+
+[Shortcuts app integration](https://github.com/user-attachments/assets/586f52d6-e106-4635-9fc2-0bb6345eefa7)
+
+[Siri integration](https://github.com/user-attachments/assets/45d81dc4-de8c-4914-9f75-9823976b7888)
+
+[Spotlight search](https://github.com/user-attachments/assets/511f0a84-5362-478f-8239-f2ee3326ab70)
+
+[Premium version store](https://github.com/user-attachments/assets/618d1784-b77a-420d-b62d-b93292cfcbc3)
 
 # HabitsTracker
 
