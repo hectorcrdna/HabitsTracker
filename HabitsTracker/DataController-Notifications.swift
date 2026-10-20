@@ -111,7 +111,7 @@ extension DataController {
 			content.subtitle = habitContent
 		}
 
-		let dateComponents = notificationFrequency(for: habit)
+		let dateComponents = notificationFrequencyDateComponents(for: habit)
 
 		let trigger = UNCalendarNotificationTrigger(
 			dateMatching: dateComponents,
@@ -129,7 +129,7 @@ extension DataController {
 	/// Chooses the right date components from the time, date and frequency the user wants to be reminded of a habit.
 	/// - Parameter habit: The habit to remind the user of.
 	/// - Returns: `DateComponents` for the use of a notification request.
-	func notificationFrequency(for habit: Habit) -> DateComponents {
+	func notificationFrequencyDateComponents(for habit: Habit) -> DateComponents {
 		let calendar = Calendar.current
 
 		switch habit.notificationFrequency {

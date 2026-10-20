@@ -119,8 +119,14 @@ struct HabitView: View {
 			Text("There was a problem setting your notification. Please check you have notifications enabled.")
 		}
         .onAppear(perform: processNotifications)
-		.onChange(of: habit.completed) {
+		.onChange(of: habit.completed) { _, newValue in
             processNotifications()
+
+            guard habit.notificationFrequency != Frequency.none.rawValue else { return }
+
+            if newValue {
+                dataController.makeUpComingCopy(of: habit)
+            }
         }
 		.onChange(of: habit.reminderEnabled) { _, newValue in
             processNotifications()

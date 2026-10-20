@@ -320,7 +320,7 @@ class DataController: ObservableObject {
         selectedHabit = habit
     }
 
-	func copy(_ habit: Habit) -> Habit {
+	func makeUpComingCopy(of habit: Habit) {
 		let habitCopy = Habit(context: container.viewContext)
 		habitCopy.completed = false
 		habitCopy.content = habit.content
@@ -329,19 +329,21 @@ class DataController: ObservableObject {
 		habitCopy.priority = habit.priority
 
 		let calendar = Calendar.current
-		habitCopy.reminderDate = calendar.nextDate(after: habit.habitReminderDate,
-												   matching: notificationFrequency(for: habit),
+        habitCopy.reminderDate = calendar.nextDate(after: habit.habitReminderDate,
+												   matching: notificationFrequencyDateComponents(for: habit),
 												   matchingPolicy: .strict
 		)
 
 		habitCopy.reminderEnabled = true
 		habitCopy.title = habit.title
 		habitCopy.tags = habit.tags
-		save()
-		habit.successorID = habitCopy.objectID.uriRepresentation()
+        habit.notificationFrequency = Frequency.none.rawValue
+        save()
 
-		return habitCopy
-	}
+        Task {
+            await processNotications(for: habitCopy)
+        }
+    }
 
 	/// Counts the total amount of Tags or Habits saved.
 	///
@@ -368,9 +370,7 @@ class DataController: ObservableObject {
 		let request = Habit.fetchRequest()
 		request.predicate = NSPredicate(format: "completed = false")
 
-		request.sortDescriptors = [
-			NSSortDescriptor(keyPath: \Habit.priority, ascending: false)
-		]
+		request.sortDescriptors = [NSSortDescriptor(keyPath: \Habit.priority, ascending: false)]
 
 		request.fetchLimit = count
 
