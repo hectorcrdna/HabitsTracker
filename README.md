@@ -8,6 +8,8 @@
 
 [Main Workflow 2](https://github.com/user-attachments/assets/a8daadaa-1089-4646-910c-5de9201059f4)
 
+[Widgets](https://github.com/user-attachments/assets/e5d2781a-4f99-4d8e-a5d1-b88c0e0c9d67)
+
 [Awards View](https://github.com/user-attachments/assets/67a12053-1eee-4264-affc-c62d99d453c4)
 
 [Filtering](https://github.com/user-attachments/assets/255bb336-3ccc-4633-a275-3cd4957c097c) 
